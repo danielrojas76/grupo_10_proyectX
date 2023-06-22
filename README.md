@@ -11,11 +11,11 @@
 **Daniel Rojas:**
 Me llamo Daniel, tengo 28 años, vivo en Buenos Aires, Argentina, trabajo como chofer de APP. Me gusta todo lo que tenga que ver con la tencnologia y me gustaria ingresar al area IT, por eso elegi hacer este curso full stack. tengo conocimientos basicos que he ido adquiriendo de manera autodidacta. en mi tiempo libre me gusta leer, ver anime y jugar juegos de pc.
 
-**Ezequiek Bermejo:**
+**Ezequiel Bermejo:**
 //escribir una breve descripcion
 
 **Matias Julian Cevallos Moran**
-//escribir una breve descripcion
+Mi nombre es Matias Julian Cevallos Moran, tengo 22 años, vivo en Capital Federal, estudio Ingenieria en Sistemas en la Universidad Tecnologica Nacional, me gustaria dedicarme a todo lo que es desarrollo web, suelo desarrollarme bien en todas las tecnologias y me encantan ver y jugar al futbol. 
 
 **Jorge Ivan Lara Hernandez**
 Mi nombre es Ivan Lara, tengo 24 años, vivo en Medellin-Colombia, trabajo actualmente como operario en una fábrica de luminarias. Me gusta la música y las tecnologías de la información, recientemente estoy realizando el curso de full stack y mi objetivo es poder trabajar junto a un equipo que me permita desarrollarme como persona y profesionalmente. 
