@@ -21,5 +21,5 @@ Me llamo Daniel, tengo 28 años, vivo en Buenos Aires, Argentina, trabajo como c
 Mi nombre es Ivan Lara, tengo 24 años, vivo en Medellin-Colombia, trabajo actualmente como operario en una fábrica de luminarias. Me gusta la música y las tecnologías de la información, recientemente estoy realizando el curso de full stack y mi objetivo es poder trabajar junto a un equipo que me permita desarrollarme como persona y profesionalmente. 
 
 
-**Pablo Kruchiwski**
-//escribir una breve descripcion
+**Pablo Kruchowski**
+Me llamo Pablo, tengo 29 años, vivo en Posadas, Misiones, Argentina. Trabajo diseñando muebles y armandolos, antes estudiaba medicina pero dejé la carrera y ahora estoy estudiando programación en algo que siempre me gusto, mi objetivo es poder trabajar en este ambito, me gusta la la informatica, las peliculas de terror y acción, y juegos onlines.
