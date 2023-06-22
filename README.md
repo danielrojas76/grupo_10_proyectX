@@ -18,7 +18,8 @@ Me llamo Daniel, tengo 28 años, vivo en Buenos Aires, Argentina, trabajo como c
 //escribir una breve descripcion
 
 **Jorge Ivan Lara Hernandez**
-//escribir una breve descripcion
+Mi nombre es Ivan Lara, tengo 24 años, vivo en Medellin-Colombia, trabajo actualmente como operario en una fábrica de luminarias. Me gusta la música y las tecnologías de la información, recientemente estoy realizando el curso de full stack y mi objetivo es poder trabajar junto a un equipo que me permita desarrollarme como persona y profesionalmente. 
+
 
 **Pablo Kruchiwski**
 //escribir una breve descripcion
