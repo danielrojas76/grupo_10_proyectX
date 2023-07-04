@@ -18,7 +18,7 @@ Mi nombre es Ezequiel , tengo 26 años, vivo en Capital Federal, estudio en Digi
 Mi nombre es Matias Julian Cevallos Moran, tengo 22 años, vivo en Capital Federal, estudio Ingenieria en Sistemas en la Universidad Tecnologica Nacional, me gustaria dedicarme a todo lo que es desarrollo web, suelo desarrollarme bien en todas las tecnologias y me encantan ver y jugar al futbol. 
 
 **Jorge Ivan Lara Hernandez:**
-Mi nombre es Ivan Lara, tengo 24 años, vivo en Medellin-Colombia, trabajo actualmente como operario en una fábrica de luminarias. Me gusta la música y las tecnologías de la información, recientemente estoy realizando el curso de full stack y mi objetivo es poder trabajar junto a un equipo que me permita desarrollarme como persona y profesionalmente. 
+Mi nombre es Jorge Ivan Lara, tengo 24 años, vivo en Medellin-Colombia, trabajo actualmente como operario en una fábrica de iluminarias. Me gusta la música y las tecnologías de la información, recientemente estoy realizando el curso de fullstack y mi objetivo es poder trabajar junto a un equipo que me permita desarrollarme como persona y profesionalmente. 
 
 
 **Pablo Kruchowski:**
