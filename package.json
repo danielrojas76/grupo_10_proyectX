@@ -1,0 +1,15 @@
+{
+  "name": "grupo_10_proyectx",
+  "version": "1.0.0",
+  "description": "- Nuestro sitio web es un e-commerce especializado en artículos deportivos. \r - Ofrecemos una amplia variedad de productos de alta calidad para personas apasionadas por el deporte, desde ropa y calzado deportivo hasta equipos y accesorios. \r - Nuestro objetivo es proporcionar a nuestra audiencia todo lo necesario para disfrutar de una vida activa y saludable.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
