@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Header*/
+.header {
+    font-family: 'Victor Mono', monospace;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+}
+
+.burguer-menu {
+    border: none;
+    background-color: whitesmoke;
+    margin: 0 16px;
+}
+
+.header .burguer-menu i {
+    width: 40px;
+    font-size: 26px
+}
+
+.nav-bar {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
+}
+
+.logo {
+    height: 100%;
+}
+
+.first-nav {
+    display: none;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.search-box {
+    display: none;
+}
+
+.second-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.second-nav button {
+    border: none;
+    font-size: 26px;
+}
+
+.second-nav button i {
+    font-size: 30px;
+}
+
+/* body*/
+.box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.box a {
+    position: absolute;
+    align-items: center;
+}
+
+.ingreso {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding-bottom: 10px;
+    border-bottom: solid 1px rgb(221, 219, 219);
+    margin: 30px 0px 5px;
+}
+
+.inicioSesion input {
+    height: 33px;
+    width: 250px;
+    margin: 10px 0px 10px;
+}
+
+.entrar button {
+    color: white;
+    background-color: black;
+    margin-top: 15px;
+    width: 250px;
+    height: 33px;
+    border-radius: 4px;
+    border: 0;
+}
+.entrar button:hover{
+   background-color: grey;
+}
+a {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover{
+    color:grey;
+}
+.registrarse {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.opcionParaEntrar {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border-bottom: solid 1px rgb(221, 219, 219);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.codigoMail button {
+    color: white;
+    background-color: black;
+    margin-top: 10px;
+    width: 250px;
+    height: 33px;
+    border-radius: 4px;
+    border: 0;
+}
+.codigoMail button:hover{
+    background-color: grey;
+}
+@media (min-width:480px) {
+
+    .nav-bar {
+        justify-content: start;
+    }
+
+    .burguer-menu {
+        display: none;
+    }
+
+    .first-nav {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+    }
+
+    .first-nav li {
+        margin: 5px;
+    }
+
+    .search-box {
+        display: block;
+    }
+
+    .search-box {
+        width: 47%;
+    }
+
+    .second-nav {
+        width: 47%;
+    }
+
+    .olvideLaContraseña a {
+        display: flex;
+        justify-content: flex-end;
+        top: 45%;
+    }
+
+    .registrarse a {
+        display: flex;
+        justify-content: center;
+    }
+}
