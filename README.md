@@ -24,6 +24,9 @@ Mi nombre es Jorge Ivan Lara, tengo 24 años, vivo en Medellin-Colombia, trabajo
 **Pablo Kruchowski:**
 Me llamo Pablo, tengo 29 años, vivo en Posadas, Misiones, Argentina. Trabajo diseñando muebles y armandolos, antes estudiaba medicina pero dejé la carrera y ahora estoy estudiando programación en algo que siempre me gusto, mi objetivo es poder trabajar en este ambito, me gusta la la informatica, las peliculas de terror y acción, y juegos onlines.
 
+**Antonela Carreras:**
+Me llamo Antonela Carreras, consultor senior con mas de 3 anos de experiencia en servicios financiera-Titulado de manager en gestion de bancos y empresas Financieras. Actualmente trabajando en una empresa, con objetivos de dar los primeros pasos en el Area Digital. 
+
 - [ADDIDAS](https://www.adidas.com.ar/): Esta página nos atrajo por su diseño, cómo muestra los detalles del producto. Nos pareció muy atractiva la idea de incluir las imágenes del producto en un cuadro 2x2 y agregar descripciones del producto de manera desplegable. El orden que presentaba su barra de navegación también fue algo que nos llamó la atención por la manera en que estaba organizada.
 
 - [NIKE](https://www.nike.com.ar/): Luego de ver muchas páginas, buscando una idea para el diseño del carrito que nos guste a todo el equipo, dimos con la página de NIKE, la cual presentaba un diseño que se ajustaba a nuestras necesidades. La idea de poder modificar la cantidad de productos a comprar desde la misma página de inicio, desplegando una barra lateral del lado derecho, sumado a que automáticamente modifica los valores a pagar acorde a la cantidad de productos que tengamos, fue lo que nos convenció para incluirlo en nuestro proyecto.
