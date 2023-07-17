@@ -22,8 +22,14 @@ app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/login.html"))    
 });
 
+
 //REGISTRO
 app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/register.html"))    
+});
+
+//password
+app.get("/password", (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/password.html"))    
 });
 
