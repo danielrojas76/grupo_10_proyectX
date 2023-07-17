@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <title>login</title>
 </head>
 
@@ -15,7 +16,7 @@
         <nav class="nav-bar">
             <img src="/images/LOGO.png" alt="" class="logo">
             <ul class="first-nav">
-                <li><a href="">HOME</a></li>
+                <li><a href="/">HOME</a></li>
                 <li><a href="">CATEGORIA</a></li>
                 <li><a href="">CONTACTO</a></li>
             </ul>
@@ -32,33 +33,33 @@
         </nav>
     </header>
     <main>
-    <form action="/" method="get">
-        <div class="box">
-            <h2 class="ingreso"> Ingresar con mail y contraseña </h2>
-            <br>
-            <div class="inicioSesion">
-                <input class="email" name="email" placeholder="Ej: ejemplo@mail.com" required>
+        <form action="/" method="get">
+            <div class="box">
+                <h2 class="ingreso"> Ingresar con mail y contraseña </h2>
                 <br>
-                <input class="password" name="password" placeholder="Ingrese su contraseña" required>
+                <div class="inicioSesion">
+                    <input class="email" name="email" placeholder="Ej: ejemplo@mail.com" required>
+                    <br>
+                    <input class="password" name="password" placeholder="Ingrese su contraseña" required>
+                </div>
+                <br>
+                <div class="olvideLaContraseña">
+                    <a href="/olvidelacontraseña">Olvidé la contraseña</a>
+                </div>
+                <div class="entrar">
+                    <button type="submit">Entrar</button>
+                </div>
+                <br>
+                <div class="registrarse">
+                    <a href="/register"> ¿No tiene una cuenta? Regístrese</a>
+                </div>
+                <br>
+                <h2 class="opcionParaEntrar">Escoja una opción para entrar</h2>
+                <div class="codigoMail">
+                    <button type="submit">Recibir código por mail</button>
+                </div>
             </div>
-            <br>
-            <div class="olvideLaContraseña">
-                <a href="/olvidelacontraseña">Olvidé la contraseña</a>
-            </div>
-            <div class="entrar">
-                <button type="submit">Entrar</button>
-            </div>
-            <br>
-            <div class="registrarse">
-                <a href="/register"> ¿No tiene una cuenta? Regístrese</a>
-            </div>
-            <br>
-            <h2 class="opcionParaEntrar">Escoja una opción para entrar</h2>
-            <div class="codigoMail">
-                <button type="submit">Recibir código por mail</button>
-            </div>
-        </div>
-    </form>
+        </form>
     </main>
     <footer class="footer">
         <section class="container_footer_1">

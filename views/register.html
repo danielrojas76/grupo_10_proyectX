@@ -1,11 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css\register.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <title>Register</title>
 </head>
+
 <body>
-    
+    <header class="header">
+        <button class="burguer-menu"><i class="fa-solid fa-bars"></i></button>
+
+        <nav class="nav-bar">
+            <img src="/images/LOGO.png" alt="" class="logo">
+            <ul class="first-nav">
+                <li><a href="/">HOME</a></li>
+                <li><a href="">CATEGORIA</a></li>
+                <li><a href="">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-bar">
+            <div class="search-box">
+                <input type="search" name="" id="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="second-nav">
+                <a href="/login"><button type="button"><i class="fa fa-user-circle" aria-hidden="true"></i></button></a>
+                <button type="button"><i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="box-form">
+            <form action="/" method="get">
+                <h3>REGISTRATE</h3>
+                <h6>Registrate con</h6>
+                <div class="botones-acceso">
+                    <button>FACEBOOK<i class="fa-brands fa-facebook"></i></button>
+                    <button>GOOGLE<i class="fa-brands fa-google"></i></button>
+                </div>
+                <p class="letra0">O</p>
+                <h5>TU NOMBRE</h5>
+                <div class="nombre">
+                    <input type="text" name="" id="" placeholder="Nombre(s) *">
+                </div>
+                <div class="apellido">
+                    <input type="text" name="" id="" placeholder="Apellido *">
+                </div class="date">
+                <h5>FECHA DE NACIMIENTO</h5>
+                <div class="date">
+                    <input type="date" name="" id="">
+                </div>
+
+                <h5>SEXO</h5>
+                <div class="botones-sexos">
+                    <input type="radio" name="sexos" id="">
+                    <label>Hombre</label>
+                    <input type="radio" name="sexos" id="">
+                    <label>Mujer</label>
+                    <input type="radio" name="sexos" id="">
+                    <label>Otros</label>
+                </div>
+
+                <h5>DATOS DE ACCESO</h5>
+                <div class="email">
+                    <input type="email" name="" id="" placeholder="Correo Electronico *">
+                </div>
+                <div class="contraseña">
+                    <input type="password" name="" id="" placeholder="Contraseña *">
+                    <p>Minimo 8 caracteres con una mayúscula, una minúscula, un caracter especial y un numero</p>
+                </div>
+                <div class="terminos">
+                    <input type="checkbox" name="" id="">
+                    <label>He leido y aceptos los terminos y la politica de privacidad</label>
+                </div>
+                <div class="boton-registrate">
+                    <button type="submit">REGÍSTRATE<i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+            </form>
+            <div class="box-rigth">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis earum consequatur suscipit id
+                    eum
+                    officiis at! Quod asperiores maiores vitae repudiandae ipsa earum eum quaerat fugiat? Repellendus
+                    perspiciatis praesentium neque?</h2>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure similique rerum tempora? Odit ex minima
+                    quas voluptate iusto, repellendus similique, omnis tenetur exercitationem eveniet hic, itaque
+                    laudantium! Iste, sequi quod.</P>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure similique rerum tempora? Odit ex minima
+                    quas voluptate iusto, repellendus similique, omnis tenetur exercitationem eveniet hic, itaque
+                    laudantium! Iste, sequi quod.</P>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure similique rerum tempora? Odit ex minima
+                    quas voluptate iusto, repellendus similique, omnis tenetur exercitationem eveniet hic, itaque
+                    laudantium! Iste, sequi quod.</P>
+
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <section class="container_footer_1">
+            <p>Todos los derechos</p>
+        </section>
+        <section class="container_footer_2">
+            <ul>
+                <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-square-twitter"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+        </section>
+    </footer>
+
 </body>
+
 </html>
