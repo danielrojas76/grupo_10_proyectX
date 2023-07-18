@@ -12,7 +12,9 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/index.html"))    
 });
 //PRODUCT
-
+app.get("/productDetail", (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/productDetail.html"))
+});
 
 //CARRITO
    
