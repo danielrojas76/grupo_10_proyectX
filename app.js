@@ -1,37 +1,20 @@
 const express = require("express")
 const app = express();
-const path =  require("path");
+let mainRouter = require('./routes/mainRoutes')
+let userRouter = require('./routes/userRoutes')
+let productRouter = require('./routes/productRoutes')
 
 app.use(express.static("public")); 
+
+app.set('view engine', 'ejs')
 
 app.listen(3000, () => 
     console.log("Servidor corriendo")
 );
-//HOME
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/index.html"))    
-});
-//PRODUCT
-app.get("/productDetail", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/productDetail.html"))
-});
+app.use("/", mainRouter);
 
-//CARRITO
-   
+app.use("/user", userRouter);
 
-//LOGIN
-app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/login.html"))    
-});
+app.use("/product", productRouter);
 
-
-//REGISTRO
-app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/register.html"))    
-});
-
-//password
-app.get("/password", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/password.html"))    
-});
 
