@@ -1,15 +1,13 @@
-const path = require('path')
-
 let userControllers = {
     register: function(req, res){
-        res.render(path.join(__dirname, '../views/register'))},
+        res.render('register')},
 
     login: function(req, res){
-        res.render(path.join(__dirname, '../views/login'))    
+        res.render('login')    
     },
 
     password: function(req, res){
-        res.render(path.join(__dirname, '../views/password'))    
+        res.render('password')    
     }
 }
 
