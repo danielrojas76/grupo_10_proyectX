@@ -1,10 +1,7 @@
 const express = require("express")
-const path = require('path')
-const mainRouter = require('./routes/mainRoutes')
-const userRouter = require('./routes/userRoutes')
-const productRouter = require('./routes/productRoutes')
-
 const app = express();
+const dotenv = require('dotenv').config();
+let path = require('path')
 
 app.use(express.static("public")); 
 
@@ -25,6 +22,7 @@ app.use("/user", userRouter);
 
 app.use("/product", productRouter);
 
-app.listen(3000, () => 
-    console.log("Servidor corriendo")
-);
+app.listen(process.env.PORT, () => { 
+    console.log("Servidor escuchando en Puerto" + process.env.PORT);
+});
+ 
