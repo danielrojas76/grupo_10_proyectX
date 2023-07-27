@@ -1,38 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <title>PROYECTO X</title>
-</head>
+<%- include('./partials/head.ejs') %>
 
 <body>
-    <header class="header">
-        <button class="burguer-menu"><i class="fa-solid fa-bars"></i></button>
 
-        <nav class="nav-bar">
-            <img src="/images/LOGO.png" alt="" class="logo">
-            <ul class="first-nav">
-                <li><a href="">HOME</a></li>
-                <li><a href="">CATEGORIA</a></li>
-                <li><a href="#about">CONTACTO</a></li>
-            </ul>
-        </nav>
-        <nav class="nav-bar">
-            <div class="search-box">
-                <input type="search" name="" id="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div class="second-nav">
-                <a href="/user/login"><button type="button"><i class="fa fa-user-circle"
-                    aria-hidden="true"></i></button></a>
-                <button type="button"><i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
-            </div>
-        </nav>
-    </header>
+    <%- include('./partials/header.ejs') %>
+
     <main>
         <section class="showcase">
             <div class="video-container">
@@ -149,7 +120,7 @@
                 </article>
             </section>
             <section id="about">
-                <h1>Sobre nosotros</h1>
+                <h1>CONTACTO</h1>
                 <p>En nuestro sitio encontras todo lo que necesites para mejorar tu rendimiento en tu deporte favorito!
                 </p>
                 <h2>nuestras redes sociales</h2>
@@ -202,19 +173,9 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <section class="container_footer_1">
-            <p>Todos los derechos</p>
-        </section>
-        <section class="container_footer_2">
-            <ul>
-                <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-twitter"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
-            </ul>
-        </section>
-    </footer>
+
+    <%- include('./partials/footer.ejs') %>
+
 </body>
 
 </html>
