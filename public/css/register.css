@@ -1,78 +1,65 @@
-* {
-   font-family: Helvetica, Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Victor+Mono&display=swap');
 
-body {
+* {
+   font-family: "Roboto", Helvetica, Arial, sans-serif;
    box-sizing: border-box;
    padding: 0;
    margin: 0;
 }
-
+.w100 {
+   width: 90%;
+   max-width: 500px;
+}
+body {
+  margin: auto
+}
 main {
    height: 100vh;
 }
 
-/* /--Header START--/ */
+/*--Header START--*/
 
-.header {
-   font-family: 'Victor Mono', monospace;
+header {
    width: 100%;
-   height: 50px;
    display: flex;
-   justify-content: space-between;
-   background-color: whitesmoke;
+   justify-content: space-around;
+   align-items: center;
+   background-color:  #ebebeb;
 }
 
 .burguer-menu {
    border: none;
-   background-color: whitesmoke;
-   margin: 0 16px;
+   background-color: none;
 }
 
-.header .burguer-menu i {
-   width: 40px;
-   font-size: 26px
+header i {
+   font-size: 30px;
 }
 
-.nav-bar {
-   width: 30%;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: end;
-   align-items: center;
-}
-
-.logo {
-   height: 100%;
-}
-
-.first-nav {
-   display: none;
-}
-
-.nav-bar ul li a {
+header a {
    text-decoration: none;
    color: black;
 }
 
+.logo {
+   width: 100px;
+}
+
+.first-nav,
 .search-box {
    display: none;
 }
 
 .second-nav {
-   width: 100%;
-   display: flex;
-   justify-content: space-around;
+   justify-content: center;
 }
 
 .second-nav button {
    border: none;
-   font-size: 26px;
+   margin: 5px;
 }
 
-.second-nav button i {
-   font-size: 30px;
-}
+/*--Header END--*/
 
 /* PANTALLA TOTAL REGISTRO */
 .box-form {
@@ -80,7 +67,6 @@ main {
    justify-content: space-around;
    margin: auto;
    flex-wrap: wrap;
-
 }
 
 /* FORM IZQUIERDA */
@@ -89,6 +75,11 @@ form {
    margin-left: 10px;
    width: 100vw;
    max-width: 700px;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   height: 90%;
 }
 
 /* FORM DERECHA */
@@ -96,30 +87,46 @@ form {
 .box-rigth {
    width: 100vw;
    max-width: 700px;
+   display: none;
+}
+.box-rigth li {
+   list-style: none;
+}
+.registrateCon {
+   margin-top: 10px;
+   font-size: 11px;
 }
 
 /* BOTONES ACCESO */
 .botones-acceso {
-   display: flex
+   display: flex;
+   margin-top: 15px;
+   margin-bottom: 15px;   
+   width: 90%;
 }
 
 .botones-acceso button {
-   margin-right: 10px;
    background-color: white;
    color: black;
-   width: 270px;
+   width: 45%;
    height: 30px;
    border: 2px solid black;
    display: flex;
    justify-content: space-between;
    align-items: center;
    font-size: 10px;
+   max-width: 200px;
+   padding: 5px;
 }
 
 .botones-acceso i {
    margin-left: 30px;
    font-size: 18px;
    color: black;
+}
+
+.buttonGoogle{
+   margin-left: 15px;
 }
 
 .botones-acceso button:hover {
@@ -133,27 +140,39 @@ form {
 
 /* NOMBRE */
 .nombre input {
-   width: 550px;
+   width: 90%;
    height: 30px;
-   margin-bottom: 15px;
+   margin: auto;
+   margin-top: 8px;
 }
 
 /* APELLIDO */
 .apellido input {
-   width: 550px;
+   width: 90%;
    height: 30px;
+   margin-top: 15px;
+   margin-bottom: 15px;
 }
 
 /* FECHA NACIMIENTO */
 .date input {
-   width: 550px;
+   width: 90%;
    height: 30px;
+   margin-top: 8px;
+   margin-bottom: 10px;
 }
 
 /* BOTONES SEXOS */
 
+.botones-sexos {
+   display: flex;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
 .botones-sexos input {
-   margin-right: 10px;
+   margin-right: 3px;
    border-bottom: 50%;
    width: 45px;
    height: 15px;
@@ -161,7 +180,7 @@ form {
 }
 
 .botones-sexos label {
-   font-size: 13px;
+   font-size: 13px;   
 }
 
 .botones-sexos input :hover {
@@ -171,15 +190,17 @@ form {
 
 /* EMAIL */
 .email input {
-   width: 550px;
+   width: 90%;
    height: 30px;
-   margin-bottom: 15px;
+   margin-top: 9px;
+   margin-bottom: 10px;
 }
 
 /* CONTRASEÑA */
 .contraseña input {
-   width: 550px;
+   width: 90%;
    height: 30px;
+   margin-bottom: 5px;
 }
 
 .contraseña p {
@@ -191,12 +212,19 @@ form {
 .terminos {
    margin-top: 10px;
    margin-bottom: 10px;
+   display: flex;
+   align-items: center;
 }
 
 .terminos input {
    width: 12px;
    height: 15px;
    accent-color: black;
+   margin-right: 10px;
+}
+
+.terminos label {
+   font-size: 15px;
 }
 
 /* BOTON REGISTRARSE*/
@@ -219,12 +247,11 @@ form {
 
 .footer {
    width: 100%;
+   height: 60px;
    background-color: #373742;
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
-   align-items: center;
-   height: 60px;
+   justify-content: space-around;
 }
 
 .container_footer_1 {
@@ -270,10 +297,11 @@ form {
 
 @media (min-width: 480px) {
 
-   /*--nav-bar--*/
-
+   /*--nav bar--*/
    .nav-bar {
-      justify-content: start;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
    }
 
    .burguer-menu {
@@ -281,24 +309,55 @@ form {
    }
 
    .first-nav {
+      width: 45%;
       display: flex;
-      justify-content: space-around;
-      list-style-type: none;
    }
 
-   .first-nav li {
-      margin: 5px;
+   .first-nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+   }
+
+   .first-nav ul li {
+      margin: 0 5px;
+   }
+
+   .second-nav {
+      width: 45%;
+      display: flex;
+      justify-content: end;
+      margin-right: 15px;
    }
 
    .search-box {
       display: block;
    }
 
-   .search-box {
-      width: 47%;
+   .search-box input {
+      display: none;
    }
 
-   .second-nav {
-      width: 47%;
+   /*--nav bar--*/
+
+}
+
+@media (min-width: 790px) {
+   
+   /*--nav bar--*/
+   
+   .search-box {
+      display: flex;
    }
+   
+   .search-box input {
+      display: block;
+   }
+   
+   /*--nav bar--*/
+   .box-rigth {
+      display: block;
+      
+   }
+
 }
