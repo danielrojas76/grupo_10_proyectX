@@ -9,73 +9,57 @@
 }
 
 * {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     font-size: 12px;
     box-sizing: border-box;
 }
 
+
 /*--Header START--*/
 
-.header {
-    font-family: 'Victor Mono', monospace;
+header {
     width: 100%;
-    height: 50px;
     display: flex;
-    justify-content: space-between;
-    background-color: whitesmoke;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .burguer-menu {
     border: none;
-    background-color: whitesmoke;
-    margin: 0 16px;
+    background-color: none;
 }
 
-.header .burguer-menu i {
-    width: 40px;
-    font-size: 26px
-}
-
-.nav-bar {
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
-    align-items: center;
+header i {
+    font-size: 30px;
 }
 
 .logo {
-    height: 100%;
+    width: 100px;
 }
 
-.first-nav {
-    display: none;
-}
-
-.nav-bar ul li a {
-    text-decoration: none;
-    color: black;
-}
-
+.first-nav,
 .search-box {
     display: none;
 }
 
 .second-nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .second-nav button {
     border: none;
-    font-size: 26px;
+    margin: 5px;
 }
 
-.second-nav button i {
-    font-size: 30px;
+/*--Header END--*/
+
+body {
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5;
+    background-color: var(--second-color);
 }
 
 .footer {
@@ -84,7 +68,7 @@
     background-color: #373742;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .container_footer_1 {
@@ -94,7 +78,6 @@
     align-items: center;
     text-align: start;
 }
-
 
 .container_footer_1 p {
     color: #fff;
@@ -122,6 +105,11 @@
     font-size: 25px;
     list-style: none;
 }
+
+
+
+/*-Footer END--*/
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -132,15 +120,18 @@ main {
     background-repeat: space;
     display: flex;
     width: 90%;
-    height: 70vh;
+    height: 50vh;
     flex-wrap: wrap;
-    border: solid 1px black;
-    overflow: hidden;
-    margin: auto;
+    margin-left: 40px;
+    max-width: 380px;
+    min-width: 380px;
 }
+
 h1 b {
-    font-size: 26px;
+    font-size: 50px;
+    margin: 5px;
 }
+
 h2 b {
     font-size: 26px;
 }
@@ -152,8 +143,8 @@ h2 {
 
 .primer-sector img {
     width: 47%;
-    margin: 5px;
-    height: 47%;
+    margin: 0px;
+    height: 50%;
 }
 
 .primer-sector button {
@@ -161,6 +152,7 @@ h2 {
     top: -25px;
     left: 150px;
 }
+
 .button {
     font-size: 20px;
     font-weight: bold;
@@ -175,28 +167,64 @@ h2 {
     margin: 10px 0;
 }
 
-.añadir {
-    width: 50%;
-    height: 27px;
-    margin: 10px;
-    margin-left: 94px;
-    font-size: 20px;
+#precio {
+    font-size: 37px;
+    margin: 5px;
     font-weight: bold;
-    color: black;
-    border: solid 1px rgb(221, 219, 219);
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+}
+
+#descuento {
+    font-size: 25px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.opciones-disponibles b {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
+    font-size: 37px;
+}
+
+.op-color {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.añadir {
+    height: 35px;
+    width: 200px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .fav {
-    width: 27px;
-    height: 27px;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    border: solid 1px rgb(221, 219, 219);
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    height: 35px;
+    width: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px;
+    margin-bottom: 17px;
+}
+
+.boton-añadir {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    justify-content: center;
 }
 
 .logos-datos {
@@ -206,21 +234,29 @@ h2 {
     align-content: space-around;
 }
 
+.logos-datos ul li {
+    list-style: none;
+}
+
 .tercer-sector {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-article {
-    border: solid 1px black;
-    background-color: rgba(245, 245, 245, 0.774);
+article {    
     margin-bottom: 27px;
+    width: auto;
 }
 
 .producto-interes img {
     margin-bottom: 5px;
-    border-bottom: solid 1px black;
+
+}
+
+.precio-nombre-producto {
+    background: white;
+    margin-top: -8px;
 }
 
 .footer {
@@ -268,50 +304,91 @@ article {
 }
 
 @media (min-width: 480px) {
-
-    /*--nav-bar--*/
-
-    .nav-bar {
-        justify-content: start;
-    }
-
-    .burguer-menu {
-        display: none;
-    }
-
-    .first-nav {
+    /*--nav bar--*/
+    .nav-bar{
+        width: 90%;
         display: flex;
-        justify-content: space-around;
-        list-style-type: none;
+        justify-content: space-between;
     }
 
-    .first-nav li {
-        margin: 5px;
+    .burguer-menu{
         display: none;
     }
 
-    .search-box {
-        display: none;
+    .first-nav{
+        width: 45%;
+        display: flex;
     }
 
-    .search-box{
-        width: 47%;
+    .first-nav ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    .first-nav ul li{
+        margin: 0 5px;
     }
 
     .second-nav{
-        width: 47%;
+        width: 45%;
+        display: flex;
+        justify-content: end;
+        margin-right: 15px;
     }
 
-    /*--nav-bar--*/
+    .search-box{
+        display: block;
+    }
+
+    .search-box input{
+        display: none;
+    }
+
+     /*--nav bar--*/
 
     .article-box {
         width: 47%;
         max-width: 360px;
     }
+
+    .primer-sector {
+        background-repeat: space;
+        display: flex;
+        width: 90%;
+        height: 50vh;
+        flex-wrap: wrap;
+        margin-left: 40px;
+    }
 }
 
 @media (min-width: 790px) {
+
+    /*--nav bar--*/
+
+    .search-box{
+        display: flex;
+    }
+
+    .search-box input{
+        display: block;
+    }
+
+    /*--nav bar--*/
+
     .article-box {
         width: 29%;
     }
+
+    .primer-sector {
+        background-repeat: space;
+        display: flex;
+        width: 90%;
+        height: 50vh;
+        flex-wrap: wrap;
+        margin-left: 40px;
+        max-width: 380px;
+        min-width: 380px;
+    }
+
 }
