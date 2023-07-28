@@ -10,28 +10,7 @@
 </head>
 
 <body>
-    <header class="header">
-        <button class="burguer-menu"><i class="fa-solid fa-bars"></i></button>
-
-        <nav class="nav-bar">
-            <img src="/images/LOGO.png" alt="" class="logo">
-            <ul class="first-nav">
-                <li><a href="/">HOME</a></li>
-                <li><a href="">CATEGORIA</a></li>
-                <li><a href="">CONTACTO</a></li>
-            </ul>
-        </nav>
-        <nav class="nav-bar">
-            <div class="search-box">
-                <input type="search" name="" id="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div class="second-nav">
-                <button type="button"><i class="fa fa-user-circle" aria-hidden="true"></i></button>
-                <button type="button"><i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
-            </div>
-        </nav>
-    </header>
+    <%- include("./partials/header.ejs") %>
     <main>
         <form action="/" method="get">
             <div class="box">
@@ -61,19 +40,7 @@
             </div>
         </form>
     </main>
-    <footer class="footer">
-        <section class="container_footer_1">
-            <p>Todos los derechos</p>
-        </section>
-        <section class="container_footer_2">
-            <ul>
-                <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-twitter"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
-            </ul>
-        </section>
-    </footer>
+    <%- include("./partials/footer.ejs") %>
 </body>
 
 </html>
