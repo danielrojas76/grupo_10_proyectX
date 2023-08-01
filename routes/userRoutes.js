@@ -10,4 +10,12 @@ router.get('/login', userController.login)
 
 router.get('/password', userController.password)
 
-module.exports = router;
+
+router.get('/administrador', userController.administrador)
+
+router.get('/stock', userController.stock)
+
+
+
+
+module.exports = router; 

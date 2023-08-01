@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/stock.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <title>Administrador</title>
+</head>
+
+<body>
+  <%-include('./partials/header.ejs')%>
+    <main class="formulario">
+      <h4>Agregando Productos</h4>
+      <form action="" class="form">
+        <div class="control">
+          <label for="Marcas">Marcas</label>
+          <select name="Marcas" id="Marcas">
+            <option value="Adidas">Adidas</option>
+            <option value="Reebok">Reebook</option>
+            <option value="Puma">Puma</option>
+            <option value="Fila">Fila</option>
+            <option value="Nike">Nike</option>
+            <option value="Running">Running</option>
+          </select>
+        </div>
+        <div class="control">
+          <input type="text" name="" id="" placeholder="Nombre(s) *">
+        </div>
+        <div class="control">
+          <input type="number" name="precio" id="" placeholder="Precio *">
+        </div>
+        <div class="control">
+          <input type="number" name="Descuento" id="" placeholder="Descuento *">
+        </div>
+
+        <div class="control">
+          <label for="Genero">Genero</label>
+          <select name="Genero" id="Genero">
+            <option value="Mujer">Mujer</option>
+            <option value="Hombre">Hombre</option>
+        </div>
+        <br>
+        <div class="description">
+          <textarea name="textarea" placeholder="Descripcion"></textarea>
+        </div>
+
+        <div class="date w100">
+          <input type="date" name="" id="">
+        </div>
+        <input type="submit" value="Agregar">
+      </form>
+    </main>
+    <%-include("./partials/footer.ejs") %>
+</body>
+
+
+
+
+</html>

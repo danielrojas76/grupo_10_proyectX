@@ -8,6 +8,13 @@ let userControllers = {
 
     password: function(req, res){
         res.render('password')    
+    },
+
+    administrador: function(req, res){
+        res.render('administrador')
+    },
+    stock: function(req, res){
+        res.render('stock')
     }
 }
 

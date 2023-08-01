@@ -1,0 +1,245 @@
+
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 90vh;
+    overflow-x: hidden;
+    background: rgb(233, 235, 238);
+    font-family: Helvetica, sans-serif;
+}
+
+.form{
+    width: 400px;
+    background:rgb(234, 230, 230);
+    padding: 30px;
+    margin: auto;
+    color: rgb(57, 53, 53);
+
+
+}
+h4{
+    font-size: 22px;
+    text-align: center;
+ 
+}
+main .control{
+  
+    padding: 2px;
+    border-radius: 10px;
+}
+
+input, textarea, label, select{
+    width: 75%;
+    background: #373742;
+    border: none;
+    padding: 12px;
+    color: antiquewhite;
+    margin: 16px 0;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+select{
+width: 52%;
+
+}
+.control input:focus{
+    transform: translateY(12px) scale(.7);
+    transform-origin: left top;
+    color: white;
+
+}
+
+.formulario input:focus{
+    transform: translateY(12px) scale(.7);
+    background-color: rgb(220, 215, 215);
+}
+textarea:focus{
+    transform: translateY(12px) scale(.7);
+    transform-origin: left top;
+    color: white;
+
+
+}
+
+
+
+/*--Header START--*/
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.burguer-menu{
+    border: none;
+    background-color: none;
+}
+
+header i{
+    font-size: 30px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.first-nav, .search-box {
+    display: none;
+}
+
+.second-nav{
+    justify-content: center;
+}
+
+.second-nav button{
+    border: none;
+    margin: 5px;
+}
+
+/*--Header END--*/
+
+
+/*--Footer STAR--*/
+
+.footer {
+    width: 100%;
+    height: 60px;
+    background-color: #373742;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container_footer_1 {
+    width: 47%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: start;
+}
+
+.container_footer_1 p {
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.container_footer_2 {
+    width: 47%;
+}
+
+.container_footer_2 ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container_footer_2 ul li {
+    list-style: none;
+}
+
+.container_footer_2 ul li i {
+    color: #fff;
+    font-size: 25px;
+    list-style: none;
+}
+
+
+
+/*-Footer END--*/
+
+
+/*==media queries==*/
+
+@media (min-width: 480px) {
+    /*--nav bar--*/
+    .nav-bar{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .burguer-menu{
+        display: none;
+    }
+
+    .first-nav{
+        width: 45%;
+        display: flex;
+    }
+
+    .first-nav ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    .first-nav ul li{
+        margin: 0 5px;
+    }
+
+    .second-nav{
+        width: 45%;
+        display: flex;
+        justify-content: end;
+        margin-right: 15px;
+    }
+
+    .search-box{
+        display: block;
+    }
+
+    .search-box input{
+        display: none;
+    }
+
+     /*--nav bar--*/
+
+    .article-box {
+        width: 47%;
+        max-width: 360px;
+    }
+
+
+}
+
+@media (min-width: 790px) {
+
+    /*--nav bar--*/
+
+    .search-box{
+        display: flex;
+    }
+
+    .search-box input{
+        display: block;
+    }
+
+    /*--nav bar--*/
+
+    .article-box {
+        width: 29%;
+    }
+   
+}
+
+
+
+   
+
+
