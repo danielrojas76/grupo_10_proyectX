@@ -1,21 +1,37 @@
-Retrospectiva:
+RETROSPECTIVA
 
-**15/06/2023**
+**15/06/2023** - SPRINT 1
 
-- Deberiamos empezar a organizar el contenido del sprint y acordar mejor las reuniones.
+- Comenzar a hacer: Deberiamos empezar a organizar el contenido del sprint y acordar mejor las reuniones.
 
-- Hablando con el grupo llegamos a la conclusión que debemos organizarnos mejor con los horarios y la disponibilidad de cada uno de los miembros del equipo.
+- Hacer más: Hablando con el grupo llegamos a la conclusión que debemos organizarnos mejor con los horarios y la disponibilidad de cada uno de los miembros del equipo.
 
-- Deberiamos ponernos mas serios durante las reuniones.
+- Continuar haciendo: Deberiamos ponernos mas serios durante las reuniones.
 
-- Hasta el momento no tenemos inconvenientes al hacer el trabajo, ya que venimos trabajando y comunicandonos de forma perfecta.
+- Hacer menos:
 
-**29/06/2023**
+- Dejar de hacer: Hasta el momento no tenemos inconvenientes al hacer el trabajo, ya que venimos trabajando y comunicandonos de forma perfecta.
 
-- Deberiamos organizar mejor las daylis
+**29/06/2023** - SPRINT 2
 
-- Respetarnos un poco mas
+- Comenzar a hacer: Deberiamos organizar mejor las daylis.
 
-- Mejorar la comunicacion en equipo, cuando no se puedan reunir o terminar la tarea que corresponda, "avisar con tiempo"
+- Hacer más: Respetar los tiempos de entrega pactados.
 
-- Respetar los tiempos de entrega pactados
+- Continuar haciendo: Mejorar la comunicacion en equipo, cuando no se puedan reunir o terminar la tarea que corresponda, "avisar con tiempo".
+
+- Hacer menos:
+
+- Dejar de hacer: Hasta el momento no tenemos inconvenientes al hacer el trabajo, ya que venimos trabajando generalmente bien. 
+
+**18/07/2023** - SPRINT 3
+
+- Comenzar a hacer: Deberiamos imprementar mas dailys para organizarnos mejor y obtener mejores resultados. Buscar la manera que todos puedan participar en las actividades de cada sprint.
+
+- Hacer más: Dedicarle mas tiempo a los contenidos visto en las clases a si mejoramos nuestras habilidades.
+
+- Continuar haciendo: Seguir trabajando en equipo y entregando a tiempo lo pedido. 
+
+- Hacer menos: 
+
+- Dejar de hacer: Hasta el momento no tenemos inconvenientes al hacer el trabajo, ya que venimos trabajando generalmente bien.
