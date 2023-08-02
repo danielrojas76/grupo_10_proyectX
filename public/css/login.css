@@ -1,70 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Victor+Mono&display=swap');
+
 * {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0px;
+    padding: 0;
     margin: 0;
-}
+ }
+.w100 {
+    width: 90%;
+    max-width: 500px;
+ }
 
 main {
     height: 100vh;
 }
 
-/*Header*/
-header{
+/*--Header START--*/
+
+header {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #ebebeb;
-}
-
-.burguer-menu{
+    background-color:  #ebebeb;
+ }
+ 
+ .burguer-menu {
     border: none;
     background-color: none;
-}
-
-header i{
+ }
+ 
+ header i {
     font-size: 30px;
-}
-
-.logo {
+ }
+ 
+ header a {
+    text-decoration: none;
+    color: black;
+ }
+ 
+ .logo {
     width: 100px;
-}
-
-.first-nav, .search-box {
+ }
+ 
+ .first-nav,
+ .search-box {
     display: none;
-}
-
-.second-nav{
+ }
+ 
+ .second-nav {
     justify-content: center;
-}
-
-.second-nav button{
+ }
+ 
+ .second-nav button {
     border: none;
     margin: 5px;
-}
+ }
+ 
+ /*--Header END--*/
 
 /* body*/
-.box {
+.box-form {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
+    justify-content: space-around;
+    margin: auto;
+    flex-wrap: wrap;
+ }
 
-.box a {
-    position: absolute;
-    align-items: center;
-}
+form {
+    margin-left: 10px;
+    width: 100vw;
+    max-width: 700px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 90%;
+ }
+
+ .box-rigth {
+    width: 100vw;
+    max-width: 700px;
+    display: none;
+    margin-top: 100px;
+ }
+ .box-rigth li {
+    list-style: none;
+ }
+ .registrateCon {
+    margin-top: 10px;
+    font-size: 11px;
+    text-decoration: none;
+    color: black
+
+ }
 
 .ingreso {
     font-size: 20px;
     font-weight: bold;
     color: black;
     padding-bottom: 10px;
-    border-bottom: solid 1px rgb(221, 219, 219);
     margin: 30px 0px 5px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .inicioSesion input {
@@ -83,19 +121,39 @@ header i{
     border: 0;
 }
 
-.entrar button:hover {
-    background-color: grey;
-}
+.terminos {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+ }
+ 
+ .terminos input {
+    width: 12px;
+    height: 15px;
+    accent-color: black;
+    margin-right: 10px;
+ }
+ 
+ .terminos label {
+    font-size: 12.5px;
+ }
 
-a {
-    font-size: 15px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-
-a:hover {
-    color: grey;
-}
+.boton-registrate button {
+    height: 35px;
+    width: 250px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.2px;
+    padding: 0 7px;
+ }
+ 
+ .boton-registrate button:hover {
+    color: gray;
+ }
 
 .registrarse {
     display: flex;
@@ -103,28 +161,41 @@ a:hover {
     margin-bottom: 15px;
 }
 
-.opcionParaEntrar {
-    font-size: 20px;
-    font-weight: bold;
+.botones-acceso {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;   
+    width: 100%;
+    justify-content: space-between;
+ }
+ 
+ .botones-acceso button {
+    background-color: white;
     color: black;
-    border-bottom: solid 1px rgb(221, 219, 219);
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-}
-
-.codigoMail button {
-    color: white;
-    background-color: black;
-    margin-top: 10px;
-    width: 250px;
-    height: 33px;
-    border-radius: 4px;
-    border: 0;
-}
-
-.codigoMail button:hover {
-    background-color: grey;
-}
+    width: 45%;
+    height: 30px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    max-width: 200px;
+    padding: 5px;
+ }
+ 
+ .botones-acceso i {
+    margin-left: 30px;
+    font-size: 18px;
+    color: black;
+ }
+ 
+ .buttonGoogle{
+    margin-left: 15px;
+ }
+ 
+ .botones-acceso button:hover {
+    color: #857d7d;
+ }
 
 /*footer*/
 .footer {
@@ -244,4 +315,8 @@ a:hover {
     .article-box {
         width: 29%;
     }
+    .box-rigth {
+        display: block;
+        
+     }
 }
