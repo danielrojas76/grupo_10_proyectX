@@ -13,18 +13,16 @@
     <%- include('./partials/header.ejs') %>
         
     <main>
-        <section class="primer-sector">
-            <img src="/images/Zapatilla Naranja.jpg" alt="" class="zapa-naranja">
-            <img src="/images/Zapatilla Naranja Vista Centro.jpg" alt="" class="zapa-centro">
-            <img src="/images/Zapatilla Naranja Vista Arriba.jpg" alt="" class="zapa-arriba">
-            <img src="/images/Zapatilla Naranja Vista Abajo.jpg" alt="" class="zapa-abajo">
 
+        <section class="primer-sector">
+            <img src="/images/<%= productFind.image %>" alt="" class="zapa-naranja">
         </section>
+        
         <section class="segundo-sector">
             <div class="detail-product">
-                <h1><b>Zapatilla Nacho 3000 Naranja</b></h1>
-                <div id="precio">$75.000</div>
-                <div id="descuento">Descuento 1%</div>
+                <h1><b><%= productFind.name %></b></h1>
+                <div id="precio">$<%= productFind.price %></div>
+                <div id="descuento"><%= productFind.discount %>%</div>
                 <div class="opciones-disponibles">
                     <div><b>Opciones Disponibles</b></div>
                     <div class="op-color">
