@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1,
+        "name": "remera own the run",
+        "price": 50.000,
+        "discount": 30,
+        "category": "visited",
+        "description": "",
+        "image": "aremera-own-the-run.webp"
+    },
+    {
+        "id": 2,
+        "name": "remera own the run",
+        "price": 50.000,
+        "discount": 30,
+        "category": "visited",
+        "description": "",
+        "image": "aremera-own-the-run.webp"
+    },
+    {
+        "id": 3,
+        "name": "remera own the run",
+        "price": 50.000,
+        "discount": 30,
+        "category": "visited",
+        "description": "",
+        "image": "aremera-own-the-run.webp"
+    },
+    {
+        "id": 4,
+        "name": "remera own the run",
+        "price": 50.000,
+        "discount": 30,
+        "category": "visited",
+        "description": "",
+        "image": "aremera-own-the-run.webp"
+    },
+    {
+        "id": 5,
+        "name": "remera own the run",
+        "price": 50.000,
+        "discount": 30,
+        "category": "in-sale",
+        "description": "",
+        "image": "aremera-own-the-run.webp"
+    },
+    {
+        "id": 6,
+        "name": "remera own the run",
+        "price": 50.000,
+        "discount": 30,
+        "category": "in-sale",
+        "description": "",
+        "image": "aremera-own-the-run.webp"
+    },
+    {
+        "id": 7,
+        "name": "remera own the run",
+        "price": 50.000,
+        "discount": 30,
+        "category": "in-sale",
+        "description": "",
+        "image": "aremera-own-the-run.webp"
+    },
+    {
+        "id": 8,
+        "name": "remera own the run",
+        "price": 50.000,
+        "discount": 30,
+        "category": "in-sale",
+        "description": "",
+        "image": "aremera-own-the-run.webp"
+    }
+    
+]

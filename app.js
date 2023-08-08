@@ -33,5 +33,5 @@ app.use("/user", userRouter);
 app.use("/product", productRouter);
 
 app.listen(process.env.PORT, () => { 
-    console.log("Servidor escuchando en Puerto" + process.env.PORT);
+    console.log("Servidor escuchando en Puerto " + process.env.PORT);
 });
