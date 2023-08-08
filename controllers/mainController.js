@@ -1,6 +1,10 @@
+const productModel = require('../models/mainModels')
+
 let mainController = {
     home: function(req, res) {
-        res.render('index');
+        const productsVisited = productModel.findVisited();
+        const productsInSale = productModel.findInSale();
+        res.render('index', {productsVisited, productsInSale});
     }
 }
 
