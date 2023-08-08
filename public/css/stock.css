@@ -1,95 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Victor+Mono&display=swap');
 
-*{
+* {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    margin: 0;
+    box-sizing: border-box;
     padding: 0;
-    box-sizing: border-box;
+    margin: 0;
 }
 
-body{
-    width: 100%;
-    height: 90vh;
-    overflow-x: hidden;
-    background: rgb(233, 235, 238);
-    font-family: Helvetica, sans-serif;
-}
-
-.form{
-    width: 400px;
-    background:rgb(234, 230, 230);
-    padding: 30px;
+body {
     margin: auto;
-    color: rgb(57, 53, 53);
-
-
-}
-h4{
-    font-size: 22px;
-    text-align: center;
- 
-}
-main .control{
-  
-    padding: 2px;
-    border-radius: 10px;
+   line-height: 1.5;
+    background: white;
 }
 
-input, textarea, label, select{
-    width: 75%;
-    background: #373742;
-    border: none;
-    padding: 12px;
-    color: antiquewhite;
-    margin: 16px 0;
-    font-size: 15px;
-    box-sizing: border-box;
-}
-select{
-width: 52%;
-
-}
-.control input:focus{
-    transform: translateY(12px) scale(.7);
-    transform-origin: left top;
-    color: white;
-
-}
-
-.formulario input:focus{
-    transform: translateY(12px) scale(.7);
-    background-color: rgb(220, 215, 215);
-}
-textarea:focus{
-    transform: translateY(12px) scale(.7);
-    transform-origin: left top;
-    color: white;
-
-
-}
-
-
+.w100 {
+    width: 90%;
+    max-width: 500px;
+ }
 
 /*--Header START--*/
 
-header{
+header {
     width: 100%;
+    height: 70px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #ebebeb;
+    font-size: 12px;
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
 
-.burguer-menu{
+.burguer-menu {
     border: none;
     background-color: none;
 }
 
-header i{
+header i {
     font-size: 30px;
 }
 
@@ -97,20 +44,130 @@ header i{
     width: 100px;
 }
 
-.first-nav, .search-box {
+.first-nav,
+.search-box {
     display: none;
 }
 
-.second-nav{
+.second-nav {
     justify-content: center;
 }
 
-.second-nav button{
+.second-nav button {
     border: none;
     margin: 5px;
 }
 
 /*--Header END--*/
+
+.mainCreate {
+    height: 85vh;
+}
+
+.agregarProducts {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contentForm {
+    height: 100%;
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.boxForm { 
+    height: 52%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxMarcas {
+    margin-top: 10px;
+}
+
+.boxMarcas label { 
+    margin-right: 10px;
+}
+
+.boxMarcas select {
+    height: 25px;
+}
+
+.inputsCompletar {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputsCompletar input {
+    width: 90%;
+   height: 30px;
+   margin: auto;
+   margin-top: 8px; 
+   margin-bottom: 8px;  
+}
+
+.genero { 
+    display: flex;
+    align-items: center;
+}
+
+.genero label { 
+    margin-right: 10px;
+}
+
+.genero select { 
+   height: 30px;
+    
+}
+
+.description {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.description input{
+   width: 90%;
+   height: 80px;
+   margin: auto;
+   margin-top: 8px; 
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+}
+
+.date input {
+    width: 90%;
+   height: 30px;
+   margin: auto;
+   margin-top: 8px; 
+
+}
+
+.buttonAgregar {
+    display: flex;
+    margin: auto;
+}
+
+.buttonAgregar button{
+    width: 90%;
+    height: 40px;
+    margin: auto;
+    margin-top: 8px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 7px;
+}
 
 
 /*--Footer STAR--*/
@@ -159,56 +216,72 @@ header i{
     list-style: none;
 }
 
-
-
 /*-Footer END--*/
 
 
 /*==media queries==*/
 
 @media (min-width: 480px) {
+
     /*--nav bar--*/
-    .nav-bar{
+    .nav-bar {
         width: 90%;
+        height: 100%;
         display: flex;
         justify-content: space-between;
     }
 
-    .burguer-menu{
+    .burguer-menu {
         display: none;
     }
 
-    .first-nav{
+    .first-nav {
         width: 45%;
         display: flex;
     }
 
-    .first-nav ul{
+    .first-nav ul {
         list-style: none;
         display: flex;
         align-items: center;
-    }
-    
-    .first-nav ul li{
-        margin: 0 5px;
+
     }
 
-    .second-nav{
+    .first-nav ul li {
+        display: flex;
+        height: 67px;
+        margin: 0 5px;
+        align-items: center;
+        list-style: none;
+    }
+
+    .first-nav ul li a {
+        text-decoration: none;
+        color: #373742;
+    }
+
+
+    .second-nav {
         width: 45%;
         display: flex;
         justify-content: end;
         margin-right: 15px;
+        align-items: center;
     }
 
-    .search-box{
+    .search-box {
         display: block;
     }
 
-    .search-box input{
+    .search-box input {
         display: none;
     }
 
-     /*--nav bar--*/
+    .first-nav ul li:hover {
+        border-bottom: solid 3px black;
+    }
+
+    /*--nav bar--*/
 
     .article-box {
         width: 47%;
@@ -222,12 +295,27 @@ header i{
 
     /*--nav bar--*/
 
-    .search-box{
+    .search-box {
+        width: 202.8px;
+        height: 35px;
+        padding: 5px;
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 50px;
         display: flex;
+        justify-content: end;
+        align-items: center;
     }
 
-    .search-box input{
+    .search-box i {
+        background-color: white;
+        font-size: x-large;
+    }
+
+    .search-box input {
+        border-style: none;
         display: block;
+        height: 100%;
     }
 
     /*--nav bar--*/
@@ -235,11 +323,5 @@ header i{
     .article-box {
         width: 29%;
     }
-   
+
 }
-
-
-
-   
-
-
