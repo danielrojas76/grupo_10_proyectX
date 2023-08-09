@@ -13,6 +13,9 @@ let userControllers = {
     administrador: function(req, res){
         res.render('administrador')
     },
+    admin: function(req, res){
+        res.render('userAdmin')
+    },
     stock: function(req, res){
         res.render('stock')
     }
