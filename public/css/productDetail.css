@@ -21,39 +21,45 @@
 
 header {
     width: 100%;
+    height: 70px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.burguer-menu {
+    background-color: #ebebeb;
+    font-size: 12px;
+ }
+ 
+ 
+ .burguer-menu {
     border: none;
     background-color: none;
-}
-
-header i {
+ }
+ 
+ header i {
     font-size: 30px;
-}
-
-.logo {
+ }
+ 
+ .logo {
     width: 100px;
-}
-
-.first-nav,
-.search-box {
+ }
+ 
+ .first-nav,
+ .search-box {
     display: none;
-}
-
-.second-nav {
+ }
+ 
+ .second-nav {
     justify-content: center;
-}
-
-.second-nav button {
+ }
+ 
+ .second-nav button {
     border: none;
     margin: 5px;
-}
-
-/*--Header END--*/
+ }
+ 
+ 
+ 
+ /*--Header END--*/
 
 body {
     width: 100%;
@@ -111,6 +117,7 @@ body {
 /*-Footer END--*/
 
 main {
+    height: 150vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -139,7 +146,9 @@ h1 {
     font-weight: bold;
 }
 
-h2 {
+h3 {
+    margin-top: 10px;
+    margin-left: 15px;
     width: 100%;
     margin-bottom: 15px;
 }
@@ -178,9 +187,10 @@ h2 {
 }
 
 
-.precio-viejo, del {
-    font-size: 16px;
-    margin-top: 10px;
+.precio-viejo del{
+    margin-top: 20px;
+    font-size: 11px;
+    /* margin-top: 10px; */
     color: rgba(111, 111, 111, 1)
     
 }
@@ -192,8 +202,10 @@ h2 {
 }
 
 .descuento {
-    font-size: 25px;
-    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    font-size: 15px;
     font-weight: bold;
     color: red
 }
@@ -223,7 +235,7 @@ h2 {
 }
 
 .fav {
-    height: 35px;
+    height: 32px;
     width: 50px;
     background-color: black;
     color: white;
@@ -320,48 +332,68 @@ article {
 }
 
 @media (min-width: 480px) {
-    /*--nav bar--*/
-    .nav-bar{
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .burguer-menu{
-        display: none;
-    }
-
-    .first-nav{
-        width: 45%;
-        display: flex;
-    }
-
-    .first-nav ul{
-        list-style: none;
-        display: flex;
-        align-items: center;
-    }
-    
-    .first-nav ul li{
-        margin: 0 5px;
-    }
-
-    .second-nav{
-        width: 45%;
-        display: flex;
-        justify-content: end;
-        margin-right: 15px;
-    }
-
-    .search-box{
-        display: block;
-    }
-
-    .search-box input{
-        display: none;
-    }
-
      /*--nav bar--*/
+   .nav-bar {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .burguer-menu {
+    display: none;
+ }
+
+ .first-nav {
+    width: 45%;
+    display: flex;
+ }
+
+ .first-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+ }
+
+ .first-nav ul li {
+    display: flex;
+    height: 67px;
+    margin: 0 5px;
+    align-items: center;
+    list-style: none;
+ }
+
+ .first-nav ul li a {
+    text-decoration: none;
+    color: #373742;
+ }
+
+
+ .second-nav {
+    width: 45%;
+    display: flex;
+    justify-content: end;
+    margin-right: 15px;
+    align-items: center;
+ }
+
+ .search-box {
+    display: block;
+ }
+
+ .search-box input {
+    display: none;
+ }
+
+ .first-nav ul li:hover {
+    border-bottom: solid 3px black;
+ }
+
+ /*--nav bar--*/
+    main {
+        height: 130vh;
+    }
 
     .article-box {
         width: 47%;
@@ -376,18 +408,35 @@ article {
 }
 
 @media (min-width: 790px) {
-
-    /*--nav bar--*/
-
-    .search-box{
-        display: flex;
-    }
-
-    .search-box input{
-        display: block;
+    main {
+        height: 120vh;
     }
 
     /*--nav bar--*/
+
+   .search-box {
+    width: 202.8px;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+ }
+
+ .search-box i {
+    background-color: white;
+    font-size: x-large;
+ }
+
+ .search-box input {
+    border-style: none;
+    display: block;
+    height: 100%;
+ }
+ /*--nav bar--*/
 
     .article-box {
         width: 29%;
