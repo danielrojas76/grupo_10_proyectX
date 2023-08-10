@@ -16,25 +16,17 @@
 
         <section class="primer-sector">
             <img src="/images/<%= productFind.image %>" alt="" class="zapa-naranja">
-        </section>
-        
+        </section>        
         <section class="segundo-sector">
             <div class="detail-product">
-                <h1><b><%= productFind.name %></b></h1>
-                <div id="precio">$<%= productFind.price %></div>
-                <div id="descuento"><%= productFind.discount %>%</div>
-                <div class="opciones-disponibles">
-                    <div><b>Opciones Disponibles</b></div>
-                    <div class="op-color">
-                        <img src="/images/Zapatilla Naranja.jpg" alt="" width="75vw">
-                        <img src="/images/Zapatilla Celeste.jpg" alt="" width="75vw">
-                        <img src="/images/Zapatilla Naranja.jpg" alt="" width="75vw">
-                        <img src="/images/Zapatilla Celeste.jpg" alt="" width="75vw">
-                    </div>
-                </div>
+                <div class="precio-box">
+                    <h1 class="titulo-producto strong"><%= productFind.name %></h1>
+                    <p class="precio">$<%= productFind.price %></p>
+                    <p class="descuento"><%= productFind.discount %>%</p>
+                    <p class="precio-viejo">Anterior <del>$80</del></p>
             </div>
             <div class="boton-añadir">
-                <button class="añadir">Añadir al Carrito</button><button class="fav"><i
+                <button class="btn">Añadir al Carrito</button><button class="fav"><i
                         class="fa-regular fa-heart"></i></button>
                 <div class="logos-datos">
                     <ul>
@@ -45,7 +37,7 @@
                 </div>
         </section>
         <section class="tercer-sector">
-            <h2><b>Tambien Podria interesarte</b></h2>
+            <h2 class="strong">Tambien Podria interesarte</h2>
             <article>
                 <div class="producto-interes">
                     <div>

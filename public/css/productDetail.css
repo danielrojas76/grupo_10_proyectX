@@ -117,23 +117,26 @@ main {
 }
 
 .primer-sector {
-    background-repeat: space;
-    display: flex;
     width: 90%;
     height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     flex-wrap: wrap;
-    margin-left: 40px;
-    max-width: 380px;
-    min-width: 380px;
+    max-width: 430px;
 }
 
-h1 b {
-    font-size: 50px;
-    margin: 5px;
+h1 {
+    
+    width: 100%;
+    text-align: center;
+    
 }
 
-h2 b {
+
+.strong {
     font-size: 26px;
+    font-weight: bold;
 }
 
 h2 {
@@ -142,9 +145,8 @@ h2 {
 }
 
 .primer-sector img {
-    width: 47%;
-    margin: 0px;
-    height: 50%;
+    width: 280px;
+    height: 300px;
 }
 
 .primer-sector button {
@@ -165,18 +167,35 @@ h2 {
 .segundo-sector {
     width: 90%;
     margin: 10px 0;
+    max-width: 430px;
 }
 
-#precio {
+.precio-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.precio-viejo, del {
+    font-size: 16px;
+    margin-top: 10px;
+    color: rgba(111, 111, 111, 1)
+    
+}
+
+.precio {
     font-size: 37px;
     margin: 5px;
     font-weight: bold;
 }
 
-#descuento {
+.descuento {
     font-size: 25px;
     margin: 5px;
     font-weight: bold;
+    color: red
 }
 
 .opciones-disponibles b {
@@ -195,14 +214,11 @@ h2 {
     margin: 10px;
 }
 
-.añadir {
+.btn {
     height: 35px;
     width: 200px;
     background-color: black;
     color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     margin-top: 15px;
 }
 
@@ -352,13 +368,10 @@ article {
         max-width: 360px;
     }
 
-    .primer-sector {
-        background-repeat: space;
-        display: flex;
-        width: 90%;
-        height: 50vh;
-        flex-wrap: wrap;
-        margin-left: 40px;
+    .primer-sector img {
+        width: 280px;
+        margin: 27px;
+        height: 300px;
     }
 }
 
@@ -386,9 +399,24 @@ article {
         width: 90%;
         height: 50vh;
         flex-wrap: wrap;
-        margin-left: 40px;
         max-width: 380px;
         min-width: 380px;
     }
+
+    .precio-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+}
+ del {
+    margin-top: 10px;
+ }
+
+ .titulo-producto {
+    width: 100%;
+    text-align: center;
+
+ }
 
 }
