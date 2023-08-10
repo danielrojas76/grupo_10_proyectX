@@ -3,12 +3,16 @@ let userController = require('../controllers/userController');
 
 let router = express.Router();
 
-router.get('/login', userController.login)
-router.get('/password', userController.password)
-router.get('/register', userController.register)
-router.get('/administrador', userController.administrador)
-router.get('/admin', userController.admin)
+/**********LOGIN***********/ 
+router.get('/login', userController.login);
+/**********RECUPERAR CONTRASEÑA***********/ 
+router.get('/password', userController.password);
+/**********FORMULARIO DE REGISTRO***********/ 
+router.get('/register', userController.register);
+/**********PERFIL DEL ADMINISTRADOR***********/ 
+router.get('/admin', userController.admin);
+/**********PERFIL DEL USUARIO***********/ 
+router.get('/perfil', userController.user);
 
-router.get('/stock', userController.stock)
 
 module.exports = router; 

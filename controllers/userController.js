@@ -10,14 +10,11 @@ let userControllers = {
         res.render('password')    
     },
 
-    administrador: function(req, res){
-        res.render('administrador')
+    user: function(req, res){
+        res.render('user')
     },
     admin: function(req, res){
         res.render('userAdmin')
-    },
-    stock: function(req, res){
-        res.render('stock')
     }
 }
 
