@@ -15,19 +15,24 @@
     <main>
 
         <section class="primer-sector">
-            <img src="/images/<%= productFind.image %>" alt="" class="zapa-naranja">
+            <img src="/images/<%= productFind.image %>" alt="" width="358px">
         </section>        
         <section class="segundo-sector">
-            <div class="detail-product">
+            <div class="btn">
+                <h1 class="tituloProduct"><%= productFind.name.toUpperCase() %></h1>
                 <div class="precio-box">
-                    <h1 class="titulo-producto strong"><%= productFind.name %></h1>
-                    <p class="precio">$<%= productFind.price %></p>
-                    <p class="descuento"><%= productFind.discount %>%</p>
-                    <p class="precio-viejo"><del>$80</del></p>
-            </div>
-            <div class="boton-añadir">
-                <button class="btn">AÑADIR AL CARRITO</button><button class="fav"><i
-                        class="fa-regular fa-heart"></i></button>
+                    <p class="precio"><b>$<%= (productFind.price - (productFind.price * (productFind.discount / 100)))%></b></p>
+                    <p class="precio-viejo"><del>$<%= productFind.price %></del></p>
+                    <p class="descuento"><b><%= productFind.discount %>%</b></p>
+                </div>
+                <div class="btn">
+                    <button class="carrito">AÑADIR AL CARRITO</button>
+                <div class="btn-secundarios">
+                    <button class="fav"><i class="fa-regular fa-heart"></i></button>
+                    <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
+                    <button class="editar"><i class="fa-solid fa-file-pen"></i></button>
+                </div> 
+                </div>                
                 <div class="logos-datos">
                     <ul>
                         <li><i class="fa-solid fa-truck-fast"></i> ENVIOS GRATIS A PARTIR DE $8000</li>
@@ -41,44 +46,44 @@
             <article>
                 <div class="producto-interes">
                     <div>
-                        <img src="/images/Remera Deportiva.jpg" alt="" width="100vw">
+                        <img src="/images/<%= productFind.image %>" alt="" width="100vw">
                     </div>
                     <div class="precio-nombre-producto">
                         <p id="precio-interes">$10.000</p>
-                        <p id="nombre-interes"><b>Remera Deportiva</b></p>
+                        <p id="nombre-interes"><b><%= productFind.name.toUpperCase() %></b></p>
                     </div>
                 </div>
             </article>
             <article>
                 <div class="producto-interes">
                     <div>
-                        <img src="/images/Pesas.jpg" alt="" width="100vw">
+                        <img src="/images/<%= productFind.image %>" alt="" width="100vw">
                     </div>
                     <div class="precio-nombre-producto">
-                        <p id="precio-interes">$30.000</p>
-                        <p id="nombre-interes"><b>Pesas 30 Kg</b></p>
+                        <p id="precio-interes">$<%= productFind.price %></p>
+                        <p id="nombre-interes"><b><%= productFind.name.toUpperCase() %></b></p>
                     </div>
                 </div>
             </article>
             <article>
                 <div class="producto-interes">
                     <div>
-                        <img src="/images/Soga.jpg" alt="" width="100vw">
+                        <img src="/images/<%= productFind.image %>" alt="" width="100vw">
                     </div>
                     <div class="precio-nombre-producto">
-                        <p id="precio-interes">$2.500</p>
-                        <p id="nombre-interes"><b>Soga para Saltar</b></p>
+                        <p id="precio-interes">$<%= productFind.price %></p>
+                        <p id="nombre-interes"><b><%= productFind.name.toUpperCase() %></b></p>
                     </div>
                 </div>
             </article>
             <article>
                 <div class="producto-interes">
                     <div>
-                        <img src="/images/Calza.jpg" alt="" width="100vw">
+                        <img src="/images/<%= productFind.image %>" alt="" width="100vw">
                     </div>
                     <div class="precio-nombre-producto">
-                        <p id="precio-interes">$16.000</p>
-                        <p id="nombre-interes"><b>Calza Deportiva</b></p>
+                        <p id="precio-interes">$<%= productFind.price %></p>
+                        <p id="nombre-interes"><b><%= productFind.name.toUpperCase() %></b></p>
                     </div>
                 </div>
             </article>
