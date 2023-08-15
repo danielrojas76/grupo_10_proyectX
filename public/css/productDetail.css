@@ -52,13 +52,15 @@ header i {
     border: none;
     margin: 5px;
 }
+
 /*--Header END--*/
-.primer-sector{
+.primer-sector {
     margin: auto;
     display: flex;
     justify-content: center;
 }
-.imgPrincipal{
+
+.imgPrincipal {
     width: 358px;
 }
 
@@ -92,6 +94,7 @@ header i {
 .descuento b {
     color: red;
 }
+
 .btn {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -99,6 +102,7 @@ header i {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .btn {
     width: 360px;
     margin: auto;
@@ -106,10 +110,10 @@ header i {
     flex-wrap: nowrap;
     align-items: center;
     flex-direction: column;
-    
+
 }
 
-.carrito{
+.carrito {
     height: 35px;
     width: 100%;
     margin-bottom: 10px;
@@ -118,6 +122,7 @@ header i {
     align-items: center;
     padding: 0 7px;
 }
+
 .btn-secundarios {
     width: 100%;
     display: flex;
@@ -228,8 +233,6 @@ h3 {
     list-style: none;
 }
 
-
-
 /*-Footer END--*/
 
 @media (min-width: 480px) {
@@ -295,16 +298,16 @@ h3 {
     /*--nav bar--*/
     main {
         height: 160vh;
-    }   
+    }
 
     .tituloProduct {
         display: flex;
         justify-content: center;
     }
-    
-    }
 
- 
+}
+
+
 
 
 @media (min-width: 790px) {
@@ -338,5 +341,56 @@ h3 {
     }
 
     /*--nav bar--*/
+    .box-form {
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .primer-sector {
+        width: 100vw;
+        max-width: 700px;
+        /* padding: 10px; */
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .segundo-tercer-sector {
+        width: 100vw;
+        max-width: 700px;
+        display: flex;
+        /* padding: 10px; */
+        /* align-items: center; */
+        flex-direction: column
+    }
+    /* .segundo-tercer-sector article {
+        display: block;
+    } */
+}
+
+@media (min-width: 1400px) {
+    main {
+        height: 125vh;
+    }
+    .segundo-tercer-sector {
+        margin-top: 20px;
+        max-width: 800px;        
+    }
+
+    .tercer-sector {
+        margin-top: 10px;
+        max-width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .tercer-sector article {
+        width: 48%;
+        
+    }
 
 }
