@@ -131,7 +131,7 @@ header i {
 }
 
 
-.fav {
+.btn-type {
     height: 35px;
     width: 29%;
     background-color: black;
@@ -142,28 +142,12 @@ header i {
     padding: 0 7px;
 }
 
-.eliminar {
-    height: 35px;
-    width: 29%;
+.btn-type button {
+    border-style: none;
     background-color: black;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 7px;
-
 }
 
-.editar {
-    height: 35px;
-    width: 29%;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 7px;
-}
 
 .logos-datos {
     margin: 10px 0;
