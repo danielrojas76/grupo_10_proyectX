@@ -13,7 +13,47 @@ const model = {
         const products = model.findAll();
         const productFind = products.find(products => products.id === id)
         return productFind
-    }
+    },
+    productDelete: (id) => {
+        let products = model.findAll();
+
+        let productNews = products.filter(cadaProduct => cadaProduct.id !== id);
+
+        let productsJSON = JSON.stringify(productNews);
+
+        return fs.writeFileSync(productsFilePath, productsJSON, "utf-8")
+    },
+    productCreate: (newProduct) => {
+        let products = model.findAll();
+
+        let lastProductId = products[products.length-1].id
+
+        let productNews = {
+            id: lastProductId + 1,
+            ...newProduct
+        }
+
+        products.push(productNews);
+
+        let productsJSON = JSON.stringify(products)
+
+        fs.writeFileSync(productsFilePath, productsJSON, 'utf-8')
+
+        return productNews
+    },
+
+    productUpdate: (productUpdated) => {
+        let products = model.findAll();
+
+        let productIndex = products.findIndex(cadaProduct => cadaProduct.id == productUpdated.id) 
+
+        products[productIndex] = productUpdated
+
+        let productsJSON = JSON.stringify(products)
+
+        fs.writeFileSync(productsFilePath, productsJSON, 'utf-8')
+    },
+
 };
 
 module.exports = model;

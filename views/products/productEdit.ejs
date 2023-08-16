@@ -15,35 +15,30 @@
     <main class="mainCreate">
       <h3 class="agregarProducts">EDITAR PRODUCTO</h3>
       <div class="contentForm">
-        <form class="boxForm">
-          <div class="boxMarcas">
-            <label class="marcas"><b>MARCAS</b></label>
-            <select name="Marcas" id="Marcas">
-              <option value="Adidas">Adidas</option>
-              <option value="Reebok">Reebook</option>
-              <option value="Puma">Puma</option>
-              <option value="Fila">Fila</option>
-              <option value="Nike">Nike</option>
-              <option value="Running">Running</option>
-            </select>
-          </div>
+        <form class="boxForm" action="/product/<%=productFind.id%>/edit/?_method=PUT" method="post" enctype="multipart/form-data">
           <div class="inputsCompletar w100">
-            <input type="text" placeholder="Nombres *">
-            <input type="text" placeholder="Precio *">
-            <input type="number" placeholder="Descuento % *">
+            <label for="name"></label>
+            <input type="text" placeholder="Nombres *" value="<%=productFind.name%>">
+            <label for="price"></label>
+            <input type="text" placeholder="Precio *" value="<%=productFind.price%>">
+            <label for="discount"></label>
+            <input type="number" placeholder="Descuento % *" value="<%=productFind.discount%>">
           </div>
-          <div class="genero">
-            <label><b>GENERO</b></label>
-            <select name="Genero" id="Genero">
-              <option value="Mujer">Mujer</option>
-              <option value="Hombre">Hombre</option>
+          <div class="genero">          
+            <label for="category" class="marcas"><b>CATEGORIA</b></label>
+            <select name="category" id="category" class="form-input">
+            <option value="">Elegí</option>
+            <option value="in-sale">En oferta</option>
+            <option value="visited" >Últimos agregados</option>
             </select>
           </div>
           <div class="description w100">
-            <input type="text" placeholder="Descripcion *" >
+            <label for="description"></label>
+            <input type="text" placeholder="Descripcion *" value="<%=productFind.decription%>">
           </div>
           <div class="date w100">
-            <input type="date" name="" id="">
+            <label for="image"></label>
+						<input type="file" id="image" name="image" placeholder="Ej: 15">
           </div>
           <div class="buttonAgregar w100">
             <button type="submit">AGREGAR</button>
