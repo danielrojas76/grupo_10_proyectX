@@ -17,11 +17,11 @@
       <div class="contentForm">
         <form class="boxForm" action="/product/<%=productFind.id%>/edit/?_method=PUT" method="post" enctype="multipart/form-data">
           <div class="inputsCompletar w100">
-            <label for="name">Nombre:</label>
+            <label for="name"></label>
             <input type="text" id="name" name="name" placeholder="Nombres *" value="<%=productFind.name%>">
-            <label for="price">Precio:</label>
+            <label for="price"></label>
             <input type="text" id="price" name="price" placeholder="Precio *" value="<%=productFind.price%>">
-            <label for="discount">Descuento:</label>
+            <label for="discount"></label>
             <input type="number" id="discount" name="discount" placeholder="Descuento % *" value="<%=productFind.discount%>">
           </div>
           <div class="genero">          
@@ -33,11 +33,11 @@
             </select>
           </div>
           <div class="description w100">
-            <label for="description">Descripcion:</label>
+            <label for="description"></label>
             <input type="text" name="description" id="description" placeholder="Descripcion *" value="<%= productFind.description %>">
           </div>
           <div class="date w100">
-            <label for="image">Agregar imagen:</label>
+            <label for="image" class="imagen"><b>AGREGAR IMAGEN</b></label>
 						<input type="file" id="image" name="image">
             <input type="hidden" name="old-image" value="<%= productFind.image%>">
           </div>

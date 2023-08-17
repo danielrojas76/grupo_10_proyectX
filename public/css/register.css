@@ -58,7 +58,7 @@ header i {
 
 .second-nav button {
    border: none;
-   margin: 5px;
+   /* margin: 5px; */
 }
 
 
@@ -392,6 +392,13 @@ form {
       border-style: none;
       display: block;
       height: 100%;
+      margin-bottom: 10px;
+   }
+
+   .lupita {
+      background-color: white;
+      margin-right: 5px;
+      margin-bottom: 10px;
    }
    /*--nav bar--*/
    .box-rigth {

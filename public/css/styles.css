@@ -395,6 +395,9 @@ h1 {
         display: block;
         height: 100%;
     }
+    .main-all-product {
+        height: 85vh;
+    }
 
     /*--nav bar--*/
 

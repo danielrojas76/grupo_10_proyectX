@@ -14,7 +14,7 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <div class="main">
+        <div class="main-all-product">
             <section class="section-box">
                 <h2 class="titulares">TODOS LOS PRODUCTOS</h2>
                 <% products.forEach(product => { %>
@@ -23,7 +23,7 @@
                         <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                         <div class="description-product">
                             <div class="descripton-specific">
-                                <p class="titulo"><%= product.name %></p>
+                                <p class="titulo"><%= product.name.toUpperCase() %></p>
                                 <div class="price-container">
                                     <p class="precio">$<%= product.price %></p>
                                     <p class="descuento"><%= product.discount %>% OFF</p>

@@ -24,14 +24,14 @@
 
         <div class="main">
             <section class="section-box">
-                <h2 class="titulares">Productos recomendados</h2>
+                <h2 class="titulares">PRODUCTOS RECOMENDADOS</h2>
                 <% productsVisited.forEach(product => { %>
                 <article class="article-box">
                     <a href="/product/<%= product.id %>/detail">
                         <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                         <div class="description-product">
                             <div class="descripton-specific">
-                                <p class="titulo"><%= product.name %></p>
+                                <p class="titulo"><%= product.name.toUpperCase() %></p>
                                 <div class="price-container">
                                     <p class="precio">$<%= product.price %></p>
                                     <p class="descuento"><%= product.discount %>% OFF</p>
@@ -44,7 +44,7 @@
             </section>
 
             <section class="section-box">
-                <h2 class="titulares">Ofertas</h2>
+                <h2 class="titulares">OFERTAS</h2>
 
                 <% productsInSale.forEach(product => { %>
                     <article class="article-box">
@@ -52,7 +52,7 @@
                             <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                             <div class="description-product">
                                 <div class="descripton-specific">
-                                    <p class="titulo"><%= product.name %></p>
+                                    <p class="titulo"><%= product.name.toUpperCase() %></p>
                                     <div class="price-container">
                                         <p class="precio">$<%= product.price %></p>
                                         <p class="descuento"><%= product.discount %>% OFF</p>
