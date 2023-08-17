@@ -1,9 +1,11 @@
 const express = require('express');
-const productController = require('../controllers/productController');
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 
+const productController = require('../controllers/productController');
+
+// =========== img upload ================ //
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
         let fileUbication = path.join(__dirname, "../public/images/products");
@@ -17,13 +19,16 @@ let storage = multer.diskStorage({
 })
 
 let upload = multer({storage})
+// =========== img upload ================ //
 
+router.get('/', productController.products);
 
+router.get('/search', productController.search);
 
 router.get('/:id/detail', productController.detail);
 
 router.get('/:id/edit', productController.edit);
-router.put('/:id/edit',upload.single("image"), productController.update); // no funciona
+router.put('/:id/edit',upload.single("image"), productController.update); 
 
 router.get('/create', productController.create);  
 router.post('/create', upload.single("image"), productController.store);  

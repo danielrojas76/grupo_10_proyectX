@@ -172,6 +172,56 @@ h3 {
     align-items: center;
 }
 
+
+/*********ARTICULOPS MAS VISITADOS*********/
+
+.section-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.article-box {
+    width: fit-content;
+    margin: 4px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(192, 192, 192);
+}
+
+.article-box img {
+    width: 200px;
+    height: 200px;
+}
+
+.description-product {
+    border-top: 1px solid #ebebeb;
+    padding: 15px;
+}
+
+.article-box:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+}
+
+.precio {
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.descuento {
+    font-size: 1.3rem;
+    color: rgb(255, 28, 28);
+}
+
+.titulo {
+    font-size: 1.5rem;
+}
+/*********ARTICULOPS MAS VISITADOS*********/
+
 /*--Footer STAR--*/
 .footer {
     width: 100%;

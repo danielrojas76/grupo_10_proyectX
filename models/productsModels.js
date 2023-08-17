@@ -14,6 +14,11 @@ const model = {
         const productFind = products.find(products => products.id === id)
         return productFind
     },
+    findVisited: () => {
+        const products = model.findAll();
+        const productsVisited = products.filter(product => product.category === "visited");
+        return productsVisited;
+    },
     productDelete: (id) => {
         let products = model.findAll();
 
@@ -54,6 +59,11 @@ const model = {
         fs.writeFileSync(productsFilePath, productsJSON, 'utf-8')
     },
 
+    search: function(Keyword){
+        let products = model.findAll();
+        let productsFind = products.filter(product => product.name.toLowerCase().includes(Keyword.toLowerCase()));
+        return productsFind;
+    }
 };
 
 module.exports = model;

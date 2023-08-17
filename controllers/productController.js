@@ -1,10 +1,22 @@
 const productsModel = require('../models/productsModels')
 
 let productController = {
+    products: function(req, res) {
+        const products = productsModel.findAll();
+        res.render('products', {products});
+    },
+
+    search: (req, res) => {
+		let searchKeyword = req.query.keywords;
+		let productsFind = productsModel.search(searchKeyword);
+		res.render('results', {products: productsFind, result: searchKeyword})
+	},
+
     detail: function(req, res) {
         const id = Number(req.params.id);
         const productFind = productsModel.findById(id)
-        res.render('productDetail', {productFind});
+        const productsVisited = productsModel.findVisited();
+        res.render('productDetail', {productFind, productsVisited});
     },
 
     cart: function(req, res){
@@ -49,7 +61,7 @@ let productController = {
 		let productUpdated = {
 			id: Number(req.params.id),
 			...req.body,
-			image: req.file.filename,		
+			image: req.file ? req.file.filename : req.body["old-image"]		
 		}
 
 		productsModel.productUpdate(productUpdated);

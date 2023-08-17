@@ -15,7 +15,8 @@
     <main>
         <div class="box-form">
             <section class="primer-sector">
-                <img src="/images/<%= productFind.image %>" alt="" width="358px">
+                <img src="/images/products/<%= productFind.image %>" alt="" width="358px">
+                <p class="titulo"><%= productFind.description %></p>
             </section>  
             <div class="segundo-tercer-sector">
                 <section class="segundo-sector">
@@ -45,52 +46,29 @@
                     </div>
                 </section>
                 <h3 class="strong">TAMBIEN PODRIA INTERESARTE</h3>
-                <section class="tercer-sector">
-                    <article>
-                        <div class="producto-interes">
-                            <div>
-                                <img src="/images/<%=productFind.image %>" alt="" width="100vw">
+                
+                <section class="section-box">
+                    <h2 class="titulares">Productos recomendados</h2>
+                    <% productsVisited.forEach(product => { %>
+                    <article class="article-box">
+                        <a href="/product/<%= product.id %>/detail">
+                            
+                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                            <div class="description-product">
+                                <div class="descripton-specific">
+                                    <p class="titulo"><%= product.name %></p>
+                                    
+                                    <div class="price-container">
+                                        <p class="precio">$<%= product.price %></p>
+                                        <p class="descuento"><%= product.discount %>% OFF</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="precio-nombre-producto">
-                                <p id="precio-interes">$10.000</p>
-                                <p id="nombre-interes"><b><%=productFind.name%></b></p>
-                            </div>
-                        </div>
+                        </a>
                     </article>
-                    <article>
-                        <div class="producto-interes">
-                            <div>
-                                <img src="/images/<%=productFind.image %>" alt="" width="100vw">
-                            </div>
-                            <div class="precio-nombre-producto">
-                                <p id="precio-interes">$<%=productFind.price %></p>
-                                <p id="nombre-interes"><b><%=productFind.name%></b></p>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="producto-interes">
-                            <div>
-                                <img src="/images/<%= productFind.image %>" alt="" width="100vw">
-                            </div>
-                            <div class="precio-nombre-producto">
-                                <p id="precio-interes">$<%= productFind.price %></p>
-                                <p id="nombre-interes"><b><%= productFind.name%></b></p>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="producto-interes">
-                            <div>
-                                <img src="/images/<%= productFind.image %>" alt="" width="100vw">
-                            </div>
-                            <div class="precio-nombre-producto">
-                                <p id="precio-interes">$<%= productFind.price %></p>
-                                <p id="nombre-interes"><b><%= productFind.name%></b></p>
-                            </div>
-                        </div>
-                    </article>
+                    <% }) %>
                 </section>
+
             </div>    
         </div>
         </main>
