@@ -13,7 +13,7 @@
     <%- include("./partials/header.ejs") %>
     <main>
         <div class="box-form">
-            <form action="/" method="get">
+            <form method="GET" action="/" enctype="multipart/form-data">
                 <h3 class="w100">REGISTRATE</h3>
                 <p class="registrateCon w100">Registrate con</p>
                 <div class="botones-acceso w100">
@@ -32,7 +32,6 @@
                 <div class="date w100">
                     <input type="date" name="" id="">
                 </div>
-
                 <h5 class="w100">SEXO</h5>
                 <div class="botones-sexos w100">
                     <input type="radio" name="sexos" id="">
@@ -42,7 +41,10 @@
                     <input type="radio" name="sexos" id="">
                     <label>Otros</label>
                 </div>
-
+                <div class="uploadImg w100">                        
+                            <label for="image"></label>
+                            <input type="file" id="image" name="image">                        
+                </div>
                 <h5 class="w100">DATOS DE ACCESO</h5>
                 <div class="email w100">
                     <input type="email" name="" id="" placeholder="Correo Electronico *">

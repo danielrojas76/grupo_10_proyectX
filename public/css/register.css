@@ -194,6 +194,11 @@ form {
    color: black;
 }
 
+/* AGREGAR IMAGEN */
+
+.uploadImg {
+   margin-bottom: 10px;
+}
 
 /* EMAIL */
 .email input {

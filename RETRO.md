@@ -38,7 +38,7 @@ RETROSPECTIVA
 
 **01/08/2023** - SPRINT 4
 
-- Comenzar a hacer: Deberiamos imprementar dailys para organizarnos mejor y obtener mejores resultados. Mas participacion grupal.
+- Comenzar a hacer: Deberiamos imprementar dailys para organizarnos mejor y obtener mejores resultados. Mas participación grupal.
 
 - Hacer más: Dedicarle mas tiempo a los contenidos visto en las clases a si mejoramos nuestras habilidades.
 
