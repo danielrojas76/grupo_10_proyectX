@@ -4,7 +4,7 @@ const uuid = require('uuid');
 const bcrypt = require('bcrypt');
 
 const model = {
-    fileRoute: path.join(__dirname, '../data/users.json'),
+    fileRoute: path.join(__dirname, '../data/usersDataBase.json'),
 
     create: (userData) => {
         const emailInUse = model.findByEmail(userData.email);
@@ -42,6 +42,6 @@ const model = {
     },
 
     findAll: ( )=> {
-        
+
     }
 }
