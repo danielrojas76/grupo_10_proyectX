@@ -1,13 +1,15 @@
 
+
 const userModels = require('../models/userModels');
 const bcrypt = require('bcrypt');
+
 
 let userControllers = {
 
     getRegister: (req, res) => {
-        const error = req.query.error;
+        
+        res.render('register', { error })
 
-        res.render('register', { error });
     },
 
     register: function (req, res) {
@@ -15,6 +17,9 @@ let userControllers = {
             email: req.body.email,
             password: req.body.password,
         }
+
+
+        const user = userModel.create(newUser);
 
 
         if (user.error) {
@@ -46,6 +51,12 @@ let userControllers = {
             res.redirect('/users/login?error=el mail o la contraseña son incorrecta');
         }
         
+
+    },
+
+    login: function (req, res) {
+        res.render('login')
+
     },
 
     password: function (req, res) {
