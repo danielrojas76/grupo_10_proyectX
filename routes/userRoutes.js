@@ -4,7 +4,9 @@ let userController = require('../controllers/userController');
 let router = express.Router();
 
 /**********LOGIN***********/ 
-router.get('/login', userController.login);
+router.get('/login', userController.getLogin);
+
+router.post('/login', userController.postLogin)
 /**********RECUPERAR CONTRASEÑA***********/ 
 router.get('/password', userController.password);
 /**********FORMULARIO DE REGISTRO***********/ 
