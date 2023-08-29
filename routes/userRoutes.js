@@ -10,7 +10,9 @@ router.post('/login', userController.postLogin)
 /**********RECUPERAR CONTRASEÑA***********/ 
 router.get('/password', userController.password);
 /**********FORMULARIO DE REGISTRO***********/ 
-router.get('/register', userController.register);
+router.get('/register', userController.getRegister);
+
+router.post('/register', userController.register);
 /**********PERFIL DEL ADMINISTRADOR***********/ 
 router.get('/admin', userController.admin);
 /**********PERFIL DEL USUARIO***********/ 
