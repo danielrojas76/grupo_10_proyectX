@@ -19,7 +19,7 @@ let userControllers = {
         }
 
 
-        const user = userModel.create(newUser);
+        const user = userModels.create(newUser);
 
 
         if (user.error) {
