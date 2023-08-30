@@ -13,7 +13,6 @@
     <%- include("./partials/header.ejs") %>
     <main>
         <div class="box-form">
-            <p style="color: red;"><%= error %></p>
             <form method="GET" action="/" enctype="multipart/form-data">
                 <h3 class="w100">REGISTRATE</h3>
                 <p class="registrateCon w100">Registrate con</p>
@@ -43,11 +42,12 @@
                     <label>Otros</label>
                 </div>
                 <div class="uploadImg w100">                        
-                            <label for="image"><b>AGREGAR IMAGEN</b></label>
-                            <input type="file" id="image" name="image">                        
+                    <label for="image"><b>AGREGAR IMAGEN</b></label>
+                    <input type="file" id="image" name="image">                        
                 </div>
                 <h5 class="w100">DATOS DE ACCESO</h5>
                 <div class="email w100">
+                    <p style="color: red;"><%= errors %></p>
                     <input type="email" name="" id="" placeholder="Correo Electronico *">
                 </div>
                 <div class="contraseña w100">

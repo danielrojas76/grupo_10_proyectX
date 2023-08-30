@@ -11,7 +11,7 @@ const model = {
 
         if (emailInUse) {
             return ({
-                error: 'Este email ya esta registrado'
+                errors: 'Este email ya esta registrado'
             })
         }
 
