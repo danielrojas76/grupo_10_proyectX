@@ -7,8 +7,8 @@ const bcrypt = require('bcrypt');
 let userControllers = {
 
     getRegister: (req, res) => {
-        
-        res.render('register', { error })
+        const errors = req.body.errors;
+        res.render('register', { errors })
 
     },
 
@@ -30,7 +30,7 @@ let userControllers = {
 
     },
     getLogin: (req, res) => {
-        const error = req.querry.error;
+        const error = req.body.error;
         res.render('login', { error });
     },
 
