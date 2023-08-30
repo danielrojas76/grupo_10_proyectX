@@ -30,7 +30,7 @@ let userControllers = {
 
     },
     getLogin: (req, res) => {
-        const error = req.querry.error;
+        const error = req.body.error;
         res.render('login', { error });
     },
 
