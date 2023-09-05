@@ -6,7 +6,7 @@ let router = express.Router();
 /**********LOGIN***********/ 
 router.get('/login', userController.getLogin);
 
-router.post('/login', userController.postLogin)
+router.post('/login', userController.login)
 /**********RECUPERAR CONTRASEÑA***********/ 
 router.get('/password', userController.password);
 /**********FORMULARIO DE REGISTRO***********/ 

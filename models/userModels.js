@@ -26,7 +26,7 @@ const model = {
 
         users.push(newUser);
 
-        const userJson = JSON.stringify(users);
+        const usersJson = JSON.stringify(users);
 
         fs.writeFileSync(model.fileRoute, usersJson, 'utf-8');
 

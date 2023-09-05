@@ -35,7 +35,7 @@ let userControllers = {
     },
 
 
-    postLogin: (req, res) => {
+    login: (req, res) => {
         const userInJson = userModels.findByEmail(req.body.email);
 
         if (!userInJson) {
@@ -44,7 +44,15 @@ let userControllers = {
         const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
 
         
-        if(validPw) {
+        if(validPw) {            
+            if(req.body.remember === 'on'){                
+                res.cookie('email', userInJson.email, { maxAge: 1000 * 60 * 60 * 24 * 365});
+            } else {
+                console.log('No se quiere mantener la sesión iniciada');
+            }
+
+            req.session.user = userInJson;
+
             res.redirect('index')
             
         } else {
@@ -53,11 +61,7 @@ let userControllers = {
         
 
     },
-
-    login: function (req, res) {
-        res.render('login')
-
-    },
+    /* --------------------------------------------------------------------------------------------------------------------------------------------- */
 
     password: function (req, res) {
         res.render('password')
