@@ -11,7 +11,7 @@ const model = {
 
         if (emailInUse) {
             return ({
-                errors: 'Este email ya esta registrado'
+                error: 'Este email ya esta registrado'
             })
         }
 
@@ -22,7 +22,7 @@ const model = {
             ...userData
         };
 
-        newUser.password = bcrypt.hashSync(newUser.password, 15);
+        newUser.password = bcrypt.hashSync(newUser.password, 12);
 
         users.push(newUser);
 
@@ -45,3 +45,5 @@ const model = {
 
     }
 }
+
+module.exports = model;
