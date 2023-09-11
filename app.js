@@ -5,6 +5,7 @@ const dotenv = require('dotenv').config();
 const methodOverride = require('method-override');// Pasar poder usar los métodos PUT y DELETE
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const {userLog} =  require('./middlewares/userLog');
 // ************ express() - (don't touch) ************
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(cookieParser());
 app.use(session({ secret: 'Secreto!!', resave: false, saveUninitialized: true}));
+app.use(userLog);
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');
 app.set('views', [

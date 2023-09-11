@@ -6,7 +6,13 @@
                 <ul>
                     <li><a href="/">HOME</a></li>
                     <li><a href="/product">PRODUCTOS</a></li>
-                    <li><a href="/product/create">VENDER</a></li>
+                    <% if (locals.userLog) { %>
+                        <li><a href="/product/create">VENDER</a></li>
+                        <li><a href="/user/profile"><%= locals.userLog.first_name.toUpperCase() %></a></li>
+                        <li><a href="/user/logout">SALIR</a></li>
+                    <% } else { %>
+
+                    <% } %>
                 </ul>
             </div>
             <div class="second-nav">

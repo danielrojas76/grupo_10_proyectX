@@ -1,5 +1,3 @@
-
-
 const userModels = require('../models/userModels');
 const bcrypt = require('bcrypt');
 
@@ -12,12 +10,18 @@ let userControllers = {
 
     },
 
-    register: function (req, res) {
+    register: (req, res) => {
         const newUser = {
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            date: req.body.date,
             email: req.body.email,
             password: req.body.password,
+            sexos: req.body.sexos,
+            image: req.file.filename
         }
 
+        console.log(newUser)
 
         const user = userModels.create(newUser);
 
@@ -39,7 +43,7 @@ let userControllers = {
         const userInJson = userModels.findByEmail(req.body.email);
 
         if (!userInJson) {
-            return res.redirect('/users/login?error=El mail o la contraseña son incorrecta');
+            return res.redirect('/user/login?error=El mail o la contraseña son incorrecta');
         } 
         const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
 
@@ -53,13 +57,18 @@ let userControllers = {
 
             req.session.user = userInJson;
 
-            res.redirect('index')
+            res.redirect('/')
             
         } else {
-            res.redirect('/users/login?error=el mail o la contraseña son incorrecta');
+            res.redirect('/user/login?error=el mail o la contraseña son incorrecta');
         }
         
 
+    },
+    logout: (req, res) => {
+        res.clearCookie('email');
+        req.session.destroy();
+        res.redirect('/');
     },
     /* --------------------------------------------------------------------------------------------------------------------------------------------- */
 
