@@ -3,6 +3,7 @@ let userController = require('../controllers/userController');
 let multer = require('multer');
 let path = require('path');
 let router = express.Router();
+const userLog =  require('../middlewares/userLog');
 
 /**********multer configuration***********/ 
 const storage = multer.diskStorage({
@@ -19,7 +20,7 @@ const storage = multer.diskStorage({
 let upload = multer({storage})
 
 /**********LOGIN***********/ 
-router.get('/login', userController.getLogin);
+router.get('/login', userLog.guest ,userController.getLogin);
 router.post('/login', userController.login)
 /**********RECUPERAR CONTRASEÑA***********/ 
 router.get('/password', userController.password);
