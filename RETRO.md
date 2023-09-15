@@ -49,3 +49,14 @@ RETROSPECTIVA
 - Dejar de hacer: Hasta el momento no tenemos inconvenientes al hacer el trabajo, ya que venimos trabajando generalmente bien.
 
 
+**12/09/2023** - SPRINT 5
+
+- Comenzar a hacer: 
+
+- Hacer más: 
+
+- Continuar haciendo: 
+
+- Hacer menos: 
+
+- Dejar de hacer:
