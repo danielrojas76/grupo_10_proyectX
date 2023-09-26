@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/register.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <title>PROYECT X | Register </title>
+    <title>PROYECT X | REGISTER </title>
 </head>
 
 <body>
     <%- include("./partials/header.ejs") %>
     <main>
         <div class="box-form">
-            <form action="/" method="get">
+            <form method="post" action="/user/register" enctype="multipart/form-data">
                 <h3 class="w100">REGISTRATE</h3>
                 <p class="registrateCon w100">Registrate con</p>
                 <div class="botones-acceso w100">
@@ -23,32 +23,35 @@
                 <p class="letra0 w100">O</p>
                 <h5 class="w100">TU NOMBRE</h5>
                 <div class="nombre w100">
-                    <input type="text" name="" id="" placeholder="Nombre(s) *">
+                    <input type="text" name="first_name" id="" placeholder="Nombre(s) *">
                 </div>
                 <div class="apellido w100">
-                    <input type="text" name="" id="" placeholder="Apellido *">
+                    <input type="text" name="last_name" id="" placeholder="Apellido *">
                 </div class="date w100">
                 <h5 class="w100">FECHA DE NACIMIENTO</h5>
                 <div class="date w100">
-                    <input type="date" name="" id="">
+                    <input type="date" name="date" id="">
                 </div>
-
                 <h5 class="w100">SEXO</h5>
                 <div class="botones-sexos w100">
-                    <input type="radio" name="sexos" id="">
+                    <input type="radio" name="sexos" id="" value="hombre">
                     <label>Hombre</label>
-                    <input type="radio" name="sexos" id="">
+                    <input type="radio" name="sexos" id="" value="mujer">
                     <label>Mujer</label>
-                    <input type="radio" name="sexos" id="">
+                    <input type="radio" name="sexos" id="" value="otros">
                     <label>Otros</label>
                 </div>
-
+                <div class="uploadImg w100">                        
+                    <label for="image"><b>AGREGAR IMAGEN</b></label>
+                    <input type="file" id="image" name="image">                        
+                </div>
                 <h5 class="w100">DATOS DE ACCESO</h5>
                 <div class="email w100">
-                    <input type="email" name="" id="" placeholder="Correo Electronico *">
+                    <p style="color: red;"><%= errors %></p>
+                    <input type="email" name="email" id="" placeholder="Correo Electronico *">
                 </div>
                 <div class="contraseña w100">
-                    <input type="password" name="" id="" placeholder="Contraseña *">
+                    <input type="password" name="password" id="" placeholder="Contraseña *">
                     <p>Minimo 8 caracteres con una mayúscula, una minúscula, un caracter especial y un numero</p>
                 </div>
                 <div class="terminos w100">
@@ -58,6 +61,7 @@
                 <div class="boton-registrate w100">
                     <button type="submit">REGÍSTRATE<i class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
+                
             </form>
             <div class="box-rigth">
                 <p>UNITE AL CLUB. OBTENÉ LOS BENEFICIOS</p>

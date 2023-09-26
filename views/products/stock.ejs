@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stock.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <title>STOCK</title>
+</head>
+
+<body>
+    <%-include('./partials/header.ejs')%>
+        <main class='main'>
+            <h1>ADMINIS/LISTAR</h1>
+            <form class="btn-crear" action="/product/create" method="get">
+                <button ><i class="fa-solid fa-plus"></i>CREAR</button>
+            </form>
+           <!--  <div class="btn-listar"><BUTton><i class="fa-solid fa-list"></i>LISTAR</BUTton></div> -->
+
+            <!-- <section> -->
+                <table>
+                    <tr class="principal">
+                        <th>Editar</th>
+                        <th class="ocultar">Imagen</th>
+                        <th class="ocultar">Marca</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th class="ocultar">Dto</th>
+                        <th><i class="fa-solid fa-trash"></i></th>
+                    </tr>
+                    <tr class="stock">
+                        <td><a href="/product/:id/edit"><i class="fa-solid fa-file-pen"></i></a></td>
+                        <td class="ocultar"><img src="/images/Zapatilla Celeste.jpg" alt="" width="50vw"></td>
+                        <td class="ocultar">Adidas</td>
+                        <td>Zapatillas</td>
+                        <td>$45.000</td>
+                        <td class="ocultar">----</td>
+                        <td><i class="fa-solid fa-trash"></i></td>
+                    </tr>
+                   
+
+                </table>
+
+            <!-- </section> -->
+
+        </main>
+        <%- include("./partials/footer.ejs") %>         
+    </body>
+
+</html>

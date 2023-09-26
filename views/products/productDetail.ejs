@@ -6,125 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/productDetail.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <title>PROYECTO X</title>
+    <title><%= productFind.name.toUpperCase()%></title>
 </head>
 
 <body>
-    <header class="header">
-        <button class="burguer-menu"><i class="fa-solid fa-bars"></i></button>
-
-        <nav class="nav-bar">
-            <img src="/images/LOGO.png" alt="" class="logo">
-            <ul class="first-nav">
-                <li><a href="">HOME</a></li>
-                <li><a href="">CATEGORIA</a></li>
-                <li><a href="">CONTACTO</a></li>
-            </ul>
-        </nav>
-        <nav class="nav-bar">
-            <div class="search-box">
-                <input type="search" name="" id="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div class="second-nav">
-                <button type="button"><i class="fa fa-user-circle" aria-hidden="true"></i></button>
-                <button type="button"><i class="fa-sharp fa-solid fa-cart-shopping"></i></button>
-            </div>
-        </nav>
-    </header>
+    <%- include('./partials/header.ejs') %>
+        
     <main>
-        <section class="primer-sector">
-            <img src="/images/Zapatilla Naranja.jpg" alt="" class="zapa-naranja">
-            <img src="/images/Zapatilla Naranja Vista Centro.jpg" alt="" class="zapa-centro">
-            <img src="/images/Zapatilla Naranja Vista Arriba.jpg" alt="" class="zapa-arriba">
-            <img src="/images/Zapatilla Naranja Vista Abajo.jpg" alt="" class="zapa-abajo">
-            <button class="button">Mostrar Más<i class="fa-solid fa-chevron-down"></i></i></button>
-        </section>
-        <section class="segundo-sector">
-            <div class="detail-product">
-                <h1><b>Zapatilla Nacho 3000 Naranja</b></h1>
-                <div id="precio"><b>$75.000</b></div>
-                <div id="descuento"><b>Descuento 1%</b></div>
-                <div class="opciones-disponibles">
-                    <div><b>Opciones Disponibles</b></div>
-                    <div class="op-color">
-                        <img src="/images/Zapatilla Naranja.jpg" alt="" width="75vw">
-                        <img src="/images/Zapatilla Celeste.jpg" alt="" width="75vw">
-                        <img src="/images/Zapatilla Naranja.jpg" alt="" width="75vw">
-                        <img src="/images/Zapatilla Celeste.jpg" alt="" width="75vw">
+        <div class="box-form">
+            <section class="primer-sector">
+                <img src="/images/products/<%= productFind.image %>" alt="" width="100%">
+                <br> 
+                <h2 class="titulo-descripcion"><b>DESCIPCION</b></h2>
+                <br>
+                <p class="titulo"><%= productFind.description.toUpperCase() %></p>
+            </section>  
+            <div class="segundo-tercer-sector">
+                <section class="segundo-sector">
+                    <div class="btn">
+                        <h1 class="tituloProduct"><%=productFind.name.toUpperCase()%></h1>
+                        <div class="precio-box">
+                            <p class="precio"><b>$<%=(productFind.price - (productFind.price * (productFind.discount / 100)))%></b></p>
+                            <p class="precio-viejo"><del>$<%= productFind.price %></del></p>
+                            <p class="descuento"><b><%= productFind.discount %>%</b></p>
+                        </div>
+                        <div class="btn">
+                            <button class="carrito">AÑADIR AL CARRITO</button>
+                            <div class="btn-secundarios">
+                            <a href="" class="btn-type"><button><i class="fa-regular fa-heart"></i></button></a>
+                            <form class="btn-type" action="/product/<%=productFind.id%>/delete/?_method=DELETE" method="POST" style="display:inline-flex">
+                                <button type="submit"><i class="fa-solid fa-trash"></i></button>                          
+                            </form>                            
+                            <a href="/product/<%=productFind.id%>/edit" class="btn-type"><button><i class="fa-solid fa-file-pen"></i></button></a>                            
+                        </div> 
+                    </div>                
+                    <div class="logos-datos">
+                        <ul>
+                            <li><i class="fa-solid fa-truck-fast"></i> ENVIOS GRATIS A PARTIR DE $8000</li>
+                            <li><i class="fa-solid fa-lock"></i> CUOTAS SIN INTERES</li>
+                            <li><i class="fa-solid fa-money-bill-wave"></i> DEVOLUCIONES GRATIS</li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-            <div class="boton-añadir">
-                <button class="añadir">Añadir al Carrito</button><button class="fav"><i
-                        class="fa-regular fa-heart"></i></button>
-                <div class="logos-datos">
-                    <i class="fa-solid fa-truck-fast"> Envíos Gratis a partir de $8000</i>
-                    <i class="fa-solid fa-lock"> Cuotas Sin Interes</i>
-                    <i class="fa-solid fa-money-bill-wave"> Devoluciones Gratis</i>
-                </div>
-        </section>
-        <section class="tercer-sector">
-            <h2><b>Tambien Podria interesarte</b></h2>
-            <article>
-                <div class="producto-interes">
-                    <div>
-                        <img src="/images/Remera Deportiva.jpg" alt="" width="100vw">
-                    </div>
-                    <div>
-                        <p id="precio-interes">$10.000</p>
-                        <p id="nombre-interes"><b>Remera Deportiva</b></p>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="producto-interes">
-                    <div>
-                        <img src="/images/Pesas.jpg" alt="" width="100vw">
-                    </div>
-                    <div>
-                        <p id="precio-interes">$30.000</p>
-                        <p id="nombre-interes"><b>Pesas 30 Kg</b></p>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="producto-interes">
-                    <div>
-                        <img src="/images/Soga.jpg" alt="" width="100vw">
-                    </div>
-                    <div>
-                        <p id="precio-interes">$2.500</p>
-                        <p id="nombre-interes"><b>Soga para Saltar</b></p>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="producto-interes">
-                    <div>
-                        <img src="/images/Calza.jpg" alt="" width="100vw">
-                    </div>
-                    <div>
-                        <p id="precio-interes">$16.000</p>
-                        <p id="nombre-interes"><b>Calza Deportiva</b></p>
-                    </div>
-                </div>
-            </article>
-        </section>
-    </main>
-    <footer class="footer">
-        <section class="container_footer_1">
-            <p>Todos los derechos</p>
-        </section>
-        <section class="container_footer_2">
-            <ul>
-                <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-twitter"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
-            </ul>
-        </section>
-    </footer>
-</body>
+                </section>
+                <h3 class="strong">TAMBIEN PODRIA INTERESARTE</h3>
+                
+                <h2 class="titulares">Productos recomendados</h2>
+                <section class="section-box">
+                    <% productsVisited.forEach(product => { %>
+                    <article class="article-box">
+                        <a href="/product/<%= product.id %>/detail">
+                            
+                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                            <div class="description-product">
+                                <div class="descripton-specific">
+                                    <p class="titulo"><%= product.name.toUpperCase() %></p>
+                                    
+                                    <div class="price-container">
+                                        <p class="precio">$<%= product.price %></p>
+                                        <p class="descuento"><%= product.discount %>% OFF</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <% }) %>
+                </section>
 
-</html>
+            </div>    
+        </div>
+        </main>
+        <%- include('./partials/footer.ejs') %>
+    </body>
+    
+    </html>

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Victor+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&family=Victor+Mono&display=swap');
 
 
@@ -25,19 +23,21 @@ body {
 
 /*--Header START--*/
 
-header{
+header {
     width: 100%;
+    height: 70px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.burguer-menu{
+
+.burguer-menu {
     border: none;
     background-color: none;
 }
 
-header i{
+header i {
     font-size: 30px;
 }
 
@@ -45,18 +45,21 @@ header i{
     width: 100px;
 }
 
-.first-nav, .search-box {
+.first-nav,
+.search-box {
     display: none;
 }
 
-.second-nav{
+.second-nav {
     justify-content: center;
 }
 
-.second-nav button{
+.second-nav button {
     border: none;
     margin: 5px;
 }
+
+
 
 /*--Header END--*/
 
@@ -69,7 +72,7 @@ a {
 
 h1 {
     font-weight: 300;
-    font-size: 60px;
+    font-size: 2rem;
     line-height: 1.2;
     margin-bottom: 15px;
 }
@@ -150,7 +153,7 @@ h1 {
 }
 
 .main {
-    width: 100%;
+    width: 70%;
     margin: auto;
     margin-top: 10px;
 }
@@ -164,25 +167,47 @@ h1 {
 .section-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .article-box {
-    width: 90%;
-    min-width: 360px;
+    width: fit-content;
     margin: 4px;
     background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(192, 192, 192);
 }
 
 .article-box img {
-    width: 100%;
-    min-width: 360px;
-    height: 420px;
+    width: 200px;
+    height: 200px;
 }
 
 .description-product {
     border-top: 1px solid #ebebeb;
     padding: 15px;
+}
+
+.article-box:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+}
+
+.precio {
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.descuento {
+    font-size: 1.3rem;
+    color: rgb(255, 28, 28);
+}
+
+.titulo {
+    font-size: 1.5rem;
 }
 
 /*--box-section END--*/
@@ -227,6 +252,10 @@ h1 {
 /*--categorias END--*/
 
 /*--Main END--*/
+
+/* detail product start */
+
+/* detail product start */
 
 /*--Footer STAR--*/
 
@@ -282,70 +311,95 @@ h1 {
 /*==media queries==*/
 
 @media (min-width: 480px) {
+
     /*--nav bar--*/
-    .nav-bar{
+    .nav-bar {
         width: 90%;
+        height: 100%;
         display: flex;
         justify-content: space-between;
     }
 
-    .burguer-menu{
+    .burguer-menu {
         display: none;
     }
 
-    .first-nav{
+    .first-nav {
         width: 45%;
         display: flex;
     }
 
-    .first-nav ul{
+    .first-nav ul {
         list-style: none;
         display: flex;
         align-items: center;
     }
-    
-    .first-nav ul li{
+
+    .first-nav ul li {
+        display: flex;
+        height: 67px;
         margin: 0 5px;
+        align-items: center;
     }
 
-    .second-nav{
+    .second-nav {
         width: 45%;
         display: flex;
         justify-content: end;
         margin-right: 15px;
+        align-items: center;
     }
 
-    .search-box{
+    .search-box {
         display: block;
     }
 
-    .search-box input{
+    .search-box input {
         display: none;
     }
 
-     /*--nav bar--*/
-
-    .article-box {
-        width: 47%;
-        max-width: 360px;
+    .first-nav ul li:hover {
+        border-bottom: solid 3px black;
     }
+
+    /*--nav bar--*/
+
+
 }
 
 @media (min-width: 790px) {
 
     /*--nav bar--*/
 
-    .search-box{
+    .search-box {
+        width: 200px;
+        height: 35px;
+        padding: 5px;
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 50px;
         display: flex;
+        justify-content: end;
+        align-items: center;
+
     }
 
-    .search-box input{
+    .search-box i {
+        background-color: white;
+        font-size: x-large;
+
+    }
+
+    .search-box input {
+        border-style: none;
         display: block;
+        height: 100%;
+    }
+    .main-all-product {
+        height: 85vh;
     }
 
     /*--nav bar--*/
 
-    .article-box {
-        width: 29%;
-    }
+
 }

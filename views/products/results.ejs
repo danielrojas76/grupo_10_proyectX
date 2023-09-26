@@ -1,37 +1,31 @@
-<%- include('./partials/head.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <title>PROYECTO X</title>
+</head>
+
 
 <body>
 
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <section class="showcase">
-            <div class="video-container">
-                <video src="/video/videoplayback.webm" autoplay muted loop></video>
-            </div>
-            <div class="content">
-                <h1>Proyecto X!</h1>
-                <h3>Indumentaria deportiva</h3>
-                <a href="#about" class="btn">Leer más</a>
-            </div>
-        </section>
-        <div class="marcas">
-            <div class="logos"></div>
-            <div class="logos"></div>
-            <div class="logos"></div>
-            <div class="logos"></div>
-        </div>
-
         <div class="main">
             <section class="section-box">
-                <h2 class="titulares">PRODUCTOS RECOMENDADOS</h2>
-                <% productsVisited.forEach(product => { %>
+                <h2 class="titulares">Resultados de la búsqueda: "<%= result %>"</h2>
+
+                <% products.forEach(product => { %>
                 <article class="article-box">
                     <a href="/product/<%= product.id %>/detail">
                         <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                         <div class="description-product">
                             <div class="descripton-specific">
-                                <p class="titulo"><%= product.name.toUpperCase() %></p>
+                                <p class="titulo"><%= product.name %></p>
                                 <div class="price-container">
                                     <p class="precio">$<%= product.price %></p>
                                     <p class="descuento"><%= product.discount %>% OFF</p>
@@ -41,83 +35,10 @@
                     </a>
                 </article>
                 <% }) %>
+                
             </section>
-
-            <section class="section-box">
-                <h2 class="titulares">OFERTAS</h2>
-
-                <% productsInSale.forEach(product => { %>
-                    <article class="article-box">
-                        <a href="/product/<%= product.id %>/detail"> <!-- FALTA DIRECCION -->
-                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
-                            <div class="description-product">
-                                <div class="descripton-specific">
-                                    <p class="titulo"><%= product.name.toUpperCase() %></p>
-                                    <div class="price-container">
-                                        <p class="precio">$<%= product.price %></p>
-                                        <p class="descuento"><%= product.discount %>% OFF</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                <% }) %>
-
-            </section>
-            <section id="about">
-                <h1>CONTACTO</h1>
-                <p>En nuestro sitio encontras todo lo que necesites para mejorar tu rendimiento en tu deporte favorito!
-                </p>
-                <h2>nuestras redes sociales</h2>
-                <div class="social">
-                    <a href=""></a>
-                </div>
-            </section>
-            <div class="box-categorias">
-                <ul class="categorias">
-                    <li>Artes Marciales y Boxeo</li>
-                    <li>Buceo</li>
-                    <li>Bádminton</li>
-                    <li>Básquet</li>
-                    <li>Camping, Caza y Pesca</li>
-                    <li>Canoas, Kayaks e Inflables</li>
-                    <li>Ciclismo</li>
-                    <li>Equitación y Polo</li>
-                    <li>Esgrima</li>
-                    <li>Esqui y Snowboard</li>
-                    <li>Fitness y Musculación</li>
-                    <li>Fútbol</li>
-                    <li>Fútbol Americano</li>
-                    <li>Golf</li>
-                    <li>Handball</li>
-                    <li>Hockey</li>
-                    <li>Juegos de Salón</li>
-                    <li>Kitesurf</li>
-                    <li>Monopatines y Scooters</li>
-                    <li>Montañismo y Trekking</li>
-                    <li>Natación</li>
-                    <li>Paintball</li>
-                    <li>Parapente</li>
-                    <li>Patín y Skateboard</li>
-                    <li>Pilates y Yoga</li>
-                    <li>Pulsómetros y Cronómetros</li>
-                    <li>Ropa Deportiva</li>
-                    <li>Rugby</li>
-                    <li>Slackline</li>
-                    <li>Softball y Beisbol</li>
-                    <li>Suplementos y Shakers</li>
-                    <li>Surf y Bodyboard</li>
-                    <li>Tenis, Padel y Squash</li>
-                    <li>Tiro Deportivo</li>
-                    <li>Voley</li>
-                    <li>Wakeboard y Esqui Acuático</li>
-                    <li>Windsurf</li>
-                    <li>Zapatillas</li>
-                    <li>Otros</li>
-                </ul>
-            </div>
         </div>
-    </main>
+    </main>  
 
     <%- include('./partials/footer.ejs') %>
 

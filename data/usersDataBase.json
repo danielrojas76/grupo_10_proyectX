@@ -1,0 +1,13 @@
+[    
+    {
+        "id": "ce0ccdba-dd79-4030-b338-015d7ad24213",
+        "first_name": "mati",
+        "last_name": "cevallos",
+        "date": "2000-09-20",
+        "email": "matiascevallos7@gmail.com",
+        "password": "$2b$12$onJM8Kjz2VuTfQuUPDSeOO5AMsMb7H4w24gIK01FSD21nwVeMxdE6",
+        "sexos": "hombre",
+        "image": "img-1694476047200.jpg",
+        "category": "Admin"
+    }
+]
