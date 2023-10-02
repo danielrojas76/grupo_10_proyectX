@@ -31,6 +31,7 @@ app.set('views', [
 const mainRouter = require('./routes/mainRoutes');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
+const usersRouter = require('./routes/usersRouter');
 
 app.use((req, res, next) => {
     // Si hay una cookie guardada con el email de un usuario
@@ -52,6 +53,7 @@ app.use((req, res, next) => {
 app.use("/", mainRouter);
 app.use("/user", userRouter);
 app.use("/product", productRouter);
+app.use("/Users", usersRouter);
 
 app.listen(process.env.PORT, () => { 
     console.log("Servidor escuchando en Puerto " + process.env.PORT);
