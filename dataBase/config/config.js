@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development",// Cambiar la base 
+    "database": "proyectx_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -16,7 +16,7 @@ module.exports = {
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "proyectx_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

@@ -1,9 +1,5 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require(".");
-const { config } = require("dotenv");
-
 module.exports = (sequelize, DataTypes) => {
-let alias = 'Favoritos';
+let alias = 'User_favorite';
 let cols = {
     id: {
         type: DataTypes.INTEGER,
@@ -27,7 +23,7 @@ let cols = {
 }
 
 let config = {
-    tableName:'Favortios del usuario',
+    tableName:'user_favorite',
     timestamps: false,
 }
 

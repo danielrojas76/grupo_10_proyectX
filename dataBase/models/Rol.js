@@ -1,9 +1,5 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require(".");
-const { config } = require("dotenv")
-
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Categria del usuario';
+    let alias = 'Rol';
 
     let cols = {
         id: {
@@ -17,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     let config = {
-        tableName: 'Categoria del usuario',
+        tableName: 'rol',
         timestamps: false,
     }
     
-    const Category_user = sequelize.define(alias, cols, config);
+    const Rol = sequelize.define(alias, cols, config);
 
-    return Category_user;
+    return Rol;
 }

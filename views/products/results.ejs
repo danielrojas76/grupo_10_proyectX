@@ -17,9 +17,9 @@
     <main>
         <div class="main">
             <section class="section-box">
-                <h2 class="titulares">Resultados de la búsqueda: "<%= result %>"</h2>
+                <h2 class="titulares">Resultados de la búsqueda: <%= searchKeyword %></h2>
 
-                <% products.forEach(product => { %>
+                <% productsSearch.forEach(product => { %>
                 <article class="article-box">
                     <a href="/product/<%= product.id %>/detail">
                         <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">

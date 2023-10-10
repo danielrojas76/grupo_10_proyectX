@@ -1,8 +1,8 @@
-let express = require('express');
-let userController = require('../controllers/userController');
-let multer = require('multer');
-let path = require('path');
-let router = express.Router();
+const express = require('express');
+const userController = require('../controllers/userController');
+const multer = require('multer');
+const path = require('path');
+const router = express.Router();
 const userLog =  require('../middlewares/userLog');
 
 /**********multer configuration***********/ 
@@ -33,5 +33,9 @@ router.get('/admin', userController.admin);
 router.get('/perfil', userController.user);
 /********** SALIR ***********/ 
 router.get('/logout', userController.logout);
+/********** EDITAR USUARIO ***********/ 
+router.get("/:id/edit", userController.userEdit)
+router.put("/:id/edit", upload.single("image"), userController.userUpdate)
+
 
 module.exports = router; 

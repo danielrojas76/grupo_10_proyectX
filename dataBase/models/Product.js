@@ -1,10 +1,6 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require(".");
-const { config } = require("dotenv");
-
 module.exports = (sequelize, DataTypes) => {
 
-let alias = 'Productos';
+let alias = 'Product';
 
 let cols = {
     id: {
@@ -17,6 +13,10 @@ let cols = {
 
     },
     description: {
+        type: DataTypes.STRING(200),
+        allowNull: false,
+    },
+    discount: {
         type: DataTypes.STRING(200),
         allowNull: false,
     },
@@ -37,11 +37,11 @@ let cols = {
 };
 
 let config = {
-    tableName: 'Productos',
+    tableName: 'products',
     timestamps: false,
 };
 
-    const Products = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(alias, cols, config);
 
-    return Products;
+    return Product;
 }

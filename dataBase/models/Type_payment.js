@@ -1,9 +1,5 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require(".");
-const { config } = require("dotenv");
-
 module.exports = (sequelize, DataTypes) => {
-let alias = 'Tipo de Pago';
+let alias = 'Type_payment';
 
 let cols = {
     id: {
@@ -20,7 +16,7 @@ let cols = {
     },
 }
 let config = {
-    tableName: 'Tipe Payment',
+    tableName: 'type_payment',
     timestamps: false,
 }
 

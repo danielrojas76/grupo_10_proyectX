@@ -1,81 +1,143 @@
-const productsModel = require('../models/productsModels')
+const db = require("../database/models")
+const { Op } = require("sequelize")
 
-let productController = {
-    products: function(req, res) {
-        const products = productsModel.findAll();
-        res.render('products', {products});
+
+module.exports = {
+    products: async (req, res) => {
+        try {
+            const products = await db.Product.findAll({ raw: true });
+            res.render("products", { products })
+
+        } catch (error) {
+            console.log(error);
+        }
     },
+    search: async (req, res) => {
+        let searchKeyword = req.query.search
 
-    search: (req, res) => {
-		let searchKeyword = req.query.keywords;
-		let productsFind = productsModel.search(searchKeyword);
-		res.render('results', {products: productsFind, result: searchKeyword})
-	},
+        try {
+            let productsSearch = await db.Product.findAll({
+                where: {
+                    name: { [Op.like]: '%' + searchKeyword + '%' }
+                }
+            });
 
-    detail: function(req, res) {
-        const id = Number(req.params.id);
-        const productFind = productsModel.findById(id)
-        const productsVisited = productsModel.findVisited();
-        res.render('productDetail', {productFind, productsVisited});
+            res.render('results', { productsSearch, searchKeyword });
+        } catch (error) {
+            res.send(error);
+        }
     },
+    detail: async (req, res) => {
+        const productId = req.params.id
 
-    cart: function(req, res){
-        res.render('cart');
+        try {
+            const productFind = await db.Product.findByPk(productId, {
+                raw: true
+            })
+
+            const productsVisited = await db.Product.findAll({
+                where: {
+                    category_id: 1
+                }
+            })
+
+            res.render("productDetail", { productFind, productsVisited })
+
+
+        } catch (error) {
+            console.log(error);
+        }
     },
-
-    stock: (req, res) => {
-        const products = productsModel.findAll();
-        res.render('stock', {products});
+    cart: async (req, res) => {
+        try {
+            res.render("cart")
+        } catch (error) {
+            console.log(error);
+        }
     },
+    stock: async (req, res) => {
+        try {
+            const products = await db.Product.findAll({ raw: true });
+            res.render("stock", { products })
 
-    create: (req, res) => {
-        res.render('productCreate');
+        } catch (error) {
+            console.log(error);
+        }
     },
+    edit: async (req, res) => {
+        const productId = req.params.id
 
-    edit: (req, res) => {
-        const id = Number(req.params.id);
-        const productFind = productsModel.findById(id);
-        res.render('productEdit', {productFind});
+        try {
+            const productFind = await db.Product.findByPk(productId, {
+                raw: true
+            })
+
+            res.render("productEdit", { productFind })
+
+
+        } catch (error) {
+            console.log(error);
+        }
     },
-    store: (req, res) => {
-        if(req.file){
-			let newProduct = {
-				name: req.body.name,
-				price: req.body.price,
-				discount: req.body.discount,
-				category: req.body.category,
-				description: req.body.description,
-				image: req.file.filename,
-			}
-			
-			let productNew = productsModel.productCreate(newProduct)
-			
-			res.redirect("/product/" + productNew.id + "/detail")
-		}
-		else {
-			res.render("product-create-form")
-		}        
+    store: async (req, res) => {
+        const newProduct = await db.Product.create({
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount,
+            category: req.body.category,
+            description: req.body.description,
+            img: req.filename,
+        }, { raw: true })
+        try {
+            res.redirect("/product/" + req.body.id + "/detail", { newProduct })   // DUDA !!        
+
+        } catch (error) {
+            console.log(error);
+        }
     },
+    create: async (req, res) => {
+        try {
+            res.render("productCreate")
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    update: async (req, res) => {
+        const productId = req.params.id
 
-    update: (req, res) => {        
-		let productUpdated = {
-			id: Number(req.params.id),
-			...req.body,
-			image: req.file ? req.file.filename : req.body["old-image"]		
-		}
+        try {
+            const updateProduct = await db.Product.update({
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                category: req.body.category,
+                description: req.body.description,
+                image: req.file.filename,
+            },
+                {
+                    where: { id: productId }
+                })
 
-		productsModel.productUpdate(productUpdated);
 
-		res.redirect("/product/" + productUpdated.id + "/detail");
-	},
+            res.redirect("/product/" + id + "/detail", {updateProduct}) // DUDA !!
 
-    destroy: (req, res) => {
-        const id = Number(req.params.id);
-        
-        productsModel.productDelete(id);
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    destroy: async (req, res) => {
+        const productId = req.params.id
 
-        res.redirect("/")
+        const productDelete = await db.Product.destroy({
+            where: { id: productId }
+        })
+        try {
+            res.redirect("/", {productDelete})
+
+        } catch (error) {
+            console.log(error);
+        }
     }
+
 }
 
-module.exports = productController;

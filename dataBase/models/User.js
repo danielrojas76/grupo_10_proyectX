@@ -1,9 +1,5 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require(".");
-const { config } = require("dotenv");
-
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Usuario';
+    let alias = 'User';
 
     let cols = {
         id: {
@@ -17,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
         last_name: {
             type: DataTypes.STRING(50)
         },
+        date: {
+            type: DataTypes.DATE 
+        },
         email: {
             type: DataTypes.STRING(200),
             allowNull: false,
@@ -29,25 +28,24 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(200),
             allowNull: false,
         },
+        sexo: {
+            type: DataTypes.STRING(50)
+        },
         img: {
             type: DataTypes.STRING(50),
         },
-        category: {
+        rol_id: {    
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: 'Categories', // nombre del modelo (tabla) referenciada
-                key: 'id' // nombre de la clave primaria referenciada
-            }
         }
     }
 
     let config = {
-        tableName: 'Usuarios Vip',
+        tableName: 'user',
         timestamps: false
     }
 
-    const Usuario = sequelize.define(alias, cols, config);
+    const User = sequelize.define(alias, cols, config);
 
-    return Usuario;
+    return User;
 }

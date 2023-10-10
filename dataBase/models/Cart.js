@@ -1,14 +1,10 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require(".");
-const { config } = require("dotenv");
-
 module.exports = (sequelize, DataTypes) => {
-let alias = 'Carrito de Compras';
+let alias = 'Cart';
 
 let cols = {
     id: {
         type: DataTypes.INTEGER,
-        primariKey: true,
+        primaryKey: true,
         autoIncrement: true,
     },
 user_id: {
@@ -41,7 +37,7 @@ payment_id: {
 }
 }
 let config = {
-    tableName: 'Carrito',
+    tableName: 'cart',
     timestamps: false
 }
 
