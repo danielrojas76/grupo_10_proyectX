@@ -67,12 +67,13 @@ module.exports = {
                 email: req.body.email,
                 password: req.body.password,
                 sexos: req.body.sexos,
-                image: req.file.filename
+                image: req.file.filename,
+                rol_id: req.body.email.includes("proyectx") ? 1 : 2                
             }, { raw: true })
-            if (user.error) {
+            if (newUser.error) {
                 res.redirect('/users/register?error=' + user.error);
             } else {
-                res.redirect("/", { newUser })
+                res.redirect("/")
             }
         } catch (error) {
             console.log(error);

@@ -15,10 +15,10 @@ user_id: {
     }
 
 },
-products_id: {
+product_id: {
     type: DataTypes.INTEGER,
     references: {
-        model: 'Products',
+        model: 'Product',
         key: 'id'
     }
 },

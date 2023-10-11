@@ -5,7 +5,7 @@ const dotenv = require('dotenv').config();
 const methodOverride = require('method-override');// Pasar poder usar los métodos PUT y DELETE
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const {userLog} =  require('./middlewares/userLog'); 
+const { userLog } =  require('./middlewares/userLog'); 
 // ************ express() - (don't touch) ************
 const app = express();
 
@@ -32,8 +32,22 @@ const mainRouter = require('./routes/mainRoutes');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
 
-app.use((req, res, next) => {
-    // Si hay una cookie guardada con el email de un usuario
+const db = require('./dataBase/models');
+
+/* app.use( async (req, res, next) => {
+    userEmail = req.cookies.email;
+
+    try {
+        const user = await db.User.findOne({
+            where: {email: userEmail}
+        })
+
+        next({user})
+        
+    } catch (error) {
+        console.log(error);
+    } */
+    /* // Si hay una cookie guardada con el email de un usuario
     if(req.cookies.email){
         const userModel = require('./models/userModels');
 
@@ -44,8 +58,8 @@ app.use((req, res, next) => {
         req.session.user = user;
     }
     // Si no hay cookie de email, no hacemos nada
-    next();
-});
+    next(); */
+/* });  */
 
 
 

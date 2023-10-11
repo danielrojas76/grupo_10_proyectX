@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(200),
             allowNull: false,
         },
-        sexo: {
+        sexos: {
             type: DataTypes.STRING(50)
         },
         img: {
@@ -36,7 +36,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         rol_id: {    
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
+            references: {
+                model: 'Rol',
+                key: 'id' 
+            }
         }
     }
 
@@ -46,6 +50,6 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     const User = sequelize.define(alias, cols, config);
-
+    
     return User;
 }

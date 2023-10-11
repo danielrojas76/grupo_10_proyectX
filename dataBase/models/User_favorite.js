@@ -9,14 +9,14 @@ let cols = {
     user_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'Usuario', 
+            model: 'User', 
             key: 'id' 
         }
     },
     product_id:{
         type: DataTypes.INTEGER,
         references: {
-            model: 'Products',
+            model: 'Product',
             key: 'id' 
         }
     },
