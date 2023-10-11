@@ -32,37 +32,6 @@ const mainRouter = require('./routes/mainRoutes');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
 
-const db = require('./dataBase/models');
-
-/* app.use( async (req, res, next) => {
-    userEmail = req.cookies.email;
-
-    try {
-        const user = await db.User.findOne({
-            where: {email: userEmail}
-        })
-
-        next({user})
-        
-    } catch (error) {
-        console.log(error);
-    } */
-    /* // Si hay una cookie guardada con el email de un usuario
-    if(req.cookies.email){
-        const userModel = require('./models/userModels');
-
-        // Mediante el modelo vamos a buscar los datos del usuario
-        const user = userModel.findByEmail(req.cookies.email);
-
-        // Guardamos en session los datos del mismo
-        req.session.user = user;
-    }
-    // Si no hay cookie de email, no hacemos nada
-    next(); */
-/* });  */
-
-
-
 app.use("/", mainRouter);
 app.use("/user", userRouter);
 app.use("/product", productRouter);

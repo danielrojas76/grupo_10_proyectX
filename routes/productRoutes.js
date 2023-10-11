@@ -29,10 +29,10 @@ router.get('/search', productController.search);
 router.get('/:id/detail', productController.detail);
 
 router.get('/:id/edit', userLog.auth, productController.edit);
-router.put('/:id/edit',upload.single("image"), productController.update); 
+router.put('/:id/edit',upload.single("img"), productController.update); 
 
 router.get('/create', userLog.auth, productController.create);  
-router.post('/create', upload.single("image"), productController.store);  
+router.post('/create', upload.single("img"), productController.store);  
 
 
 router.get('/stock', productController.stock)

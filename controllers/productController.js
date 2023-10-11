@@ -84,12 +84,13 @@ module.exports = {
             name: req.body.name,
             price: req.body.price,
             discount: req.body.discount,
-            category: req.body.category,
+            category_id: req.body.category_id,
             description: req.body.description,
-            img: req.filename,
-        }, { raw: true })
+            img: req.file.filename,
+        })
+        console.log(newProduct)
         try {
-            res.redirect("/product/" + req.body.id + "/detail", { newProduct })   // DUDA !!        
+            res.redirect("/product/" + newProduct.id + "/detail")   // DUDA !!        
 
         } catch (error) {
             console.log(error);
@@ -126,13 +127,13 @@ module.exports = {
         }
     },
     destroy: async (req, res) => {
-        const productId = req.params.id
-
-        const productDelete = await db.Product.destroy({
-            where: { id: productId }
-        })
         try {
-            res.redirect("/", {productDelete})
+            const productId = req.params.id
+    
+            await db.Product.destroy({
+                where: { id: productId }
+            })
+            res.redirect("/")
 
         } catch (error) {
             console.log(error);

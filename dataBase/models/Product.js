@@ -17,7 +17,7 @@ let cols = {
         allowNull: false,
     },
     discount: {
-        type: DataTypes.STRING(200),
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     price: {

@@ -28,7 +28,7 @@
                 <% productsVisited.forEach(product => { %>
                 <article class="article-box">
                     <a href="/product/<%= product.id %>/detail">
-                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                        <img src="/images/products/<%= product.img %>" alt="<%= product.name %>">
                         <div class="description-product">
                             <div class="descripton-specific">
                                 <p class="titulo"><%= product.name.toUpperCase() %></p>
@@ -49,7 +49,7 @@
                 <% productsInSale.forEach(product => { %>
                     <article class="article-box">
                         <a href="/product/<%= product.id %>/detail"> <!-- FALTA DIRECCION -->
-                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                            <img src="/images/products/<%= product.img %>" alt="<%= product.name %>">
                             <div class="description-product">
                                 <div class="descripton-specific">
                                     <p class="titulo"><%= product.name.toUpperCase() %></p>

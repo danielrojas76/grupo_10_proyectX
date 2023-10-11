@@ -1,5 +1,6 @@
 const db = require("../database/models");
 const bcrypt = require('bcrypt');
+const {validationResult} = require('express-validator')
 
 module.exports = {
     getLogin: async (req, res) => {
@@ -10,36 +11,33 @@ module.exports = {
             console.log(error);
         }
     },
-    login: async (req, res) => {                            //CHEQUEAR LO DE LAS VALIDACIONES Y LO DE BUSCAR LA CONTRASEÑA Y MAIL
-        const userId = req.params.id
-        const userEmail = req.params.email
-        const userPassword = req.params.password
-
+    login: async (req, res) => {
+        const userEmail = req.body.email;
+        const userPassword = req.body.password;
+    
         try {
-            const userLogin = await db.User.findByPk(userId, {
-                where: { email: userEmail }
-            })
-
+            const userLogin = await db.User.findOne({
+                where: { email: userEmail },
+                
+            });
             if (!userLogin) {
-                return res.redirect('/user/login?error=El mail o la contraseña son incorrecta')
+                return res.redirect('/user/login?error=El correo o la contraseña son incorrectos');
             }
-
-            const validPw = bcrypt.compareSync(req.body.password, await db.User.findByPk(userId, {
-                where: { password: req.params.password }
-            }))
-
+            const validPw = bcrypt.compareSync(userPassword, userLogin.password);
             if (validPw) {
+                req.session.user = userLogin
                 if (req.body.remember === "on") {
-                    res.cookie("email", userLogin, { maxAge: 1000 * 60 * 60 * 24 * 365 });
+                    res.cookie("email", userEmail, { maxAge: 1000 * 60 * 60 * 24 * 365 });
                 } else {
-                    console.log("No se quiere mantener la sesion iniciada");
+                    console.log("No se quiere mantener la sesión iniciada");
                 }
+                res.redirect("/");
+            } else {
+                res.redirect('/user/login?error=El correo o la contraseña son incorrectos');
             }
-
-            res.redirect("/")
-
         } catch (error) {
-            res.redirect('/user/login?error=el mail o la contraseña son incorrecta')
+            console.log(error);
+            res.redirect('/user/login?error=Ha ocurrido un error en el inicio de sesión');
         }
     },
     password: async (req, res) => {
@@ -51,7 +49,8 @@ module.exports = {
     },
     getRegister: async (req, res) => {
         try {
-            const errors = req.body.errors;
+            const errors = req.query;
+            console.log(errors)
             res.render('register', { errors })
 
         } catch (error) {
@@ -60,20 +59,24 @@ module.exports = {
     },
     register: async (req, res) => {
         try {
-            const newUser = await db.User.create({
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
-                date: req.body.date,
-                email: req.body.email,
-                password: req.body.password,
-                sexos: req.body.sexos,
-                image: req.file.filename,
-                rol_id: req.body.email.includes("proyectx") ? 1 : 2                
-            }, { raw: true })
-            if (newUser.error) {
-                res.redirect('/users/register?error=' + user.error);
+            let errors = validationResult(req)
+            if(errors.isEmpty()){
+                const newUser = await db.User.create({
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    date: req.body.date,
+                    email: req.body.email,
+                    password: bcrypt.hash(req.body.password, 10),
+                    sexos: req.body.sexos,
+                    img: req.file.filename,
+                    rol_id: req.body.email.includes("proyectx") ? 1 : 2                
+                }, { raw: true })  
             } else {
-                res.redirect("/")
+                //lista de errores
+                let queryArray = errors.errors.map(error => '&' + error.path + '=' + error.msg)
+                let queryString = queryArray.join('')
+                
+                res.redirect("/user/register?" + queryString)
             }
         } catch (error) {
             console.log(error);
@@ -115,17 +118,14 @@ module.exports = {
                 email: req.body.email,
                 password: req.body.password,
                 sexos: req.body.sexos,
-                image: req.file.filename
+                img: req.file.filename
             }, {
                 where: { id: userId }
             })
-            res.redirect("/user", { userUpdate })
+            res.redirect("/user")
 
         } catch (error) {
             console.log(error);
         }
     }
 };
-
-
-

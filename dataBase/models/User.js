@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(50)
         },
         img: {
-            type: DataTypes.STRING(50),
+            type: DataTypes.STRING(50)
         },
         rol_id: {    
             type: DataTypes.INTEGER,
