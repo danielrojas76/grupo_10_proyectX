@@ -113,14 +113,14 @@ module.exports = {
                 discount: req.body.discount,
                 category: req.body.category,
                 description: req.body.description,
-                image: req.file.filename,
+                img: req.file ? req.file.filename : req.body["old-image"],
             },
                 {
                     where: { id: productId }
                 })
 
 
-            res.redirect("/product/" + id + "/detail", {updateProduct}) // DUDA !!
+            res.redirect("/product/" + productId + "/detail") // DUDA !!
 
         } catch (error) {
             console.log(error);

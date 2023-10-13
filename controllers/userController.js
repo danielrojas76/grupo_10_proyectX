@@ -50,8 +50,7 @@ module.exports = {
     getRegister: async (req, res) => {
         try {
             const errors = req.query;
-            console.log(errors)
-            res.render('register', { errors })
+            res.render('register', { errors, emailExist: req.query.emailExist })
 
         } catch (error) {
             console.log(error);
@@ -60,22 +59,42 @@ module.exports = {
     register: async (req, res) => {
         try {
             let errors = validationResult(req)
+            let userToCreate = {
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                date: req.body.date,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                sexos: req.body.sexos,
+                img: req.file.filename,
+                rol_id: req.body.email.includes("proyectx") ? 1 : 2  
+            }
+
             if(errors.isEmpty()){
-                const newUser = await db.User.create({
-                    first_name: req.body.first_name,
-                    last_name: req.body.last_name,
-                    date: req.body.date,
-                    email: req.body.email,
-                    password: bcrypt.hash(req.body.password, 10),
-                    sexos: req.body.sexos,
-                    img: req.file.filename,
-                    rol_id: req.body.email.includes("proyectx") ? 1 : 2                
-                }, { raw: true })  
+
+                const usersInDB = await db.User.findAll({
+                    raw: true
+                })
+
+                let emailExisted = ''
+
+                usersInDB.forEach(user => {
+                    if(user.email == req.body.email){
+                        emailExisted = user.email
+                    }
+                });
+
+                if(emailExisted == req.body.email){
+                    return res.redirect('/user/register?emailExist=' + 'El email ya existe')
+                } else {
+                    await db.User.create(userToCreate, {raw: true})
+                    res.redirect('/') 
+                }
+
             } else {
                 //lista de errores
                 let queryArray = errors.errors.map(error => '&' + error.path + '=' + error.msg)
                 let queryString = queryArray.join('')
-                
                 res.redirect("/user/register?" + queryString)
             }
         } catch (error) {

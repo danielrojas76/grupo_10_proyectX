@@ -54,6 +54,9 @@
                 <h5 class="w100">DATOS DE ACCESO</h5>
                 <div class="email w100">
                     <input type="email" name="email" id="" placeholder="Correo Electronico *">
+                    <% if (locals.emailExist) { %>
+                        <div style="color: red;"> <%= emailExist %></div>
+                    <% } %>
                 </div>
                 <div class="contraseña w100">
                     <input type="password" name="password" id="" placeholder="Contraseña *">
