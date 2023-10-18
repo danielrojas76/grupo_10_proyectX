@@ -39,3 +39,5 @@ Me llamo Antonela Carreras, consultor senior con mas de 3 anos de experiencia en
 Si bien revisamos muchas páginas de deportes, nos dimos cuenta de que la mayoría sigue un diseño muy similar. Por eso, nos decidimos por utilizar estas cuatro para poder hacer nuestra página única pero a la vez similar al resto, de manera que sea agradable para los usuarios.
 
 **LINK DE TRELLO**(https://trello.com/b/rzm2MQ2f/sprint-1)
+
+**LINK DATA BASE**(https://drive.google.com/file/d/1EX4Fq_0xC-uGAjU_Pu90IvkFet_0UEoM/view?usp=drive_link)

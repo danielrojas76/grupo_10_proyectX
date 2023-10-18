@@ -12,19 +12,31 @@
 <body>
     <%- include("./partials/header.ejs") %>
         <main>
-           
-            <h1>USUARIO</h1>
-           
-            <div class="circle-box">
-                <img src="" alt="">
+
+            <h1>
+                <%= user.first_name.toUpperCase() %>
+            </h1>
+            <style>
+                .imgUser {
+                    width: 200px;
+                    height: 200px;
+                    margin: auto;
+                    border-radius: 50%;
+                    background-image: url('/images/users/<%= user.img %>');
+                    border: solid 1px black;
+                    background-size: cover;
+                }
+            </style>
+            <div class="imgUser">
+
             </div>
             <div class="btn-box">
                 <a href="/product/favorite"><input class="btn" type="button" value="FAVORITO"></a>
                 <a href="/product/productHistory"><input class="btn" type="button" value="HISTORIAL DE COMPRAS"></a>
                 <a href="/user/edit"><input class="btn" type="button" value="EDITAR"></a>
-                <a href=""><input class="btn" type="button" value="SALIR"></a>
+                <a href="/user/logout"><input class="btn" type="button" value="SALIR"></a>
             </div>
-           
+
         </main>
 
         <%- include("./partials/footer.ejs") %>

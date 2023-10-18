@@ -24,6 +24,9 @@
                 <h5 class="w100">TU NOMBRE</h5>
                 <div class="nombre w100">
                     <input type="text" name="first_name" id="" placeholder="Nombre(s) *">
+                    <% if (locals.errors && errors.first_name) { %>
+                        <div style="color: red;"> <%= errors.first_name %></div>
+                    <% } %>
                 </div>
                 <div class="apellido w100">
                     <input type="text" name="last_name" id="" placeholder="Apellido *">
@@ -43,12 +46,17 @@
                 </div>
                 <div class="uploadImg w100">                        
                     <label for="image"><b>AGREGAR IMAGEN</b></label>
-                    <input type="file" id="image" name="image">                        
+                    <input type="file" id="image" name="image">  
+                    <% if (locals.errors && errors.image) { %>
+                        <div style="color: red;"> <%= errors.image %></div>
+                    <% } %>                      
                 </div>
                 <h5 class="w100">DATOS DE ACCESO</h5>
                 <div class="email w100">
-                    <p style="color: red;"><%= errors %></p>
                     <input type="email" name="email" id="" placeholder="Correo Electronico *">
+                    <% if (locals.emailExist) { %>
+                        <div style="color: red;"> <%= emailExist %></div>
+                    <% } %>
                 </div>
                 <div class="contraseña w100">
                     <input type="password" name="password" id="" placeholder="Contraseña *">

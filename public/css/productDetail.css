@@ -25,6 +25,10 @@ header {
     font-size: 12px;
 }
 
+main{
+    height: 85vh;
+    display: flex;
+}
 
 .burguer-menu {
     border: none;

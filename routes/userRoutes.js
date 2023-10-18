@@ -1,8 +1,8 @@
-let express = require('express');
-let userController = require('../controllers/userController');
-let multer = require('multer');
-let path = require('path');
-let router = express.Router();
+const express = require('express');
+const userController = require('../controllers/userController');
+const multer = require('multer');
+const path = require('path');
+const router = express.Router();
 const userLog =  require('../middlewares/userLog');
 
 /**********multer configuration***********/ 
@@ -17,7 +17,12 @@ const storage = multer.diskStorage({
     }
 })
 
+
 let upload = multer({storage})
+
+/**********validation require***********/ 
+
+const {validationFormRegister} = require('../utils/validations')
 
 /**********LOGIN***********/ 
 router.get('/login', userLog.guest ,userController.getLogin);
@@ -26,12 +31,16 @@ router.post('/login', userController.login)
 router.get('/password', userController.password);
 /**********FORMULARIO DE REGISTRO***********/ 
 router.get('/register', userController.getRegister);
-router.post('/register', upload.single("image"),  userController.register );
+router.post('/register', [upload.single("image"), validationFormRegister], userController.register );
 /**********PERFIL DEL ADMINISTRADOR***********/ 
 router.get('/admin', userController.admin);
 /**********PERFIL DEL USUARIO***********/ 
-router.get('/perfil', userController.user);
+router.get('/profile', userController.user);
 /********** SALIR ***********/ 
 router.get('/logout', userController.logout);
+/********** EDITAR USUARIO ***********/ 
+router.get("/:id/edit", userController.userEdit)
+router.put("/:id/edit", upload.single("image"), userController.userUpdate)
+
 
 module.exports = router; 
