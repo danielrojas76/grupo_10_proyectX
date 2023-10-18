@@ -60,3 +60,16 @@ RETROSPECTIVA
 - Hacer menos:  Dejar de realizar las actividades a ultimo momento.
 
 - Dejar de hacer: Hasta el momento no tenemos inconvenientes al hacer el trabajo, ya que venimos trabajando generalmente bien.
+
+**12/09/2023** - SPRINT 6
+
+- Comenzar a hacer: Deberiamos imprementar dailys para organizarnos mejor y obtener mejores resultados. Mas participación grupal.
+
+- Hacer más: Dedicarle mas tiempo a los contenidos visto en las clases a si mejoramos nuestras habilidades. Hacer mas reuniones para entregar con tiempo en el sprint
+
+- Continuar haciendo: Entregar a tiempo lo pedido en cada sprint. Seguir practicando las clases.
+
+- Hacer menos:  Dejar de realizar las actividades a ultimo momento.
+
+- Dejar de hacer: Hasta el momento no tenemos inconvenientes al hacer el trabajo, ya que venimos trabajando generalmente bien.
+
