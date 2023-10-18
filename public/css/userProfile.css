@@ -29,6 +29,7 @@ h1{
     height: 200px;
     margin: auto;
     border-radius: 50%;
+    background-image: url(/images/users/user.image);
     border: solid 1px black;
 }
 

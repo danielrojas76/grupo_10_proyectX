@@ -35,7 +35,7 @@ router.post('/register', [upload.single("image"), validationFormRegister], userC
 /**********PERFIL DEL ADMINISTRADOR***********/ 
 router.get('/admin', userController.admin);
 /**********PERFIL DEL USUARIO***********/ 
-router.get('/perfil', userController.user);
+router.get('/profile', userController.user);
 /********** SALIR ***********/ 
 router.get('/logout', userController.logout);
 /********** EDITAR USUARIO ***********/ 

@@ -105,7 +105,29 @@ module.exports = {
         res.render('userAdmin')
     },
     user: async (req, res) => {
-        res.render('user')
+        try {
+            // Obtener el usuario de la sesión actual
+            const loggedInUser = req.session.user;
+            if (!loggedInUser) {
+                // Redireccionar a la página de inicio de sesión si el usuario no está logueado
+                return res.redirect('/user/login');
+            }
+            // Obtener todos los datos del usuario de la base de datos utilizando el ID
+            const userFromDB = await db.User.findOne({
+                where: {
+                    id: loggedInUser.id
+                }
+            });
+            if (!userFromDB) {
+                // Manejar el caso en el que no se encuentra al usuario en la base de datos
+                return res.redirect('/user/login?error=No se encontró al usuario en la base de datos');
+            }
+            // Renderizar la vista "user" con todos los datos del usuario logueado
+            res.render('user', { user: userFromDB });
+        } catch (error) {
+            console.log(error);
+            res.redirect('/user/login?error=Ha ocurrido un error al cargar la página de usuario');
+        }
     },
     logout: async (req, res) => {
         res.clearCookie('email');
