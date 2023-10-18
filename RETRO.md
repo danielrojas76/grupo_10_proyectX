@@ -49,7 +49,7 @@ RETROSPECTIVA
 - Dejar de hacer: Hasta el momento no tenemos inconvenientes al hacer el trabajo, ya que venimos trabajando generalmente bien.
 
 
-**12/09/2023** - SPRINT 5
+**17/08/2023** - SPRINT 5
 
 - Comenzar a hacer: Deberiamos imprementar dailys para organizarnos mejor y obtener mejores resultados. Mas participación grupal.
 
