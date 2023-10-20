@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <title>CARRITO DE COMPRAS</title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+        <main>
+            <h1>Carrito de compras</h1>
+            <div class="box-cart product">
+                <div class="box-item media-Product">
+                    <img src="https://topperarg.vtexassets.com/arquivos/ids/291057-1200-1200?width=1200&height=1200&aspect=true"
+                        alt="Producto 1">
+                    <div class="box-item-details">
+                        <h3>Nombre del Producto 1</h3>
+                    </div>
+                    <div class="box-item-details">
+                        <div class="quantity">
+                            <button class="quantity-btn"><i class="fa-solid fa-minus"></i></button>
+                            <span class="quantity-value">1</span>
+                            <button class="quantity-btn"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-item-details">
+                        <p>$35.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-cart mat">
+                <div class="box-item media-Mat">
+                    <img src="/images/LOGO.png" alt="Producto 1">
+                    <div class="box-pay">
+                        <input type="radio" name="formaDePago" id="">
+                        <label>Deposito o Transferencia Bancaria</label>
+                        <input type="radio" name="formaDePago" id="">
+                        <label>Mercadopago - Tarjetas Online, PagoFacil, RapiPago</label>
+                        <input type="radio" name="formaDePago" id="">
+                        <label>Pago Gamer - Tarjetas Visa o MasterCard</label>
+                    </div>
+                    <div class="box-item-details">
+                        <p>TOTAL: $35.00</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

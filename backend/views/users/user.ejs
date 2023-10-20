@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/userProfile.css">
+    <title>PROYECT X | USUARIO</title>
+</head>
+
+<body>
+    <%- include("./partials/header.ejs") %>
+        <main>
+
+            <h1>
+                <%= user.first_name.toUpperCase() %>
+            </h1>
+            <style>
+                .imgUser {
+                    width: 200px;
+                    height: 200px;
+                    margin: auto;
+                    border-radius: 50%;
+                    background-image: url('/images/users/<%= user.img %>');
+                    border: solid 1px black;
+                    background-size: cover;
+                }
+            </style>
+            <div class="imgUser">
+
+            </div>
+            <div class="btn-box">
+                <a href="/product/favorite"><input class="btn" type="button" value="FAVORITO"></a>
+                <a href="/product/productHistory"><input class="btn" type="button" value="HISTORIAL DE COMPRAS"></a>
+                <a href="/user/edit"><input class="btn" type="button" value="EDITAR"></a>
+                <a href="/user/logout"><input class="btn" type="button" value="SALIR"></a>
+            </div>
+
+        </main>
+
+        <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>

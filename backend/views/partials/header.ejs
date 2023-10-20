@@ -1,0 +1,33 @@
+<header>
+        <button class="burguer-menu"><i class="fa-solid fa-bars"></i></button>
+        <img src="/images/LOGO.png" alt="" class="logo">
+        <nav class="nav-bar">
+            <div class="first-nav">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/product">PRODUCTOS</a></li>
+                    <% if (locals.userLog) { %>
+                        <li><a href="/product/create">VENDER</a></li>
+                        <li><a href="/user/profile"><%= locals.userLog.first_name.toUpperCase() %></a></li>
+                        <li><a href="/user/logout">SALIR</a></li>
+                    <% } else { %>
+
+                    <% } %>
+                </ul>
+            </div>
+            <div class="second-nav">
+                
+                <form action="/product/search" method="GET" class="search-box">
+                    <input type="text" name="search" id="search">
+                    <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>    
+                
+                <button onclick="window.location.href='/user/login'">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </button>
+                <button onclick="window.location.href='/product/cart'">
+                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
