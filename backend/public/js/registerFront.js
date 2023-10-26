@@ -64,13 +64,14 @@ window.addEventListener('load', function () {
             return false;
         } 
         
-        if(errores.length>0){
-            e.preventDefault()
+        if(errores.length > 0){
+            e.preventDefault();
             let ulErrores = document.querySelector(".errores ul");
-            errores.forEach(errores =>{
-                ulErrores.innerHTML+= "<li>" + errores + "</li>"
+            ulErrores.innerHTML = ""; // Limpiar la lista de errores antes de agregar nuevos errores
+            errores.forEach(error => {
+                ulErrores.innerHTML += "<li>" + error + "</li>";
             });
-    };
+        }
             
         })
     })
