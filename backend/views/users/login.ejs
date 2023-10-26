@@ -12,17 +12,24 @@
 <body>
     <%- include("./partials/header.ejs") %>
     <main>
+                     
             <div class="box-form">
-                <form action="/user/login" method="post">
+                <form action="/user/login" method="post" class="form-login" id="form-login">
                     <div class="box">
                         <h3 class="ingreso">INICIAR SESIÓN</h3>
+                        <section class="errores">
+                            <ul>
+    
+                            </ul>
+                        </section> 
                         <a class="registrateCon w100" href="/user/password"><u>¿Has olvidado tu contraseña?</u></a>
                         <br>
                         <div class="inicioSesion">
+                            
                             <p style="color: red;"><% error %></p>
-                            <input type="text" class="email" name="email" placeholder="Correo Electronico *" required>
+                            <input type="text" class="email" name="email" placeholder="Correo Electronico *" required id="usuario">
                             <br>
-                            <input type ="password" name="password" placeholder="Contraseña *" required>
+                            <input type ="password" name="password" placeholder="Contraseña *" required id="passw">
                         </div>
                         
                         <div class="terminos w100">
@@ -59,6 +66,9 @@
 
         </main>
         <%- include("./partials/footer.ejs") %>
+
+
+       <script src="/js/loginFront.js" ></script>>
 </body>
 
 </html>
