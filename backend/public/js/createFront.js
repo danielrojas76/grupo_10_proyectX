@@ -18,6 +18,11 @@ window.addEventListener("load",function(){
         } else if(descripcion.value.length < 20){
             errores.push("el campo descripcion debe tener como minimo 20 caracteres")
         }
+        let image= document.querySelector("#image");
+        
+        if(image.value === ""){
+            errores.push("debe cargar una imagen")
+        } 
         
         if(errores.length>0){
                 e.preventDefault()
