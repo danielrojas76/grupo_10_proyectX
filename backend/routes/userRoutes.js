@@ -31,7 +31,7 @@ router.post('/login', userController.login)
 router.get('/password', userController.password);
 /**********FORMULARIO DE REGISTRO***********/ 
 router.get('/register', userController.getRegister);
-router.post('/register', [upload.single("image"), validationFormRegister], userController.register );
+router.post('/register', [upload.single("img"), validationFormRegister], userController.register );
 /**********PERFIL DEL ADMINISTRADOR***********/ 
 router.get('/admin', userController.admin);
 /**********PERFIL DEL USUARIO***********/ 

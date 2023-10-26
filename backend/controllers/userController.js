@@ -66,8 +66,15 @@ module.exports = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 sexos: req.body.sexos,
-                img: req.file.filename,
-                rol_id: req.body.email.includes("proyectx") ? 1 : 2  
+                /* img: req.file.filename, */
+                rol_id: req.body.email.includes("proyectx") ? 1 : 2
+            }
+
+            if(req.file !== undefined){
+                let userToCreateIMG = {
+                    ...userToCreate,
+                    img: req.file.filename
+                }
             }
 
             if(errors.isEmpty()){
@@ -87,7 +94,7 @@ module.exports = {
                 if(emailExisted == req.body.email){
                     return res.redirect('/user/register?emailExist=' + 'El email ya existe')
                 } else {
-                    await db.User.create(userToCreate, {raw: true})
+                    await db.User.create(userToCreateIMG, {raw: true})
                     res.redirect('/') 
                 }
 
