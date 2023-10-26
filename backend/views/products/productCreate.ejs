@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/productCreate.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <title>CREAR PRODUCTO</title>
+  <script src="/js/createFront.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,12 @@
     <main class="mainCreate">
       <h3 class="agregarProducts">AGREGAR PRODUCTO</h3>
       <div class="contentForm">
-        <form class="boxForm"action="/product/create" method="post" enctype="multipart/form-data">
+        <form class="boxForm"action="/product/create" method="post" enctype="multipart/form-data" id="formulario">
+          <section class="errores">
+            <ul>
+              
+            </ul>
+          </section>
           <div class="inputsCompletar w100">
             <label for="price"></label>
             <input type="text" placeholder="Nombres *" id="name" name="name">

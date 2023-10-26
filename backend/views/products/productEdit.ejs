@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/productCreate.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <title>EDITAR</title>
+  <script src="/js/editProduct.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,12 @@
     <main class="mainCreate">
       <h3 class="agregarProducts">EDITAR PRODUCTO</h3>
       <div class="contentForm">
-        <form class="boxForm" action="/product/<%=productFind.id%>/edit/?_method=PUT" method="post" enctype="multipart/form-data">
+        <section class="errores">
+          <ul>
+            
+          </ul>
+        </section>
+        <form class="boxForm" action="/product/<%=productFind.id%>/edit/?_method=PUT" method="post" enctype="multipart/form-data" id="formularioEdit">
           <div class="inputsCompletar w100">
             <label for="name"></label>
             <input type="text" id="name" name="name" placeholder="Nombres *" value="<%=productFind.name%>">

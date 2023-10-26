@@ -80,17 +80,25 @@ module.exports = {
         }
     },
     store: async (req, res) => {
-        const newProduct = await db.Product.create({
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            category_id: req.body.category_id,
-            description: req.body.description,
-            img: req.file.filename,
-        })
-        console.log(newProduct)
+        
+        /* console.log(newProduct) */
         try {
-            res.redirect("/product/" + newProduct.id + "/detail")   // DUDA !!        
+            let newProduct = {
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                category_id: req.body.category_id,
+                description: req.body.description,
+                /* img: req.file.filename, */
+            }
+            if(req.file !== undefined){
+                let newProductIMG = {
+                    ...newProduct,
+                    img: req.file.filename
+                }
+                await db.Product.create(newProduct,{row:true})
+                res.redirect("/product/" + newProductIMG.id + "/detail")   // DUDA !!        
+            }
 
         } catch (error) {
             console.log(error);

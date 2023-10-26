@@ -121,7 +121,7 @@ header i {
     width: 100%;
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: column;
     align-items: center;
 }
@@ -212,6 +212,9 @@ header i {
     text-align: center;
 }
 
+.errores {
+    color: red;
+}
 /*--Footer STAR--*/
 
 .footer {
