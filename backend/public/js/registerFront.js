@@ -48,8 +48,8 @@ window.addEventListener('load', function () {
             if (tiposPermitidos.indexOf(imagen.type) === -1) {
                 errores.push('Formato de imagen no válido. Por favor, selecciona una imagen en formato JPEG, PNG o GIF.');
                 return false;
-            } */
-        
+            }
+        }) */
         
         
         let campoEmail = document.querySelector('#email')
@@ -62,6 +62,12 @@ window.addEventListener('load', function () {
         } else {
             errores.push('Deberá ser un formato de e-mail válido')
             return false;
+        } 
+
+        let image= document.querySelector("#image");
+        
+        if(image.value === ""){
+            errores.push("debe cargar una imagen")
         } 
         
         if(errores.length > 0){
