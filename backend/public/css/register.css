@@ -110,6 +110,11 @@ form {
    margin-top: 15px;
    margin-bottom: 15px;
    width: 90%;
+   margin-left: 60px;
+}
+
+.errores {
+   color: crimson;
 }
 
 .botones-acceso button {

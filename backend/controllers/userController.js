@@ -70,8 +70,9 @@ module.exports = {
                 rol_id: req.body.email.includes("proyectx") ? 1 : 2
             }
 
+            let userToCreateIMG = {}
             if(req.file !== undefined){
-                let userToCreateIMG = {
+                userToCreateIMG = {
                     ...userToCreate,
                     img: req.file.filename
                 }

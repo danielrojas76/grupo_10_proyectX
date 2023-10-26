@@ -1,69 +1,77 @@
 window.addEventListener('load', function () {
     let formulario = document.querySelector('#formulario');
 
-    formulario.addEventListener('submit', function(e){
-        e.preventDefault()
+    formulario.addEventListener('submit', function (e) {
+        let errores = []
+        
         let nombre = document.querySelector('#first_name')
-        if(nombre.value === ''){
-            alert('El campo esta vacio')
+        if (nombre.value === '') {
+            errores.push('El campo Nombre es obligatorio')
+        } else if (nombre.value.length < 2) {
+            errores.push("El campo debe se más de 2 caracteres")
+        };
+        
+        let campoApellido = document.querySelector('#last_name')
+        if (campoApellido.value == "") {
+            errores.push('El campo Apellido es obligatorio ' )
+        } else if (campoApellido.value.length < 2) {
+            errores.push("El campo debe se más de 2 caracteres")
+        };
+        
+        let campoPassword = document.querySelector('#password');
+        let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,}$/;
+        if (campoPassword.value == "") {
+            errores.push('El campo Contraseña es obligatorio')
+        }else if(campoPassword.value.length < 8){
+            errores.push('Deberá tener al menos 8 caracteres.')
+        }else if(regex.test(valor)){
+            errores.push(valor+" es valido :-) !");
+            return true;        
+        }else{
+            errores.push(valor+" NO es valido!");
+            return false;
         }
-    })
-})
+  
 
-/* let campoApellido = document.querySelector('#last_name');
-let campoEmail = document.querySelector('#email');
-let campoPassword = document.querySelector('#password');
-let campoImagen = document.querySelector('#image');     */
-/*     campoNombre.addEventListener('input', e =>{
-            if(this.value == ""){
-                this.nextElementSibling.innerText = '';
-            } else if(this.value.length < 2){
-                alert('El campo debe ser mas de 2 caracteres')
+        let campoImagen = document.querySelector('#imagen')
+        /* campoImagen.addEventListener('change', function(){
+        let imagen = inputImagen.files[0];
+
+            // Verificar si se ha seleccionado una imagen
+            if (!imagen) {
+                errores.push('Por favor, selecciona una imagen.');
+                return false;
             }
-    })
-    campoApellido.addEventListener('input', e => {
-        if(inputActual.value == ""){
-            inputActual.nextElementSibling.innerText = '';
-        } else if(inputActual.value.length < 2){
-            alert('El campo debe se mas de 2 caracteres')
-        }
-    })
-    campoEmail.addEventListener('input', e => {
-        if(inputActual.value == ""){
-            inputActual.nextElementSibling.innerText = '';
-        }else (!validateEmail(email)) 
-        emailError.innerHTML = "Por favor, ingrese un email válido.";
-        return false;
+
+            // Verificar el tipo de archivo (debe ser una imagen)
+            let tiposPermitidos = ['image/jpeg', 'image/png', 'image/gif'];
+            if (tiposPermitidos.indexOf(imagen.type) === -1) {
+                errores.push('Formato de imagen no válido. Por favor, selecciona una imagen en formato JPEG, PNG o GIF.');
+                return false;
+            } */
         
-    })
-    
-    campoImagen.addEventListener('input', e => {
-        if(inputActual){
+        
+        
+        let campoEmail = document.querySelector('#email')
+        let validaremail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        if (campoEmail.value == "") {
+            errores.push('El campo Email debe ser obligatorio')
+        } else if (validaremail.test(campoEmail.value)) {
+            errores.push('Deberá ser un formato de e-mail válido.');
+            return true;
+        } else {
+            errores.push('Deberá ser un formato de e-mail válido')
+            return false;
+        } 
+        
+        if(errores.length>0){
+            e.preventDefault()
+            let ulErrores = document.querySelector(".errores ul");
+            errores.forEach(errores =>{
+                ulErrores.innerHTML+= "<li>" + errores + "</li>"
+            });
+    };
             
-        }
-    })
-    
-    
-    
-    campoPassword.addEventListener('input', e =>{
-        const longitud = e.target.value.length;
-        if(longitud < 8){
-            alert('La contraseña debe tener mas de 8 caracteres')
-        } else if(inputActual.value == ""){
-            inputActual.nextElementSibling.innerText = '';
-        }
-    })
-    
-    
-    formulario.addEventListener('submit', e => {
-        inputs.forEach(inputActual => {
-            if(inputActual.value.length == ""){
-                e.preventDefault();
-                inputActual.nextElementSibling.innerText = 'El campo es obligatorio'
-            }
         })
-        });
-        
     })
-    
-}) */
+
