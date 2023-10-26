@@ -1,4 +1,4 @@
-window.addEventListener("load",  () => {
+window.addEventListener("load", function ()  {
     let formulario = document.querySelector("#form-login");
 
     formulario.addEventListener("submit", function(e) {
@@ -9,9 +9,9 @@ window.addEventListener("load",  () => {
         let validaremail = /^\w+([.-_+]?\w+)@\w+([.-]?\w+)(.\w{2,10})+$/;
         if (campEmail.value == "") {
             errores.push('El campo debe ser obligatorio')
-       } else if (validaremail.test(campEmail.value)) {
-            errores.push('Deberá ser un formato de e-mail válido.');
-            return true;
+       }else if (validaremail.test(campEmail.value)) {
+           errores.push('Deberá ser un formato de e-mail válido.');
+           return true;
         } else {
             errores.push('Deberá ser un formato de e-mail válido')
             return false;

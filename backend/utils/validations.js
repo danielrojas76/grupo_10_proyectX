@@ -73,5 +73,11 @@ module.exports = {
             }
             return true;
         })
+    ],
+    validationLogin: [
+        body("email").notEmpty().withMessage('Debes completar el campo de email').bail().isEmail().withMessage('Debe ser un email valido'),
+
+        body("password").notEmpty().withMessage('Completar el campo de contraseña').bail()
+
     ]
 } 

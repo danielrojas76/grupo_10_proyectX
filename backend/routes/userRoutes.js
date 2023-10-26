@@ -5,6 +5,7 @@ const path = require('path');
 const router = express.Router();
 const userLog =  require('../middlewares/userLog');
 
+
 /**********multer configuration***********/ 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -23,10 +24,10 @@ let upload = multer({storage})
 /**********validation require***********/ 
 
 const {validationFormRegister} = require('../utils/validations')
-
+const {validationLogin} = require('../utils/validations')
 /**********LOGIN***********/ 
 router.get('/login', userLog.guest ,userController.getLogin);
-router.post('/login', userController.login)
+router.post('/login', [validationLogin], userController.login), 
 /**********RECUPERAR CONTRASEÑA***********/ 
 router.get('/password', userController.password);
 /**********FORMULARIO DE REGISTRO***********/ 
