@@ -158,6 +158,10 @@ form {
    color: gray;
 }
 
+.errores {
+   color: crimson;
+}
+
 .registrarse {
    display: flex;
    justify-content: center;
