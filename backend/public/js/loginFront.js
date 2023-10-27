@@ -5,7 +5,7 @@ window.addEventListener("load", function ()  {
        
         let errores = []
 
-        let campEmail = document.querySelector('#usuario')
+        let campEmail = document.querySelector('#email')
         let validaremail = /^\w+([.-_+]?\w+)@\w+([.-]?\w+)(.\w{2,10})+$/;
         if (campEmail.value == "") {
             errores.push('El campo debe ser obligatorio')
@@ -18,7 +18,7 @@ window.addEventListener("load", function ()  {
         }; 
     
 
-        let campoPassword = document.querySelector('#passw');
+        let campoPassword = document.querySelector('#password');
         let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,}$/;
         if (campoPassword.value == "") {
             errores.push('El campo Contraseña es obligatorio')
