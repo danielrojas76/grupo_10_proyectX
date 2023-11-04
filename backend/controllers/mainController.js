@@ -3,17 +3,17 @@ const db = require("../database/models")
 module.exports = {
     home: async (req, res) => {
         try {
-            const productsVisited = await db.Product.findAll({
-                where: {
-                    category_id: 1
-                }
-            })
-            const productsInSale = await db.Product.findAll({
+            const productsRecomended = await db.Product.findAll({
                 where: {
                     category_id: 2
                 }
             })
-            res.render("index", { productsInSale, productsVisited })
+            const productsInSale = await db.Product.findAll({
+                where: {
+                    category_id: 1
+                }
+            })
+            res.render("index", { productsInSale, productsRecomended })
         } catch (error) {
             console.log(error);
         }

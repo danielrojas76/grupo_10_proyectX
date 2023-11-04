@@ -6,6 +6,7 @@ const methodOverride = require('method-override');// Pasar poder usar los métod
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const { userLog } =  require('./middlewares/userLog'); 
+
 // ************ express() - (don't touch) ************
 const app = express();
 
@@ -31,10 +32,12 @@ app.set('views', [
 const mainRouter = require('./routes/mainRoutes');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
+const apiProducts = require('./routes/api/apiProducts');
 
 app.use("/", mainRouter);
 app.use("/user", userRouter);
 app.use("/product", productRouter);
+app.use(apiProducts)
 
 app.listen(process.env.PORT, () => { 
     console.log("Servidor escuchando en Puerto " + process.env.PORT);

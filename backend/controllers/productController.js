@@ -35,13 +35,13 @@ module.exports = {
                 raw: true
             })
 
-            const productsVisited = await db.Product.findAll({
+            const productsRecomended = await db.Product.findAll({
                 where: {
                     category_id: 1
                 }
             })
 
-            res.render("productDetail", { productFind, productsVisited })
+            res.render("productDetail", { productFind, productsRecomended })
 
 
         } catch (error) {
