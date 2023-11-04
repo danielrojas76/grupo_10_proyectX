@@ -5,86 +5,46 @@ const { Op } = require("sequelize")
 const Product = db.Product;
 
 module.exports = {
-    count: async (req, res) => {
+    products: async (req, res) => {
         try {
-            const product = await Product.findAll()
-
-            const response = {
-                meta: {
-                    status: 200,
-                    total: product.length,
-                    url: req.originalUrl
-                },
-
-                data: product
-            }
-
-            res.json(response)
-
-        } catch (error) {
-            console.log(error);
-        }
-    },
-    inSale: async (req, res) => {
-        try {
-            const productsInSale = await db.Product.findAll({
-                where: {
-                    category_id: 1
+            let product = await Product.findAll({
+                attributes: ['id', 'name', 'description', 'category_id']
+            });
+            let productApi = product.map((product) => {
+                return {
+                    id: product.id,
+                    name: product.name,
+                    description: product.description,
+                    category_id: product.category_id,
+                    detail: 'http://localhost:3000/api/products/' + product.id,
                 }
             })
 
-            const response = {
-                meta: {
-                    status: 200,
-                    total: productsInSale.length,
-                    url: req.originalUrl
-                },
-
-                data: productsInSale
-            }
-            res.json(response)
+            res.json({
+                status:200,
+                count: product.length,
+                countByCategory: {},
+                data: productApi
+            });
 
         } catch (error) {
             console.log(error);
         }
     },
-    recomended: async (req, res) => {
+    productsDetail: async (req, res) => { 
         try {
-            const productsRecomended = await db.Product.findAll({
-                where: {
-                    category_id: 2
-                }
+            let oneProduct = await db.Product.findOne({
+                where: {id: req.params.id},
+                attributes: ['id', 'name', 'description', 'category_id', 'img']
             })
 
-            const response = {
-                meta: {
-                    status: 200,
-                    total: productsRecomended.length,
-                    url: req.originalUrl
-                },
-
-                data: productsRecomended
-            }
-            res.json(response)
-
-        } catch (error) {
-            console.log(error);
-
-        }
-    },
-    detail: async (req, res) => { /* NO SE PORQ NO SE MUESTRA EL PRODUCTO */
-        try {
-            const productId = req.params.id;
-            const product = await db.Product.findByPk(productId);
-            const response = {
-                meta: {
-                    status: 200,
-                    total: product.length,
-                    url: req.originalUrl
-                },
-                data: product
-            }
-            res.json(response)
+            res.json({
+                stauts: 200,
+                data: {
+                    ...oneProduct.dataValues,
+                    urlImage: 'http://localhost:3000/img/products/' + oneProduct.dataValues.img
+                }
+            })
 
         } catch (error) {
             console.log(error);

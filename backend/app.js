@@ -32,21 +32,20 @@ app.set('views', [
 const mainRouter = require('./routes/mainRoutes');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
-const apiProducts = require('./routes/api/apiProducts');
 
 app.use("/", mainRouter);
 app.use("/user", userRouter);
+app.use("/product", productRouter);
 
-// ************ API ROUTER(anto y dani) ************ //
+
+
+// ************ API ROUTER ************ //
 
 const userApiRouter = require('./routes/api/userRouter')
+const apiProducts = require('./routes/api/apiProducts');
 
 app.use('/api/user', userApiRouter);
-
-// ************ API ROUTER(pablo y mati) ************ //
-
-app.use("/product", productRouter);
-app.use(apiProducts)
+app.use('/api/products', apiProducts)
 
 
 app.listen(process.env.PORT, () => { 
