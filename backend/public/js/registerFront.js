@@ -31,26 +31,6 @@ window.addEventListener('load', function () {
             errores.push(valor+" NO es valido!");
             return false;
         }
-  
-
-        let campoImagen = document.querySelector('#imagen')
-        /* campoImagen.addEventListener('change', function(){
-        let imagen = inputImagen.files[0];
-
-            // Verificar si se ha seleccionado una imagen
-            if (!imagen) {
-                errores.push('Por favor, selecciona una imagen.');
-                return false;
-            }
-
-            // Verificar el tipo de archivo (debe ser una imagen)
-            let tiposPermitidos = ['image/jpeg', 'image/png', 'image/gif'];
-            if (tiposPermitidos.indexOf(imagen.type) === -1) {
-                errores.push('Formato de imagen no válido. Por favor, selecciona una imagen en formato JPEG, PNG o GIF.');
-                return false;
-            }
-        }) */
-        
         
         let campoEmail = document.querySelector('#email')
         let validaremail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
@@ -67,7 +47,7 @@ window.addEventListener('load', function () {
         let image= document.querySelector("#image");
         
         if(image.value === ""){
-            errores.push("debe cargar una imagen")
+            errores.push("Debe cargar una imagen")
         } 
         
         if(errores.length > 0){
