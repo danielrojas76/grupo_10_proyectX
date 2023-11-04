@@ -48,39 +48,48 @@ module.exports = {
             console.log(error);
         }
     },
-    recomended: async(req, res) => {
+    recomended: async (req, res) => {
         try {
             const productsRecomended = await db.Product.findAll({
-            where: {
-                category_id: 2
+                where: {
+                    category_id: 2
+                }
+            })
+
+            const response = {
+                meta: {
+                    status: 200,
+                    total: productsRecomended.length,
+                    url: req.originalUrl
+                },
+
+                data: productsRecomended
             }
-        })
+            res.json(response)
 
-        const response = {
-            meta: {
-                status: 200,
-                total: productsRecomended.length,
-                url: req.originalUrl
-            },
-
-            data: productsRecomended
-        }
-        res.json(response)
-            
         } catch (error) {
             console.log(error);
-            
+
         }
-        
-    }
+    },
+    detail: async (req, res) => { /* NO SE PORQ NO SE MUESTRA EL PRODUCTO */
+        try {
+            const productId = req.params.id;
+            const product = await db.Product.findByPk(productId);
+            const response = {
+                meta: {
+                    status: 200,
+                    total: product.length,
+                    url: req.originalUrl
+                },
+                data: product
+            }
+            res.json(response)
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
 
 }
-
-
-
-
-/*  const productsVisited = await db.Product.findAll({
-     where: {
-         category_id: 1
-     }
- }) */
