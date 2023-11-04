@@ -36,6 +36,14 @@ app.use("/", mainRouter);
 app.use("/user", userRouter);
 app.use("/product", productRouter);
 
+// ************ API ROUTER ************ //
+
+const userApiRouter = require('./routes/api/userRouter')
+
+app.use('/api/user', userApiRouter);
+
+
+// ************ server ************ //
 app.listen(process.env.PORT, () => { 
     console.log("Servidor escuchando en Puerto " + process.env.PORT);
 });
