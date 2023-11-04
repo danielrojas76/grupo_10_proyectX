@@ -36,8 +36,18 @@ const apiProducts = require('./routes/api/apiProducts');
 
 app.use("/", mainRouter);
 app.use("/user", userRouter);
+
+// ************ API ROUTER(anto y dani) ************ //
+
+const userApiRouter = require('./routes/api/userRouter')
+
+app.use('/api/user', userApiRouter);
+
+// ************ API ROUTER(pablo y mati) ************ //
+
 app.use("/product", productRouter);
 app.use(apiProducts)
+
 
 app.listen(process.env.PORT, () => { 
     console.log("Servidor escuchando en Puerto " + process.env.PORT);
