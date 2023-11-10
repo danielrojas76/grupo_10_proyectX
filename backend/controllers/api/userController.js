@@ -1,4 +1,4 @@
-const db = require("../../database/models");
+const db = require("../../dataBase/models");
 const Op = db.Sequelize.Op;
 
 const controller = {
@@ -7,7 +7,7 @@ const controller = {
         try {
             // users almacena todos los usuarios con los datos que le pedis en "attributes"
             let users = await db.User.findAll({
-                attributes: ['id', 'first_name', 'last_name', 'email']
+                attributes: ['id', 'first_name', 'last_name', 'email', 'img']
             });
             // userApi almacena un array con los detalles que vos elijas usando el metodo "map"
             let usersApi = users.map((user) => {
@@ -17,7 +17,8 @@ const controller = {
                     first_name: user.first_name,
                     last_name: user.last_name,
                     email: user.email,
-                    detail: 'http://localhost:3000/api/user/' + user.id,
+                    detail: 'http://localhost:3001/api/user/' + user.id,
+                    urlImage: 'http://localhost:3001/images/users/' + user.img
                 }
             })
             // respondes a la ruta con un json
@@ -43,7 +44,7 @@ const controller = {
             status: 200,
             data: {
                 ...oneUser.dataValues,
-                urlImage: 'http://localhost:3000/img/user/' + oneUser.dataValues.img
+                urlImage: 'http://localhost:3001/images/users/' + oneUser.dataValues.img
             }
         });
     },

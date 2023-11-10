@@ -7,23 +7,45 @@ const Product = db.Product;
 module.exports = {
     products: async (req, res) => {
         try {
+            /////// productos ///////
             let product = await Product.findAll({
-                attributes: ['id', 'name', 'description', 'category_id']
+                attributes: ['id', 'name', 'description', 'category_id', 'img', 'price']
             });
             let productApi = product.map((product) => {
                 return {
                     id: product.id,
                     name: product.name,
                     description: product.description,
-                    category_id: product.category_id,
-                    detail: 'http://localhost:3000/api/products/' + product.id,
+                    category: product.category_id == 1? 'En oferta' : 'Ultimo agregado',
+                    price: product.price,
+                    detail: 'http://localhost:3001/api/products/' + product.id,
+                    urlImage: 'http://localhost:3001/images/products/' + product.img
                 }
             })
+
+            /////// categorias ///////
+
+            let sale = await Product.findAll({
+                where: {
+                    category_id: 1
+                }
+            });
+
+            let lastAdd = await Product.findAll({
+                where: {
+                    category_id: 2
+                }
+            })
+
+            /////// objeto que entrega la API ///////
 
             res.json({
                 status:200,
                 count: product.length,
-                countByCategory: {},
+                countByCategory: [
+                    {sale: sale.length}, 
+                    {lastAdd: lastAdd.length}
+                ],
                 data: productApi
             });
 
@@ -35,7 +57,7 @@ module.exports = {
         try {
             let oneProduct = await db.Product.findOne({
                 where: {id: req.params.id},
-                attributes: ['id', 'name', 'description', 'category_id', 'img']
+                attributes: ['id', 'name', 'description', 'category_id', 'img', 'price']
             })
 
             res.json({

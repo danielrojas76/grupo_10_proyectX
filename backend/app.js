@@ -44,7 +44,7 @@ app.use("/product", productRouter);
 const userApiRouter = require('./routes/api/userRouter')
 const apiProducts = require('./routes/api/apiProducts');
 
-app.use('/api/user', userApiRouter);
+app.use('/api/users', userApiRouter);
 app.use('/api/products', apiProducts)
 
 
