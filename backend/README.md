@@ -41,3 +41,11 @@ Si bien revisamos muchas p√°ginas de deportes, nos dimos cuenta de que la mayor√
 **LINK DE TRELLO**(https://trello.com/b/rzm2MQ2f/sprint-1)
 
 **LINK DATA BASE**(https://drive.google.com/file/d/1EX4Fq_0xC-uGAjU_Pu90IvkFet_0UEoM/view?usp=drive_link)
+
+## OBSERVACIONES 
+
+* **Base de datos // SQL**: La base de datos se llama 'proyectx_db.sql' y se encuentra en la carpeta ( /src/database/proyectx_db.sql ) Puede realizar la carga del archivo listo para arrancar.
+
+* **Base de datos // CONFIG.JS**: En caso que requiera especificar user/pass/puerto para conectar a la base de datos, esta se encuentra en el archivo 'config.js' y se encuentra en la carpeta  ( /src/database/config/config.js )
+
+* **Base de datos // USER/PASS**: Por defecto se adjunta un usuario ( rocio_carle@proyectox.com / #qwerty12345 ) y un administrador ( admin@proyectox.com / #12345678 ). Sus user/pass son los indicados.
