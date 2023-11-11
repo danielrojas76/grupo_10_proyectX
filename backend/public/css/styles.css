@@ -21,6 +21,10 @@ body {
     background-color: var(--second-color);
 }
 
+main {
+    background-color: white;
+}
+
 /*--Header START--*/
 
 header {

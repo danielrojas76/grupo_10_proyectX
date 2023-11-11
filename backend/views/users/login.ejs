@@ -17,19 +17,21 @@
                 <form action="/user/login" method="post" class="form-login" id="form-login">
                     <div class="box">
                         <h3 class="ingreso">INICIAR SESIÓN</h3>
-                        <section class="errores">
+                        <!-- <section class="errores">
                             <ul>
     
                             </ul>
-                        </section> 
+                        </section>  -->
                         <a class="registrateCon w100" href="/user/password"><u>¿Has olvidado tu contraseña?</u></a>
                         <br>
                         <div class="inicioSesion">
                             
                             <p style="color: red;"><% error %></p>
                             <input type="text" class="email" name="email" placeholder="Correo Electronico *"  id="email">
+                            <p class="is-invalid"></p>
                             <br>
                             <input type ="password" name="password" placeholder="Contraseña *" id="password">
+                            <p class="is-invalid"></p>
                         </div>
                         
                         <div class="terminos w100">
@@ -68,7 +70,7 @@
         <%- include("./partials/footer.ejs") %>
 
 
-       <script src="/js/loginFront.js" ></script>>
+       <script src="/js/loginFront.js" ></script>
 </body>
 
 </html>

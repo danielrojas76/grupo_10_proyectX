@@ -1,7 +1,52 @@
-window.addEventListener("load", function ()  {
+window.addEventListener("load", function () {
     let formulario = document.querySelector("#form-login");
+    let allInputs = Array.from(document.querySelectorAll("#form-login input"));
+    let inputEmail = document.querySelector("#email")
+    let inputPassword = document.querySelector("#password")
+    let validarEmail = /^\w+([.-_+]?\w+)@\w+([.-]?\w+)(.\w{2,10})+$/;
+    let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,}$/;
 
-    formulario.addEventListener("submit", function(e) {
+    allInputs.forEach(input => {
+        input.addEventListener("input", e => {
+            if (input.value.length == 0) {
+                input.classList.add("is-invalid")
+            }
+            else {
+                input.classList.remove("is-invalid")
+                input.nextElementSibling.innerText = ""
+            }
+        })
+
+        formulario.addEventListener("submit", e => {
+            allInputs.forEach(input => {
+                if (input.value.length == 0) {
+                    e.preventDefault();
+                    input.nextElementSibling.innerText = "El campo es obligatorio";
+                }
+            })
+            if (validarEmail.test(inputEmail.value)){
+                inputEmail.nextElementSibling.classList.replace("is-invalid","is-valid")
+                inputEmail.style.color = "green"
+            }           
+            
+            else if (regex.test(inputPassword.value)){
+                inputPassword.nextElementSibling.classList.replace("is-invalid","is-valid")
+            }
+            else {
+                e.preventDefault();
+            }      
+            
+
+
+        })
+
+
+
+
+
+    })
+
+    /* formulario.addEventListener("submit", function(e) {
        
         let errores = []
 
@@ -40,7 +85,7 @@ window.addEventListener("load", function ()  {
                 ulErrores.innerHTML += "<li>" + error + "</li>";
             });
     }
-    })
-   
+    }) */
+
 
 })
