@@ -1,28 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 function CategoryInDb() {
-    const [categorys, setCategorys] = useState({});
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        (async function() {
+        const fetchData = async () => {
             try {
                 const response = await fetch('/api/products');
                 const data = await response.json();
                 console.log(data);
-                setCategorys(data);
+                setCategories(data.countByCategory || []);
             } catch (error) {
                 console.log(error);
             }
-        })();
+        };
+
+        fetchData();
     }, []);
-
-    const categorysArray = categorys.countByCategory || [];
-
-    // Mapeo de categorías
-    const categoryMapping = {
-        sale: "En oferta",
-        lastAdd: "Último agregado",
-    };
 
     return (
         <React.Fragment>
@@ -34,15 +28,13 @@ function CategoryInDb() {
                     </div>
                     <div className="card-body">
                         <div className="row">
-                            {categorysArray.map((category, index) => (
+                            {categories.map((category, index) => (
                                 <div key={index} className="col-lg-6 mb-4">
-                                    {Object.keys(category).map((key, i) => (
-                                        <div className="card bg-dark text-white shadow" key={i}>
-                                            <div className="card-body">
-                                                {`${categoryMapping[key]}: ${category[key]}`}
-                                            </div>
+                                    <div className="card bg-dark text-white shadow">
+                                        <div className="card-body">
+                                            {`${Object.keys(category)[0]}: ${Object.values(category)[0]}`}
                                         </div>
-                                    ))}
+                                    </div>
                                 </div>
                             ))}
                         </div>
