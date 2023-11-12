@@ -1,64 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&family=Victor+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Victor+Mono&display=swap');
 
 * {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    width: 100vw;
-    line-height: 1.5;
-    background-color: #ebebeb;
-}
-main{
-    height: 84vh;
-    background-color: white;
-}
-
-h1{
-    font-size: 35px;
-    text-align: center;
-    padding: 10px;
-}
-
-.circle-box{
-    width: 200px;
-    height: 200px;
     margin: auto;
-    border-radius: 50%;
-    background-image: url(/images/users/user.image);
-    border: solid 1px black;
+   line-height: 1.5;
+    background: white;
 }
 
-.btn-box{
-    width: 350px;
-    height: 340px;
-    margin: auto;
-    margin-top: 30px;
+.w100 {
+    width: 90%;
+    max-width: 500px;
+ }
+
+ /*--ESTILOS DE LOS INPUTS --*/
+
+ .uploadImg {
+    margin-bottom: 10px;
+ }
+
+ /* EMAIL */
+.email input {
+    width: 90%;
+    height: 30px;
+    margin-top: 9px;
+    margin-bottom: 10px;
+ }
+ 
+ /* CONTRASEÑA */
+ .contraseña {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     
-}
-.btn {
-    height: 35px;
-    width: 200px;
-    background-color: black;
-    color: white;
-    margin-top: 15px;
-    box-shadow: 0px 0px 10px rgb(192, 192, 192);
-}
-.btn:hover {
-    box-shadow: 0px 0px 10px rgb(67, 67, 67);
-    background-color: #ebebeb;
-    color: black;
-    
-}
+ }
 
 
+ .contraseña input {
+    width: 90%;
+    height: 30px;
+    margin-bottom: 5px;
+ }
+ 
+ .contraseña p {
+    display: flex;
+    justify-content: center;
+    color: #857d7d;
+    font-size: 12px;
+ }
 
 
 
@@ -70,6 +65,8 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #ebebeb;
+    font-size: 12px;
 }
 
 
@@ -100,13 +97,125 @@ header i {
     margin: 5px;
 }
 
-
-
 /*--Header END--*/
 
-/* ********* main *********/
-/* ********* main *********/
+.mainCreate {
+    height: 84vh;;
+}
 
+.agregarProducts {
+    padding: 10px;
+    text-align: center;
+}
+
+.contentForm {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boxForm { 
+    height: 52%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxMarcas {
+    margin-top: 10px;
+}
+
+.boxMarcas label { 
+    margin-right: 10px;
+}
+
+.boxMarcas select {
+    height: 25px;
+}
+
+.inputsCompletar {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputsCompletar input {
+    width: 90%;
+   height: 30px;
+   margin: auto;
+   margin-top: 8px; 
+   margin-bottom: 8px;  
+}
+
+.genero { 
+    display: flex;
+    align-items: center;
+}
+
+.genero label { 
+    margin-right: 10px;
+}
+
+.genero select { 
+   height: 30px;
+    
+}
+
+.description {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.description input{
+   width: 90%;
+   height: 80px;
+   margin: auto;
+   margin-top: 8px; 
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+}
+
+.date input {
+    width: 90%;
+   height: 30px;
+   margin: auto;
+   margin-top: 8px; 
+}
+
+.buttonAgregar {
+    display: flex;
+    margin: auto;
+}
+
+.buttonAgregar button{
+    width: 90%;
+    height: 40px;
+    margin: auto;
+    margin-top: 8px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 7px;
+}
+
+.imagen {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.errores {
+    color: red;
+}
 /*--Footer STAR--*/
 
 .footer {
@@ -153,11 +262,6 @@ header i {
     list-style: none;
 }
 
-
-a {
-    text-decoration: none;
-    color: black;
-}
 /*-Footer END--*/
 
 
@@ -186,6 +290,7 @@ a {
         list-style: none;
         display: flex;
         align-items: center;
+
     }
 
     .first-nav ul li {
@@ -193,7 +298,14 @@ a {
         height: 67px;
         margin: 0 5px;
         align-items: center;
+        list-style: none;
     }
+
+    .first-nav ul li a {
+        text-decoration: none;
+        color: #373742;
+    }
+
 
     .second-nav {
         width: 45%;
@@ -217,6 +329,11 @@ a {
 
     /*--nav bar--*/
 
+    .article-box {
+        width: 47%;
+        max-width: 360px;
+    }
+
 
 }
 
@@ -225,7 +342,7 @@ a {
     /*--nav bar--*/
 
     .search-box {
-        width: 200px;
+        width: 202.8px;
         height: 35px;
         padding: 5px;
         border: 1px solid black;
@@ -234,13 +351,11 @@ a {
         display: flex;
         justify-content: end;
         align-items: center;
-
     }
 
     .search-box i {
         background-color: white;
         font-size: x-large;
-
     }
 
     .search-box input {
@@ -251,5 +366,8 @@ a {
 
     /*--nav bar--*/
 
+    .article-box {
+        width: 29%;
+    }
 
 }

@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/productCreate.css">
+  <link rel="stylesheet" href="/css/userEdit.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <title>EDITAR USUARIO</title>
 </head>
@@ -14,6 +14,20 @@
   <%-include('./partials/header.ejs')%>
     <main class="mainCreate">
       <h3 class="agregarProducts">EDITAR USUARIO</h3>
+      <style>
+        .imgUser {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border-radius: 50%;
+            background-image: url('/images/users/<%= userFind.img %>');
+            border: solid 1px black;
+            background-size: cover;
+        }
+    </style>
+    <div class="imgUser">
+
+    </div>
       <div class="contentForm">
         <form class="boxForm" action="/user/<%= userFind.id%>/edit/?_method=PUT" method="post" enctype="multipart/form-data"> 
           <div class="inputsCompletar w100">
