@@ -50,14 +50,30 @@ module.exports = {
     },
     cart: async (req, res) => {
         try {
+            // Obtener el carrito de sessionStorage si existe
+            /* if(req.sessionStorage.getItem('carrito')){
+
+                const carrito = JSON.parse(req.sessionStorage.getItem('carrito')) || [];
+    
+                res.render("cart", { carrito });
+            } */
             res.render("cart")
+
         } catch (error) {
             console.log(error);
+            res.status(500).send("Internal Server Error");
         }
     },
     stock: async (req, res) => {
         try {
-            const products = await db.Product.findAll({ raw: true });
+            const products = await db.Product.findAll({
+                attributes: ['id', 'name', 'description', 'img', 'price', 'discount'],
+                include: [{
+                    model: db.Category,
+                    attributes: ['id', 'name'],
+                    as: 'category'
+                }]
+            });
             res.render("stock", { products })
 
         } catch (error) {
@@ -96,8 +112,8 @@ module.exports = {
                     ...newProduct,
                     img: req.file.filename
                 }
-                await db.Product.create(newProduct,{row:true})
-                res.redirect("/product/" + newProductIMG.id + "/detail")   // DUDA !!        
+                const product = await db.Product.create(newProductIMG,{raw:true})
+                res.redirect("/product/" + product.id + "/detail")   // DUDA !!        
             }
 
         } catch (error) {
@@ -106,7 +122,8 @@ module.exports = {
     },
     create: async (req, res) => {
         try {
-            res.render("productCreate")
+            const categorias = await db.Category.findAll({raw:true})
+            res.render("productCreate", {categorias})
         } catch (error) {
             console.log(error);
         }

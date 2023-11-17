@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/stock.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/nav.css">
     <title>STOCK</title>
 </head>
 
@@ -30,15 +32,23 @@
                         <th class="ocultar">Dto</th>
                         <th><i class="fa-solid fa-trash"></i></th>
                     </tr>
-                    <tr class="stock">
-                        <td><a href="/product/:id/edit"><i class="fa-solid fa-file-pen"></i></a></td>
-                        <td class="ocultar"><img src="/images/Zapatilla Celeste.jpg" alt="" width="50vw"></td>
-                        <td class="ocultar">Adidas</td>
-                        <td>Zapatillas</td>
-                        <td>$45.000</td>
-                        <td class="ocultar">----</td>
-                        <td><i class="fa-solid fa-trash"></i></td>
-                    </tr>
+                    <% products.forEach(element => { %>
+                     
+                        <tr class="stock">
+                            <td><a href="/product/<%= element.id %>/edit"><i class="fa-solid fa-file-pen"></i></a></td>
+                            <td class="ocultar"><img src="/images/products/<%= element.img %>" alt="" width="50vw"></td>
+                            <td class="ocultar"><%= element.category.name %></td>
+                            <td><%= element.name %></td>
+                            <td><%= element.price %></td>
+                            <td><%= element.discount %></td>
+                            <td>
+                                <form action="/product/<%=element.id%>/delete/?_method=DELETE" method="POST">
+                                    <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                                <!-- <i class="fa-solid fa-trash"></i> -->
+                            </td>
+                        </tr>
+                    <% }) %>
                    
 
                 </table>
@@ -46,7 +56,9 @@
             <!-- </section> -->
 
         </main>
-        <%- include("./partials/footer.ejs") %>         
+        <%- include("./partials/footer.ejs") %>     
+        <%- include('./partials/scripts') %>    
+        <script src="/js/nav.js"></script>
     </body>
 
 </html>

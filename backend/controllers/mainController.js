@@ -18,4 +18,11 @@ module.exports = {
             console.log(error);
         }
     },
+    order: async function (req, res) {
+        let order = await db.Order.findByPk(req.params.id, {
+          include: db.Order.OrderItems,
+        });
+        //res.send(order);
+        return res.render("order", { order });
+    },
 }

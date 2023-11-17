@@ -1,33 +1,35 @@
 <header>
-        <button class="burguer-menu"><i class="fa-solid fa-bars"></i></button>
-        <img src="/images/LOGO.png" alt="" class="logo">
-        <nav class="nav-bar">
-            <div class="first-nav">
-                <ul>
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="/product">PRODUCTOS</a></li>
-                    <% if (locals.userLog) { %>
-                        <li><a href="/product/create">VENDER</a></li>
-                        <li><a href="/user/profile"><%= locals.userLog.first_name.toUpperCase() %></a></li>
-                        <li><a href="/user/logout">SALIR</a></li>
-                    <% } else { %>
-
-                    <% } %>
-                </ul>
-            </div>
-            <div class="second-nav">
-                
-                <form action="/product/search" method="GET" class="search-box">
-                    <input type="text" name="search" id="search">
-                    <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>    
-                
-                <button onclick="window.location.href='/user/login'">
-                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+    <a href="/"><img src="/images/LOGO.png" alt="Logo" class="logo"></a>
+    <button id="abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+    <nav class="nav" id="nav">
+        <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+        
+        <!-- /////// navegacion ///////////-->
+        <ul class="nav-list">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/product">Productos</a></li>
+        </ul>
+        <!-- /////// search ///////////-->
+        <form action="/product/search" method="GET" class="search-box">
+            <input type="text" class="buscardor" name="search" id="search">
+            <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <!-- /////// icono usuario ///////////-->  
+        <% if (locals.userLog) { %>
+                <button class="imgUser" onclick="window.location.href='/user/profile'" style="background-image: url('/images/users/<%= userLog.img %>');">
+                    
                 </button>
-                <button onclick="window.location.href='/product/cart'">
-                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+        <% } else { %>
+            <button class="iconUser" onclick="window.location.href='/user/login'">
+                <i class="fa fa-user-circle" aria-hidden="true"></i><p>INGRESAR</p>
+            </button>
+            
+        <% }  %>
+         <!-- /////// icono carrito ///////////-->
+         <button class="iconUser" onclick="window.location.href='/product/cart'">
+            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                <span class="cart-number" style="padding: 5px;background-color: red; color:white; border-radius: 5%;">0</span>
+        </button>
+        
+    </nav>
+</header>

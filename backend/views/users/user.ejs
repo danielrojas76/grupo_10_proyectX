@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/userProfile.css">
     <title>PROYECT X | USUARIO</title>
 </head>
 
 <body>
     <%- include("./partials/header.ejs") %>
-        <main>
+    <main>
 
             <h1>
                 <%= user.first_name.toUpperCase() %>
             </h1>
             <style>
-                .imgUser {
+                .imgUserProfile {
                     width: 200px;
                     height: 200px;
                     margin: auto;
@@ -27,12 +28,15 @@
                     background-size: cover;
                 }
             </style>
-            <div class="imgUser">
+            <div class="imgUserProfile">
 
             </div>
             <div class="btn-box">
                 <a href="/product/favorite"><input class="btn" type="button" value="FAVORITO"></a>
-                <a href="/product/productHistory"><input class="btn" type="button" value="HISTORIAL DE COMPRAS"></a>
+                <a href="/user/order"><input class="btn" type="button" value="ORDENES DE COMPRA"></a>
+                <% if (locals.user.rol_id == 1) { %>
+                    <a href="/product/stock"><input class="btn" type="button" value="LISTADO DE PRODUCTOS"></a>
+                <% } %>
                 <a href="/user/<%= user.id %>/edit"><input class="btn" type="button" value="EDITAR"></a>
                 <a href="/user/logout"><input class="btn" type="button" value="SALIR"></a>
             </div>
@@ -40,6 +44,8 @@
         </main>
 
         <%- include("./partials/footer.ejs") %>
+        <%- include('./partials/scripts') %>
+        <script src="/js/nav.js"></script>
 </body>
 
 </html>

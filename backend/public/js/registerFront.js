@@ -16,8 +16,8 @@ window.addEventListener('load', function () {
                 input.classList.add("is-invalid")
             }
             else {
-                input.classList.remove("is-invalid")
-                input.nextElementSibling.innerText = ""
+                input.classList.remove("is-invalid") 
+              input.nextElementSibling.innerText = "" 
             }
         })
 

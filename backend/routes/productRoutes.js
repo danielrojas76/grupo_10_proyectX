@@ -36,7 +36,7 @@ router.post('/create', upload.single("img"), productController.store);
 
 
 router.get('/stock', productController.stock)
-router.get('/cart', productController.cart);
+router.get('/cart', userLog.authCart ,productController.cart);
 
 router.delete("/:id/delete", userLog.auth, productController.destroy);
 

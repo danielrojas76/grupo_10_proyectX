@@ -38,7 +38,7 @@
 
         <div class="main">
             <section class="section-box">
-                <h2 class="titulares">PRODUCTOS RECOMENDADOS</h2>
+                <h2 class="titulares">PRODUCTOS</h2>
                 <% productsRecomended.forEach(product => { %>
                 <article class="article-box">
                     <a href="/product/<%= product.id %>/detail">
@@ -134,7 +134,8 @@
     </main>
 
     <%- include('./partials/footer.ejs') %>
-
+    <%- include('./partials/scripts.ejs') %>
+    <script src="/js/nav.js"></script>
 </body>
 
 </html>

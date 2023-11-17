@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>proyectX</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Toastr -->
+    <!-- <link href="/vendor/toastr/toastr.css" rel="stylesheet" /> -->
+    <!-- Your custom styles (optional) -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+        <main class="mt-5 pt-4">
+            <div class="container wow fadeIn animated">
+                <h2 class="mt-5 mb-3 h2 text-center"> Pedido Nro <%= order.id %>
+                </h2>
+                <div class="card my-5">
+                    <div class="card-body">
+                        <table class="table table-responsive-md mb-0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50px;">
+                                        <strong>#</strong>
+                                    </th>
+                                    <th class="th-lg">
+                                        <strong>Producto</strong>
+                                    </th>
+                                    <th class="th-lg ">
+                                        <strong>Precio</strong>
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Cantidad</strong>
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Subtotal</strong>
+                                    </th>
+                                    <th style="width: 50px;"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="cartRows">
+                                <% for( let i=0; i < order.orderItems.length; i++ ) { %>
+                                    <tr>
+                                        <th scope="row">
+                                            <%= i + 1 %>
+                                        </th>
+                                        <td>
+                                            <%= order.orderItems[i].name %>
+                                        </td>
+                                        <td>$ <%= order.orderItems[i].price%>
+                                        </td>
+                                        <td class="text-center">
+                                            <%= order.orderItems[i].quantity%>
+                                        </td>
+                                        <td class="text-center">$
+                                            <%= order.orderItems[i].price * order.orderItems[i].quantity%>
+                                        </td>
+                                    </tr>
+
+                                    <% } %>
+                            </tbody>
+                        </table>
+                        <div class="card-footer text-right">
+                            <h2>Total: <span class="totalAmount">$ <%= order.total %></span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header text-center">
+                        Detalles de la compra
+                    </div>
+                    <form class="card-body" id="checkoutCart">
+                        <div class="row">
+                            <div class=" col-md-6 mb-4">
+                                <p><strong>Tipo Envio:</strong>
+                                    <%= order.shippingMethod %>
+                                </p>
+                            </div>
+                            <div class=" col-md-6 mb-4">
+                                <p><strong>Pago:</strong>
+                                    <%= order.paymentMethod %>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
+            <%- include('./partials/scripts') %>
+            <script src="/js/nav.js"></script>
+</body>
+
+</html>

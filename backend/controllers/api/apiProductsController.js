@@ -114,4 +114,14 @@ module.exports = {
             });
         }
     },
+    checkout: async (req, res) => {
+        //return res.send({ ...req.body, userId: req.session.userLog.id });
+        let order = await db.Order.create(
+          { ...req.body, userId: req.session.user.id },
+          {
+            include: db.Order.OrderItems,
+          }
+        );
+        res.json({ ok: true, status: 200, order: order });
+      },
 };

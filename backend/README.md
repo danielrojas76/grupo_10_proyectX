@@ -40,7 +40,7 @@ Si bien revisamos muchas p√°ginas de deportes, nos dimos cuenta de que la mayor√
 
 **LINK DE TRELLO**(https://trello.com/b/rzm2MQ2f/sprint-1)
 
-**LINK DATA BASE**(https://drive.google.com/file/d/1EX4Fq_0xC-uGAjU_Pu90IvkFet_0UEoM/view?usp=drive_link)
+**LINK DATA BASE**(https://drive.google.com/file/d/1TiDjpr8oiErpmqD7Fkg7RF_wWBz78kH_/view?usp=drive_link)
 
 ## OBSERVACIONES 
 

@@ -17,7 +17,7 @@ const controller = {
                     first_name: user.first_name,
                     last_name: user.last_name,
                     email: user.email,
-                    detail: 'http://localhost:3001/api/user/' + user.id,
+                    detail: 'http://localhost:3001/api/users/' + user.id,
                     urlImage: 'http://localhost:3001/images/users/' + user.img
                 }
             })

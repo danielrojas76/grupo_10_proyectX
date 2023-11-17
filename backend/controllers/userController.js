@@ -26,12 +26,13 @@ module.exports = {
             const validPw = bcrypt.compareSync(userPassword, userLogin.password);
             if (validPw) {
                 req.session.user = userLogin
+                
                 if (req.body.remember === "on") {
                     res.cookie("email", userEmail, { maxAge: 1000 * 60 * 60 * 24 * 365 });
                 } else {
                     console.log("No se quiere mantener la sesión iniciada");
                 }
-                res.redirect("/");
+                res.redirect("/user/profile");
             } else {
                 res.redirect('/user/login?error=El correo o la contraseña son incorrectos');
             }
@@ -160,21 +161,26 @@ module.exports = {
         const userId = req.params.id
 
         try {
-            const userUpdate = await db.User.update({
+            await db.User.update({
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 date: req.body.date,
                 email: req.body.email,
-                password: req.body.password,
                 sexos: req.body.sexos,
-                img: req.file.filename
+                img: req.file ? req.file.filename :req.body["old-img"]
             }, {
                 where: { id: userId }
             })
-            res.redirect("/user")
+            res.redirect("/user/profile")
 
         } catch (error) {
             console.log(error);
         }
+    },
+    orderList: async (req, res)=>{
+        let orders = await db.Order.findAll({
+            where: { userId: req.session.user.id },
+        });
+        return res.render("users/orderList", { orders });
     }
 };

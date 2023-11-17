@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 const router = express.Router();
 const userLog =  require('../middlewares/userLog');
+const authMiddleware = require('../middlewares/authMiddleware')
 
 
 /**********multer configuration***********/ 
@@ -25,6 +26,7 @@ let upload = multer({storage})
 
 const {validationFormRegister} = require('../utils/validations')
 const {validationLogin} = require('../utils/validations')
+
 /**********LOGIN***********/ 
 router.get('/login', userLog.guest ,userController.getLogin);
 router.post('/login', [validationLogin], userController.login), 
@@ -41,7 +43,8 @@ router.get('/profile', userController.user);
 router.get('/logout', userController.logout);
 /********** EDITAR USUARIO ***********/ 
 router.get("/:id/edit", userController.userEdit)
-router.put("/:id/edit", upload.single("image"), userController.userUpdate)
-
+router.put("/:id/edit", upload.single("img"), userController.userUpdate)
+/********** LISTA DE ORDENES ***********/ 
+router.get('/order',authMiddleware, userController.orderList);
 
 module.exports = router; 

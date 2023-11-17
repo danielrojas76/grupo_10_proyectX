@@ -7,15 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/productCreate.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/nav.css">
   <title>CREAR PRODUCTO</title>
 </head>
 
 <body>
-  <%-include('./partials/header.ejs')%>
+  <%- include("./partials/header.ejs") %>
     <main class="mainCreate">
       <h3 class="agregarProducts">AGREGAR PRODUCTO</h3>
       <div class="contentForm">
-        <form class="boxForm"action="/product/create" method="post" enctype="multipart/form-data" id="formulario">
+        <form class="boxForm" action="/product/create" method="post" enctype="multipart/form-data" id="formulario">
           <section class="errores">
             <ul>
 
@@ -29,12 +31,15 @@
             <label for="discount"></label>
             <input type="number" placeholder="Descuento % *" id="discount" name="discount">
           </div>
-          <div class="genero">          
+          <div class="genero">
             <label for="category" class="marcas"><b>CATEGORIA</b></label>
             <select name="category_id" id="category" class="form-input">
-            <option value="">Elegí</option>
-            <option value="1">En oferta</option>
-            <option value="2" >Últimos agregados</option>
+              <option value="">Elegí</option>
+              <% categorias.forEach(element => { %>
+                <option value="<%= element.id %>"> <%= element.name %> </option>
+              <% }) %>
+              <!-- <option value="1">En oferta</option>
+              <option value="2">Últimos agregados</option> -->
             </select>
           </div>
           <div class="description w100">
@@ -43,17 +48,18 @@
           </div>
           <div class="date w100">
             <label for="image" class="imagen"><b>AGREGAR IMAGEN</b></label>
-						<input type="file" id="image" name="img" placeholder="Ej: 15">
+            <input type="file" id="image" name="img" placeholder="Ej: 15">
           </div>
           <div class="buttonAgregar w100">
             <button type="submit">AGREGAR</button>
           </div>
-      </form>
-    </div>
+        </form>
+      </div>
     </main>
     <%-include("./partials/footer.ejs") %>
-  <script src="/js/createFront.js"></script>
-
+      <script src="/js/scripts.js"></script>
+      <%- include('./partials/scripts') %>
+        <script src="/js/nav.js"></script>
 </body>
 
 
