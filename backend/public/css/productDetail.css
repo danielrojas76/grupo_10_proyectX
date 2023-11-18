@@ -11,7 +11,14 @@
     box-sizing: border-box;
 }
 
+body{
+    height: 100vh;
+}
 
+main{
+    max-height: fit-content;
+    min-height: 100%;
+}
 
 .primer-sector {
     margin: auto;

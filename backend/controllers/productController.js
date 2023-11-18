@@ -138,7 +138,7 @@ module.exports = {
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
-                category: req.body.category,
+                category_id: req.body.category_id,
                 description: req.body.description,
                 img: req.file ? req.file.filename : req.body["old-img"],
             },

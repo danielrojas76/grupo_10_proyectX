@@ -8,12 +8,14 @@
 }
 
 body {
+    height: 100vh;
     width: 100vw;
     line-height: 1.5;
     background-color: #ebebeb;
 }
 main{
-    height: 84vh;
+    max-height: fit-content;
+    min-height: 100%;
     background-color: white;
 }
 
