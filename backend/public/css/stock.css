@@ -60,6 +60,15 @@ td{
  
 }
 
+.form-delete button {
+    border: none;
+    background-color: white;
+}
+
+.stock td a i {
+  color: black
+}
+
 
 
 
@@ -75,7 +84,7 @@ table{
 }
 
 table, th, td{
-    border: 1px solid black;
+    border: 1px solid #ccc;
     font-size: 0.9rem;
     
 }

@@ -23,6 +23,18 @@ body {
  .uploadImg {
     margin-bottom: 10px;
  }
+ .is-valid {
+    color: #06c069;
+  }
+  
+  .is-invalid {
+    color: #ff0017;
+  }
+  p {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 11.5px;
+    text-align: center;
+  }
 
  /* EMAIL */
 .email input {
@@ -126,6 +138,7 @@ body {
 .description {
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
 }
 
 .description input{

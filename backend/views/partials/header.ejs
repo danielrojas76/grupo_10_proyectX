@@ -6,29 +6,37 @@
         
         <!-- /////// navegacion ///////////-->
         <ul class="nav-list">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/product">Productos</a></li>
+            <li><a href="/"><b>INICIO</b></a></li>
+            <li><a href="/product"><b>PRODUCTOS</b></a></li>
         </ul>
         <!-- /////// search ///////////-->
         <form action="/product/search" method="GET" class="search-box">
-            <input type="text" class="buscardor" name="search" id="search">
-            <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" class="buscardor" name="search" id="search" style="
+            padding: 5px;
+            padding-right: 35px;
+            border-radius: 5px 0 0 5px;
+            border: 0;
+            outline: none;
+        ">
+            <button type="submit" class="lupita" style=" border: 0;
+            padding: 5px;
+            background-color: white;"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <!-- /////// icono usuario ///////////-->  
         <% if (locals.userLog) { %>
-                <button class="imgUser" onclick="window.location.href='/user/profile'" style="background-image: url('/images/users/<%= userLog.img %>');">
+                <button class="imgUser" onclick="window.location.href='/user/profile'" style="background-image: url('/images/users/<%= userLog.img %>'); border: none;">
                     
                 </button>
         <% } else { %>
             <button class="iconUser" onclick="window.location.href='/user/login'">
-                <i class="fa fa-user-circle" aria-hidden="true"></i><p>INGRESAR</p>
+                <i class="fa fa-user-circle" aria-hidden="true"></i><!-- s -->
             </button>
             
         <% }  %>
          <!-- /////// icono carrito ///////////-->
          <button class="iconUser" onclick="window.location.href='/product/cart'">
             <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                <span class="cart-number" style="padding: 5px;background-color: red; color:white; border-radius: 5%;">0</span>
+                <span class="cart-number" style="padding: 5px;background-color: #0071ae; color:white; border-radius: 5%;">0</span>
         </button>
         
     </nav>

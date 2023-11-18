@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/nav.css">
@@ -13,8 +13,10 @@
 
 <body>
     <%- include("./partials/header.ejs") %>
-<div class="card-body">
-    <table class="table table-responsive-md mb-0">
+    <main style="height: 90vh;">
+        <h2 style="text-align: center;"><b>ORDENES DE COMPRA</b></h2>
+<div class="card-body" style="width: 100%; max-width: 1000px; margin: auto;">
+    <table class="table table-responsive-md mb-0" style="width: 100%; border: 1px solid #ccc; border-collapse: collapse; margin: 0; padding: 0; table-layout: fixed;">
         <thead>
             <tr>
                 <th style="width: 50px;">
@@ -61,6 +63,11 @@
                 <% }); %>
         </tbody>
     </table>
+    
     <script src="/js/nav.js"></script>
+    
 </div>
+
+</main>
+<%- include('./partials/footer') %>
 </body>

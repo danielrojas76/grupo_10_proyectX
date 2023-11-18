@@ -5,12 +5,12 @@ module.exports = {
         try {
             const productsRecomended = await db.Product.findAll({
                 where: {
-                    category_id: 2
+                    category_id: 1
                 }
             })
             const productsInSale = await db.Product.findAll({
                 where: {
-                    category_id: 1
+                    category_id: 3
                 }
             })
             res.render("index", { productsInSale, productsRecomended })

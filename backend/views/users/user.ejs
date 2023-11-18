@@ -16,6 +16,7 @@
 
             <h1>
                 <%= user.first_name.toUpperCase() %>
+                <%= user.last_name.toUpperCase() %>
             </h1>
             <style>
                 .imgUserProfile {
@@ -24,7 +25,7 @@
                     margin: auto;
                     border-radius: 50%;
                     background-image: url('/images/users/<%= user.img %>');
-                    border: solid 1px black;
+                    border: none;
                     background-size: cover;
                 }
             </style>
@@ -32,7 +33,7 @@
 
             </div>
             <div class="btn-box">
-                <a href="/product/favorite"><input class="btn" type="button" value="FAVORITO"></a>
+               <!--  <a href="/product/favorite"><input class="btn" type="button" value="FAVORITO"></a> -->
                 <a href="/user/order"><input class="btn" type="button" value="ORDENES DE COMPRA"></a>
                 <% if (locals.user.rol_id == 1) { %>
                     <a href="/product/stock"><input class="btn" type="button" value="LISTADO DE PRODUCTOS"></a>

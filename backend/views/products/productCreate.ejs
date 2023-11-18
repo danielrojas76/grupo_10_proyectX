@@ -18,22 +18,27 @@
       <h3 class="agregarProducts">AGREGAR PRODUCTO</h3>
       <div class="contentForm">
         <form class="boxForm" action="/product/create" method="post" enctype="multipart/form-data" id="formulario">
-          <section class="errores">
+          <!-- <section class="errores">
             <ul>
 
             </ul>
-          </section>
+          </section> -->
           <div class="inputsCompletar w100">
             <label for="price"></label>
             <input type="text" placeholder="Nombres *" id="name" name="name">
+            <p class="is-invalid"></p>
             <label for="price"></label>
             <input type="number" placeholder="Precio *" id="price" name="price">
+            <p class="is-invalid"></p>
             <label for="discount"></label>
             <input type="number" placeholder="Descuento % *" id="discount" name="discount">
+            <p class="is-invalid"></p>
           </div>
           <div class="genero">
             <label for="category" class="marcas"><b>CATEGORIA</b></label>
+            <p class="is-invalid"></p>
             <select name="category_id" id="category" class="form-input">
+              
               <option value="">Elegí</option>
               <% categorias.forEach(element => { %>
                 <option value="<%= element.id %>"> <%= element.name %> </option>
@@ -45,10 +50,12 @@
           <div class="description w100">
             <label for="description"></label>
             <input type="text" placeholder="Descripcion *" id="description" name="description">
+            <p class="is-invalid"></p>
           </div>
           <div class="date w100">
             <label for="image" class="imagen"><b>AGREGAR IMAGEN</b></label>
             <input type="file" id="image" name="img" placeholder="Ej: 15">
+            <p class="is-invalid"></p>
           </div>
           <div class="buttonAgregar w100">
             <button type="submit">AGREGAR</button>
@@ -60,6 +67,7 @@
       <script src="/js/scripts.js"></script>
       <%- include('./partials/scripts') %>
         <script src="/js/nav.js"></script>
+        <script src="/js/createFront.js"></script>
 </body>
 
 

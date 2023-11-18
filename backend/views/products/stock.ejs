@@ -42,7 +42,7 @@
                             <td><%= element.price %></td>
                             <td><%= element.discount %></td>
                             <td>
-                                <form action="/product/<%=element.id%>/delete/?_method=DELETE" method="POST">
+                                <form action="/product/<%=element.id%>/delete/?_method=DELETE" method="POST" class="form-delete">
                                     <button type="submit"><i class="fa-solid fa-trash"></i></button>
                                 </form>
                                 <!-- <i class="fa-solid fa-trash"></i> -->

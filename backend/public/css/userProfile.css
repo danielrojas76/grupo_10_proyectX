@@ -51,11 +51,27 @@ h1{
     box-shadow: 0px 0px 10px rgb(192, 192, 192);
 }
 .btn:hover {
-    box-shadow: 0px 0px 10px rgb(67, 67, 67);
-    background-color: #ebebeb;
-    color: black;
     
+    /* background-color: #ebebeb; */
+    color: gray
+    
+
 }
+
+/*-- ORDER --*/
+thead th {
+    background-color:#ebebeb;
+    text-transform: uppercase;
+}
+
+table td {
+    font-size: 15px;
+    padding: 8px;
+    text-align: center;
+}
+
+
+/*-- ORDER END --*/
 
 
 
@@ -122,9 +138,13 @@ a {
 
 /*==media queries==*/
 
-@media (min-width: 480px) {
+@media (max-width: 500px) {
 
-   
+   table td {
+    font-size: 13px;
+    padding: 1px;
+    text-align: center;
+   }
 
 }
 

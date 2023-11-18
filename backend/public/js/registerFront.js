@@ -20,6 +20,7 @@ window.addEventListener('load', function () {
               input.nextElementSibling.innerText = "" 
             }
         })
+    
 
         formulario.addEventListener("submit", e => {
             allInputs.forEach(input => {

@@ -213,8 +213,42 @@ h1 {
 }
 
 
-
 /*--categorias END--*/
+
+/*-- ORDER --*/
+
+thead th {
+    background-color:#ebebeb;
+    text-transform: uppercase;
+}
+
+table td {
+    font-size: 15px;
+    padding: 8px;
+    text-align: center;
+}
+/* table {
+    width: 200px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 4px;
+
+}
+
+th {
+    text-align: left;
+
+}
+
+thead th {
+    background-color: #ececec;
+} */
+
+
+/*-- ORDER END --*/
 
 /*--Main END--*/
 

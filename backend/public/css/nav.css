@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&family=Victor+Mono&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 header {
@@ -62,7 +64,8 @@ header {
     display: none;
 }
 
-@media screen and (max-width: 550px) {
+
+@media screen and (max-width: 646px) {
     .abrir-menu,
     .cerrar-menu {
         display: block;
