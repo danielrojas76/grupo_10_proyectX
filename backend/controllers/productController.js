@@ -101,6 +101,7 @@ module.exports = {
         
         /* console.log(newProduct) */
         try {
+            if(errors.isEmpty()){
             let newProduct = {
                 name: req.body.name,
                 price: req.body.price,
@@ -116,6 +117,12 @@ module.exports = {
                 }
                 const product = await db.Product.create(newProductIMG,{raw:true})
                 res.redirect("/product/" + product.id + "/detail")   // DUDA !!        
+            }
+            } else {
+                //lista de errores
+                let queryArray = errors.errors.map(error => '&' + error.path + '=' + error.msg)
+                let queryString = queryArray.join('')
+                res.redirect("/product/create?" + queryString)
             }
 
         } catch (error) {

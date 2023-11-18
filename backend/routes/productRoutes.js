@@ -5,6 +5,10 @@ const path = require("path");
 const userLog =  require('../middlewares/userLog');
 
 const productController = require('../controllers/productController');
+/**********validation require***********/ 
+
+const {validationProducts} = require('../utils/validations')
+const {validationEdits} = require('../utils/validations')
 
 // =========== img upload ================ //
 let storage = multer.diskStorage({
@@ -28,12 +32,11 @@ router.get('/search', productController.search);
 
 router.get('/:id/detail', productController.detail);
 
-router.get('/:id/edit', userLog.auth, productController.edit);
-router.put('/:id/edit',upload.single("img"), productController.update); 
-
 router.get('/create', userLog.auth, productController.create);  
-router.post('/create', upload.single("img"), productController.store);  
+router.post('/create', [upload.single("img"), validationProducts], productController.store);
 
+router.get('/:id/edit', userLog.auth, productController.edit);
+router.put('/:id/edit',[upload.single("img"), validationEdits], productController.update); 
 
 router.get('/stock', productController.stock)
 router.get('/cart', userLog.authCart ,productController.cart);
