@@ -15,13 +15,16 @@
 
 body {
     width: 100%;
+    height: 100vh;
     font-family: "Open Sans", sans-serif;
     line-height: 1.5;
     background-color: var(--second-color);
 }
 
 main {
+    box-sizing: content-box;
     background-color: white;
+    min-height: 100%;
 }
 
 /* //////// header ////////////*/

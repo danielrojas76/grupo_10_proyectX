@@ -37,7 +37,7 @@ module.exports = {
 
             const productsRecomended = await db.Product.findAll({
                 where: {
-                    category_id: 1
+                    category_id: productFind.category_id
                 }
             })
 
@@ -88,7 +88,9 @@ module.exports = {
                 raw: true
             })
 
-            res.render("productEdit", { productFind })
+            let categorias = await db.Category.findAll({raw:true}) 
+
+            res.render("productEdit", { productFind, categorias })
 
 
         } catch (error) {
@@ -138,7 +140,7 @@ module.exports = {
                 discount: req.body.discount,
                 category: req.body.category,
                 description: req.body.description,
-                img: req.file ? req.file.filename : req.body["old-image"],
+                img: req.file ? req.file.filename : req.body["old-img"],
             },
                 {
                     where: { id: productId }

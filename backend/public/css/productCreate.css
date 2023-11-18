@@ -77,7 +77,6 @@ body {
 }
 
 .contentForm {
-    height: 100%;
     width: 80vw;
     margin: auto;
     display: flex;

@@ -19,7 +19,7 @@
         <main>
             <div class="box-form">
                 <section class="primer-sector">
-                    <img src="/images/products/<%= productFind.img %>" alt="" width="100%">
+                    <img src="/images/products/<%= productFind.img %>" alt="" width="400px">
                    <!--  <br>
                     <h2 class="titulo-descripcion"><b>DESCIPCION</b></h2>
                     <br> -->
@@ -44,18 +44,7 @@
                             </div>
                             <div class="btn">
                                 <button class="carrito agregar_carrito" data-id="<%= productFind.id %>">AÑADIR AL CARRITO</button>
-                                <div class="btn-secundarios">
-                                    <!-- <a href="" class="btn-type"><button><i class="fa-regular fa-heart"></i></button></a> -->
-                                    <% if (locals.userLog) { %>
-                                        <form class="btn-type"
-                                            action="/product/<%=productFind.id%>/delete/?_method=DELETE" method="POST"
-                                            style="display:inline-flex">
-                                            <button type="submit"><i class="fa-solid fa-trash"></i></button>
-                                        </form>
-                                        <a href="/product/<%=productFind.id%>/edit" class="btn-type"><button><i
-                                                    class="fa-solid fa-file-pen"></i></button></a>
-                                        <% } %>
-                                </div>
+                                
                             </div>
                             <div class="logos-datos">
                                 <ul>

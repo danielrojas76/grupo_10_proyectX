@@ -22,7 +22,7 @@
           <ul>
             
           </ul> -->
-        </section>
+        <img src="/images/products/<%= productFind.img %>" alt="" width="10%">
         <form class="boxForm" action="/product/<%=productFind.id%>/edit/?_method=PUT" method="post" enctype="multipart/form-data" id="formularioEdit">
           <div class="inputsCompletar w100">
             <label for="name"></label>
@@ -39,9 +39,10 @@
             <label for="category" class="marcas"><b>CATEGORIA</b></label>
             <select name="category" id="category" class="form-input">
             <option value="">Elegí</option>
-            <option value="in-sale" <%= productFind.category === "in-sale" ? "selected" : "" %>>En oferta</option>
-            <option value="visited" <%= productFind.category === "visited" ? "selected" : "" %>>Últimos agregados</option>
-            </select>
+            <% categorias.forEach(element => { %>
+              <option value="<%= element.id %>"> <%= element.name %> </option>
+            <% }) %>
+          </select>
           </div>
           <div class="description w100">
             <label for="description"></label>
@@ -51,6 +52,7 @@
           <div class="date w100">
             <label for="image" class="imagen"><b>AGREGAR IMAGEN</b></label>
 						<input type="file" id="image" name="img">
+            <input type="hidden" name="old-img" value="<%= productFind.img %>">
             <p class="is-invalid"></p>
             <input type="hidden" name="old-image" value="<%= productFind.image%>">
             <p class="is-invalid"></p>
