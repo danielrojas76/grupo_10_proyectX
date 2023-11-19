@@ -88,7 +88,7 @@ module.exports = {
                 raw: true
             })
 
-            let categorias = await db.Category.findAll({raw:true}) 
+            let categorias = await db.Category.findAll({ raw: true })
 
             res.render("productEdit", { productFind, categorias })
 
@@ -98,26 +98,26 @@ module.exports = {
         }
     },
     store: async (req, res) => {
-        
+
         /* console.log(newProduct) */
         try {
-            if(errors.isEmpty()){
-            let newProduct = {
-                name: req.body.name,
-                price: req.body.price,
-                discount: req.body.discount,
-                category_id: req.body.category_id,
-                description: req.body.description,
-                /* img: req.file.filename, */
-            }
-            if(req.file !== undefined){
-                let newProductIMG = {
-                    ...newProduct,
-                    img: req.file.filename
+            if (errors.isEmpty()) {
+                let newProduct = {
+                    name: req.body.name,
+                    price: req.body.price,
+                    discount: req.body.discount,
+                    category_id: req.body.category_id,
+                    description: req.body.description,
+                    /* img: req.file.filename, */
                 }
-                const product = await db.Product.create(newProductIMG,{raw:true})
-                res.redirect("/product/" + product.id + "/detail")   // DUDA !!        
-            }
+                if (req.file !== undefined) {
+                    let newProductIMG = {
+                        ...newProduct,
+                        img: req.file.filename
+                    }
+                    const product = await db.Product.create(newProductIMG, { raw: true })
+                    res.redirect("/product/" + product.id + "/detail")   // DUDA !!        
+                }
             } else {
                 //lista de errores
                 let queryArray = errors.errors.map(error => '&' + error.path + '=' + error.msg)
@@ -131,8 +131,8 @@ module.exports = {
     },
     create: async (req, res) => {
         try {
-            const categorias = await db.Category.findAll({raw:true})
-            res.render("productCreate", {categorias})
+            const categorias = await db.Category.findAll({ raw: true })
+            res.render("productCreate", { categorias })
         } catch (error) {
             console.log(error);
         }
@@ -163,7 +163,7 @@ module.exports = {
     destroy: async (req, res) => {
         try {
             const productId = req.params.id
-    
+
             await db.Product.destroy({
                 where: { id: productId }
             })
@@ -173,6 +173,5 @@ module.exports = {
             console.log(error);
         }
     }
-
 }
 
