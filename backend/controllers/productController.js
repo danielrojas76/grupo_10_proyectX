@@ -160,6 +160,19 @@ module.exports = {
             console.log(error);
         }
     },
+
+
+    stockVolver: async (req, res) => {
+        try {
+           
+            res.redirect("/user/profile")
+        } catch (error) {
+            console.log(error);
+        }
+
+        },
+
+
     destroy: async (req, res) => {
         try {
             const productId = req.params.id
@@ -172,7 +185,10 @@ module.exports = {
         } catch (error) {
             console.log(error);
         }
+
+       
     }
+   
 
 }
 

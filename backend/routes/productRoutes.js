@@ -43,4 +43,6 @@ router.get('/cart', userLog.authCart ,productController.cart);
 
 router.delete("/:id/delete", userLog.auth, productController.destroy);
 
+router.get("/user/profile", productController.stockVolver);
+
 module.exports = router;
