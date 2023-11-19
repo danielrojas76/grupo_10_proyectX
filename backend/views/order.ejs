@@ -34,7 +34,8 @@
                 </h2>
                 <div class="card my-5" style="display: flex; justify-content: center;">
                     <div class="card-body" style="width: 100%; max-width: 1000px; margin: auto;">
-                        <table class="table table-responsive-md mb-0" style="width: 100%; border: 1px solid #ccc; border-collapse: collapse; margin: 0; padding: 0; table-layout: fixed;">
+                        <table class="table table-responsive-md mb-0"
+                            style="width: 100%; border: 1px solid #ccc; border-collapse: collapse; margin: 0; padding: 0; table-layout: fixed;">
                             <thead>
                                 <tr>
                                     <th style="width: 50px;">
@@ -78,31 +79,40 @@
                             </tbody>
                         </table>
                         <div class="card-footer text-right">
-                            <h3>Total: <span class="totalAmount">$ <%= order.total %></span></h3>
+                            <h3>TOTAL: <span class="totalAmount">$ <%= order.total %></span></h3>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header text-center">
-                       <b>DETALLES DE LA COMPRA</b>
-                    </div>
-                    <br>
-                    <form class="card-body" id="checkoutCart">
-                        <div class="row">
-                            <div class=" col-md-6 mb-4">
+                <br>
+                <div style="display: flex; justify-content: center;">                
+                <div class="card" style="border: 1px solid #ebebeb; display: flex; flex-direction: column; width: 50%;">
+                        <div class="card-header text-center" style="text-align: center; background-color: #ebebeb;">
+                            <b>DETALLES DE LA COMPRA</b>
+                        </div>
+                        <br>
+                        <form class="card-body" id="checkoutCart">
+                            <div class="row">
+                            <div class=" col-md-6 mb-4" style="
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-evenly;
+                            ">
                                 <p><strong>TIPO DE ENVIO:</strong>
                                     <%= order.shippingMethod %>
                                 </p>
-                            </div>
-                            <br>
-                            <div class=" col-md-6 mb-4">
                                 <p><strong>PAGO:</strong>
                                     <%= order.paymentMethod %>
                                 </p>
                             </div>
+                            <br>
+                            <div class=" col-md-6 mb-4">
+                                
+                                
+                            </div>
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
         </main>
         <%- include('./partials/footer') %>

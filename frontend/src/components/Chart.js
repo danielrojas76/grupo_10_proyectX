@@ -36,10 +36,10 @@ console.log(productArray);
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Título</th>
+                                <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>Precio</th>
-                                <th>Category</th>
+                                <th>Categoria</th>
                             </tr>
                         </thead>
                         <tbody>
