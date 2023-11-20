@@ -162,10 +162,15 @@ module.exports = {
     },
     destroy: async (req, res) => {
         try {
-            const productId = req.params.id
+
+            db.OrderItem.destroy({
+                where:{
+                    productId: req.params.id
+                }
+            })
 
             await db.Product.destroy({
-                where: { id: productId }
+                where: { id: req.params.id }
             })
             res.redirect("/")
 
