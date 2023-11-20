@@ -100,8 +100,9 @@ module.exports = {
     store: async (req, res) => {
 
         /* console.log(newProduct) */
+        let errors = []
         try {
-            if (errors.isEmpty()) {
+            if (errors) {
                 let newProduct = {
                     name: req.body.name,
                     price: req.body.price,
