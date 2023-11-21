@@ -100,8 +100,9 @@ module.exports = {
     store: async (req, res) => {
 
         /* console.log(newProduct) */
+        let errors = []
         try {
-            if (errors.isEmpty()) {
+            if (errors) {
                 let newProduct = {
                     name: req.body.name,
                     price: req.body.price,
@@ -162,10 +163,15 @@ module.exports = {
     },
     destroy: async (req, res) => {
         try {
-            const productId = req.params.id
+
+            db.OrderItem.destroy({
+                where:{
+                    productId: req.params.id
+                }
+            })
 
             await db.Product.destroy({
-                where: { id: productId }
+                where: { id: req.params.id }
             })
             res.redirect("/")
 
