@@ -38,7 +38,7 @@ router.post('/create', [upload.single("img"), validationProducts], productContro
 router.get('/:id/edit', userLog.auth, productController.edit);
 router.put('/:id/edit',[upload.single("img"), validationEdits], productController.update); 
 
-router.get('/stock', productController.stock)
+router.get('/stock', userLog.auth ,productController.stock)
 router.get('/cart', userLog.authCart ,productController.cart);
 
 router.delete("/:id/delete", userLog.auth, productController.destroy);

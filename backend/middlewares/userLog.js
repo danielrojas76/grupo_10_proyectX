@@ -15,18 +15,18 @@ const middlewares = {
     auth: (req, res, next) => {
         const session = req.session.user;
 
-        if (session.rol_id == 1) {
-
-            next();
+        if (session) {
+            if(session.rol_id == 1){
+                next();
+            }
         }
         else {
-            res.send("No tienes acceso a esta ruta")
+           return res.redirect("/")
         }
     },
     
     guest: (req, res, next) => {
         if (!req.session.user) {
-            
             next();
         }
         else {
