@@ -91,7 +91,8 @@ main{
 
 }
 
-.carrito {
+
+.carrito{
     height: 35px;
     width: 100%;
     margin-bottom: 10px;
@@ -99,6 +100,10 @@ main{
     color: white;
     align-items: center;
     padding: 0 7px;
+}
+.carrito:hover{
+    box-shadow: 0px 0px 10px rgb(55, 55, 55);
+    background-color: rgb(37, 37, 37);
 }
 
 .btn-secundarios {
