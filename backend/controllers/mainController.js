@@ -8,12 +8,19 @@ module.exports = {
                     category_id: 1
                 }
             })
+
+            const productsRecomen = await db.Product.findAll({
+                where: {
+                    category_id: 2
+                }
+            })
+            
             const productsInSale = await db.Product.findAll({
                 where: {
                     category_id: 3
                 }
             })
-            res.render("index", { productsInSale, productsRecomended })
+            res.render("index", { productsInSale, productsRecomended, productsRecomen })
         } catch (error) {
             console.log(error);
         }

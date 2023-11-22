@@ -35,8 +35,8 @@
                             </h1>
                             <div class="precio-box">
                                 <b>$</b>
-                                <p class="precio"><b><%=(productFind.price - (productFind.price * (productFind.discount
-                                            / 100)))%></b></p>
+                                <p class="precio"><b><%=Math.floor((productFind.price - (productFind.price * (productFind.discount
+                                            / 100)))).toFixed(2)%></b></p>
                                 <p class="precio-viejo"><del>$<%= productFind.price %></del></p>
                                 <p class="descuento"><b>
                                         <%= productFind.discount %>%

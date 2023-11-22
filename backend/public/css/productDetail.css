@@ -161,6 +161,7 @@ h3 {
 }
 
 .article-box {
+    max-width: 200px;
     width: fit-content;
     margin: 4px;
     background-color: #fff;

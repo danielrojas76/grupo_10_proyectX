@@ -6,7 +6,7 @@ module.exports = {
     products: async (req, res) => {
         try {
             // Sincronizar modelos con la base de datos
-            await db.sequelize.sync();
+            /* await db.sequelize.sync(); */
 
             // Obtener todos los productos con sus categorías
             const products = await db.Product.findAll({

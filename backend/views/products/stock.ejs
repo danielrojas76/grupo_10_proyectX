@@ -41,8 +41,8 @@
                             <td class="ocultar"><img src="/images/products/<%= element.img %>" alt="" width="50vw"></td>
                             <td class="ocultar"><%= element.category.name %></td>
                             <td><%= element.name %></td>
-                            <td><%= element.price %></td>
-                            <td><%= element.discount %></td>
+                            <td>$<%= element.price %></td>
+                            <td style="color: red;">%<%= element.discount %></td>
                             <td>
                                 <form action="/product/<%=element.id%>/delete/?_method=DELETE" method="POST" class="form-delete">
                                     <button type="submit"><i class="fa-solid fa-trash"></i></button>
