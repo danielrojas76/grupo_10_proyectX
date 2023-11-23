@@ -1,19 +1,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Victor+Mono&display=swap');
 
-body{
-    height: 100vh;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+
 .not-found img{
-    display: flex;
-    align-items: center;
-    min-height: 100%;
-    min-width: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
 }
                 /* Footer */
 /*--Footer STAR--*/
 .footer {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
     width: 100%;
     height: 60px;
     background-color: #373742;
