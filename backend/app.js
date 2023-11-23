@@ -36,9 +36,6 @@ const productRouter = require('./routes/productRoutes');
 app.use("/", mainRouter);
 app.use("/user", userRouter);
 app.use("/product", productRouter);
-app.use((req, res, next) => {
-    res.status(404).render("not-found")
-})
 
 
 // ************ API ROUTER ************ //
@@ -49,6 +46,9 @@ const apiProducts = require('./routes/api/apiProducts');
 app.use('/api/users', userApiRouter);
 app.use('/api/products', apiProducts)
 
+app.use((req, res, next) => {
+    res.status(404).render("not-found")
+})
 
 app.listen(process.env.PORT, () => { 
     console.log("Servidor escuchando en Puerto " + process.env.PORT);
