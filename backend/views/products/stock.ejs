@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stock.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <title>STOCK</title>
+</head>
+
+<body>
+    <%-include('./partials/header.ejs')%>
+        <main class='main'>
+            <h1>ADMINIS/LISTAR</h1>
+            <form class="btn-crear" action="/product/create" method="get">
+                <button ></i>CREAR</button>                
+            </form>
+            <br>
+            
+           <!--  <div class="btn-listar"><BUTton><i class="fa-solid fa-list"></i>LISTAR</BUTton></div> -->
+
+            <!-- <section> -->
+                <table>
+                    <tr class="principal">
+                        <th>Editar</th>
+                        <th class="ocultar">Imagen</th>
+                        <th class="ocultar">Marca</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th class="ocultar">Dto</th>
+                        <th><i class="fa-solid fa-trash"></i></th>
+                    </tr>
+                    <% products.forEach(element => { %>
+                     
+                        <tr class="stock">
+                            <td><a href="/product/<%= element.id %>/edit"><i class="fa-solid fa-file-pen"></i></a></td>
+                            <td class="ocultar"><img src="/images/products/<%= element.img %>" alt="" width="50vw"></td>
+                            <td class="ocultar"><%= element.category.name %></td>
+                            <td><%= element.name %></td>
+                            <td>$<%= element.price %></td>
+                            <td style="color: red;">%<%= element.discount %></td>
+                            <td>
+                                <form action="/product/<%=element.id%>/delete/?_method=DELETE" method="POST" class="form-delete">
+                                    <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                                <!-- <i class="fa-solid fa-trash"></i> -->
+                            </td>
+                        </tr>
+                    <% }) %>
+                   
+
+                </table>
+                <br>
+                <a href="/user/profile" style="text-decoration: none"><input class="btn" type="button" value="VOLVER"></a>
+
+            <!-- </section> -->
+
+        </main>
+        <%- include("./partials/footer.ejs") %>     
+        <%- include('./partials/scripts') %>    
+        <script src="/js/nav.js"></script>
+    </body>
+
+</html>

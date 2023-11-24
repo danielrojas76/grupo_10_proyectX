@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Victor+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.not-found img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+                /* Footer */
+/*--Footer STAR--*/
+.footer {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #373742;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container_footer_1 {
+    width: 47%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: start;
+}
+
+.container_footer_1 p {
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.container_footer_2 {
+    width: 47%;
+}
+
+.container_footer_2 ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container_footer_2 ul li {
+    list-style: none;
+}
+
+.container_footer_2 ul li i {
+    color: #fff;
+    font-size: 25px;
+    list-style: none;
+}
+
+/*-Footer END--*/
+
+/*==media queries==*/
+
+@media (min-width: 480px) {
+   
+
+
+}
+
+@media (min-width: 790px) {
+
+   
+
+    .article-box {
+        width: 29%;
+    }
+   .principal{
+    font-size: 20px;
+   }
+}

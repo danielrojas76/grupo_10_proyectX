@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/userEdit.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <title>EDITAR USUARIO</title>
+</head>
+
+<body>
+  <%-include('./partials/header.ejs')%>
+    <main class="mainCreate">
+      <h3 class="agregarProducts">EDITAR USUARIO</h3>
+      <style>
+        .imgUserProfile {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border-radius: 50%;
+            background-image: url('/images/users/<%= userFind.img %>');
+            border: solid 1px black;
+            background-size: cover;
+        }
+    </style>
+    <div class="imgUserProfile">
+
+    </div>
+      <div class="contentForm">
+        <form class="boxForm" action="/user/<%= userFind.id%>/edit/?_method=PUT" method="post" enctype="multipart/form-data"> 
+          <div class="inputsCompletar w100">
+            <label for="name"></label>
+            <input type="text" id="first_name" name="first_name" placeholder="NOMBRES *" value="<%=userFind.first_name%>"> 
+            <label for="last_name"></label>
+            <input type="text" id="last_name" name="last_name" placeholder="APELLIDOS *" value="<%=userFind.last_name%>"> 
+            <label for="date"></label>
+            <input type="date" name="date" id="" value="<%= userFind.date%>"> 
+          </div>
+          <div class="genero">          
+            <label for="category" class="marcas"><b>SEXOS</b></label>
+            <select name="sexos" id="sexos" class="form-input">
+            <option value="">Elegí</option>
+            <option value="hombre" <%=userFind.sexos === "hombre" ? "selected" : "" %>>HOMBRE</option> 
+            <option value="mujer" <%=userFind.sexos === "mujer" ? "selected" : "" %>>MUJER</option> 
+            <option value="otros" <%=userFind.sexos === "otros" ? "selected" : "" %>>OTROS</option> 
+            </select>
+          </div>          
+          <div class="date w100">
+            <label for="image" class="imagen"><b>AGREGAR IMAGEN</b></label>
+						<input type="file" id="image" name="img">   
+            <input type="hidden" name="old-img" value="<%= userFind.img %>">         
+          </div>
+          <div class="email w100" style="display: flex;
+          justify-content: center;">
+            <p style="color: red;"><%= errors %></p>
+            <input type="email" name="email" id="email" placeholder="Correo Electronico *" value="<%=userFind.email%>">
+        </div>
+        
+
+          <div class="buttonAgregar w100">
+            <button type="submit">EDITAR</button>
+          </div>
+      </form>
+    </div>
+    </main>
+    <%-include("./partials/footer.ejs") %>
+    <script src="/js/nav.js"></script>
+</body>
+
+
+
+
+</html>

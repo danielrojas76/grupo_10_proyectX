@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <title>PROYECT X | LOGIN</title>
+</head>
+
+<body>
+    <%- include("./partials/header.ejs") %>
+    <main>
+                     
+            <div class="box-form">
+                <form action="/user/login" method="post" class="form-login" id="form-login">
+                    <div class="box">
+                        <h3 class="ingreso">INICIAR SESIÓN</h3>
+                        <!-- <section class="errores">
+                            <ul>
+    
+                            </ul>
+                        </section>  -->
+                        <a class="registrateCon w100" href="/user/password"><u>¿Has olvidado tu contraseña?</u></a>
+                        <br>
+                        <div class="inicioSesion">
+                            
+                            <p style="color: red;"><% error %></p>
+                            <input type="text" class="email" name="email" placeholder="Correo Electronico *"  id="email">
+                            <p class="is-invalid"></p>
+                            <br>
+                            <input type ="password" name="password" placeholder="Contraseña *" id="password">
+                            <p class="is-invalid"></p>
+                        </div>
+                        
+                        <div class="terminos w100">
+                            <input type="checkbox" name="remember" id="">
+                            <p class="is-invalid"></p>
+                            <label class="w100">Mantener la sesión abierta</label>
+                        </div>
+                        <div class="boton-registrate w100">
+                            <button type="submit">LOGIN<i class="fa-solid fa-arrow-right-long"></i></button>
+                        </div>  
+                        <a class="registrateCon w100" href="/user/register"><u>¿No tienes cuenta? REGISTRATE</u></a>  
+                        <br>
+                        <div class="botones-acceso w100">
+                            <button>FACEBOOK<i class="fa-brands fa-facebook"></i></button>
+                            <button class="buttonGoogle">GOOGLE<i class="fa-brands fa-google"></i></button>
+                        </div>
+                    </div>                    
+                </form>
+                <div class="box-rigth">
+                    <p>UNITE AL CLUB. OBTENÉ LOS BENEFICIOS</p>
+                    <p>Unite a ProyectX. Obtené recompensas hoy mismo:</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 15% de descuento en tu próxima compra </li>
+                        <li><i class="fa-solid fa-check"></i> Acceso a productos y rebajas exclusivos para miembros
+                        </li>
+                        <li><i class="fa-solid fa-check"></i> Acceso a las apps de adidas Running y Training </li>
+                        <li><i class="fa-solid fa-check"></i> Ofertas y promociones especiales </li>
+                    </ul>
+                    <p>Como miembro de ProyectoX, queremos recompensarte con eso que te gusta por hacer lo que te gusta.
+                        Suscribite hoy mismo y accedé de inmediato a las ventajas del nivel 1:
+                        Unite ahora y empezá a ganar puntos, subí de nivel y desbloqueá más recompensas y beneficios
+                        ProyectX</p>
+                </div>
+            </div>
+
+        </main>
+        <%- include("./partials/footer.ejs") %>
+
+
+       <script src="/js/loginFront.js" ></script>
+       <script src="/js/nav.js"></script>
+</body>
+
+</html>

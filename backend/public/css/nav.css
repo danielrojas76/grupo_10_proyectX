@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&family=Victor+Mono&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-family: "Open Sans", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #ececec;
+}
+
+.logo {
+    max-width: 5rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #1c1c1c;
+}
+
+.imgUser {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url('/images/users/<%= userLog.img %>');
+    border: solid 1px black;
+    background-size: cover;
+}
+
+.iconUser{
+    border: none;
+    background-color: #ececec;
+    color: black;
+}
+
+.iconUser i{
+    font-size: 30px;
+}
+
+.search-box{
+    padding: 1rem;
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 646px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .abrir-menu,
+    .cerrar-menu
+
+    .abrir-menu {
+        color: #1c1c1c;
+    }
+
+    .cerrar-menu {
+        color: #ececec;
+    }
+
+    .iconUser{
+        border: none;
+        background-color: #1c1c1c;
+        color: white;
+    }
+
+    .nav {
+        justify-content:flex-start;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: #1c1c1c;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #ecececec;
+    }
+
+    .search-box{
+        padding: 0;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/userProfile.css">
+    <title>PROYECT X | USUARIO</title>
+</head>
+
+<body>
+    <%- include("./partials/header.ejs") %>
+    <main style="height: 90vh;">
+        <h2 style="text-align: center;"><b>ORDENES DE COMPRA</b></h2>
+<div class="card-body" style="width: 100%; max-width: 1000px; margin: auto;">
+    <table class="table table-responsive-md mb-0" style="width: 100%; border: 1px solid #ccc; border-collapse: collapse; margin: 0; padding: 0; table-layout: fixed;">
+        <thead>
+            <tr>
+                <th style="width: 50px;">
+                    <strong>#</strong>
+                </th>
+                <th class="th-lg">
+                    <strong>Fecha</strong>
+                </th>
+                <th class="th-lg">
+                    <strong>Envío</strong>
+                </th>
+                <th class="th-lg">
+                    <strong>Pago</strong>
+                </th>
+                <th>
+                    <strong>Total</strong>
+                </th>
+                <th style="width: 50px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% orders.forEach((order,index)=> { %>
+                <tr>
+                    <th scope="row">
+                        <%= index + 1 %>
+                    </th>
+                    <td>
+                        <%= new Intl.DateTimeFormat('es-ES', { year: 'numeric' , month: 'numeric' ,
+                            day: '2-digit' ,hour: 'numeric' , minute: 'numeric'
+                            }).format(order.createdAt) %>
+                    </td>
+                    <td>
+                        <%= order.shippingMethod %>
+                    </td>
+                    <td>
+                        <%= order.paymentMethod %>
+                    </td>
+                    <td>$ <%= order.total %>
+                    </td>
+                    <td><a class="" href="<%= `/order/${order.id}` %> "><i
+                                class="fas fa-eye"></i></a>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+    <a href="/user/profile"><input class="btn" type="button" value="VOLVER"></a>
+    
+    <script src="/js/nav.js"></script>
+    
+</div>
+
+</main>
+<%- include('./partials/footer') %>
+</body>

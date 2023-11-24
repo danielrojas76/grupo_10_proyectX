@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <title>CARRITO DE COMPRAS</title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+        <main>
+            <h1>Carrito de compras</h1>
+            <div class="box-cart product">
+
+            </div>
+
+            <form class="box-cart mat" id="checkoutCart">
+                <div class="box-item media-Mat">
+                    <img src="/images/LOGO.png" alt="Producto 1">
+                    <div class="box-pay">
+                        <input type="radio" name="shippingMethod" id="shippingMethod" value="Correo">
+                        <label>Correo Argentino</label>
+                        <input type="radio" name="shippingMethod" id="shippingMethod" value="Andreani">
+                        <label>Andreani</label>
+                        <input type="radio" name="shippingMethod" id="shippingMethod" value="Mensajeria">
+                        <label>Mensajeria</label>
+                    </div>
+                    <div class="box-pay">
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value="Transferencia">
+                        <label>Deposito o Transferencia Bancaria</label>
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value="Mercadopago">
+                        <label>Mercadopago - Tarjetas Online, PagoFacil, RapiPago</label>
+                    </div>
+                    <div class="box-item-details ">
+                        <p >TOTAL: <span class="totalAmount">$ 0</span></p>
+                    </div>
+                </div>
+                <button type="submit" style="padding: 12px; background-color: black; color: white;">COMPRAR</button>
+            </form>
+        </main>
+        <%- include('./partials/footer.ejs') %>
+        <%- include('./partials/scripts') %>
+        <script src="/js/cart.js"></script>
+        <script src="/js/nav.js"></script>
+
+</body>
+
+</html>

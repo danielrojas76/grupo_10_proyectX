@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/productCreate.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/nav.css">
+  <title>EDITAR</title>
+  <script src="/js/editProduct.js"></script>
+</head>
+
+<body>
+  <%-include('./partials/header.ejs')%>
+    <main class="mainCreate">
+      <h3 class="agregarProducts">EDITAR PRODUCTO</h3>
+      <div class="contentForm">
+        <!-- <section class="errores">
+          <ul>
+            
+          </ul> -->
+        <img src="/images/products/<%= productFind.img %>" alt="" width="10%">
+        <form class="boxForm" action="/product/<%=productFind.id%>/edit/?_method=PUT" method="post" enctype="multipart/form-data" id="formularioEdit">
+          <div class="inputsCompletar w100">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Nombres *" value="<%=productFind.name%>">
+            <p class="is-invalid"></p>
+            <label for="price"></label>
+            <input type="text" id="price" name="price" placeholder="Precio *" value="<%=productFind.price%>">
+            <p class="is-invalid"></p>
+            <label for="discount"></label>
+            <input type="number" id="discount" name="discount" placeholder="Descuento % *" value="<%=productFind.discount%>">
+            <p class="is-invalid"></p>
+          </div>
+          <div class="genero">          
+            <label for="category" class="marcas"><b>CATEGORIA</b></label>
+            <select name="category_id" id="category" class="form-input">
+            <option value="">Elegí</option>
+            <% categorias.forEach(element => { %>
+              <option value="<%= element.id %>"> <%= element.name %> </option>
+            <% }) %>
+          </select>
+          </div>
+          <div class="description w100">
+            <label for="description"></label>
+            <input type="text" name="description" id="description" placeholder="Descripcion *" value="<%= productFind.description %>">
+            <p class="is-invalid"></p>
+          </div>
+          <div class="date w100">
+            <label for="image" class="imagen"><b>AGREGAR IMAGEN</b></label>
+						<input type="file" id="image" name="img">
+            <input type="hidden" name="old-img" value="<%= productFind.img %>">
+            <p class="is-invalid"></p>
+            <input type="hidden" name="old-image" value="<%= productFind.image%>">
+            <p class="is-invalid"></p>
+          </div>
+          <div class="buttonAgregar w100">
+            <button type="submit">AGREGAR</button>
+          </div>
+      </form>
+    </div>
+    </main>
+    <%-include("./partials/footer.ejs") %>
+    <%- include('./partials/scripts') %>
+    <script src="/js/nav.js"></script>
+    <script src="/js/editProduct.js"></script>
+</body>
+
+
+
+
+</html>
