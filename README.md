@@ -49,3 +49,19 @@ Si bien revisamos muchas p√°ginas de deportes, nos dimos cuenta de que la mayor√
 * **Base de datos // CONFIG.JS**: En caso que requiera especificar user/pass/puerto para conectar a la base de datos, esta se encuentra en el archivo 'config.js' y se encuentra en la carpeta  ( /src/database/config/config.js )
 
 * **Base de datos // USER/PASS**: Por defecto se adjunta un usuario ( rocio_carle@proyectox.com / #qwerty12345 ) y un administrador ( admin@proyectox.com / #12345678 ). Sus user/pass son los indicados.
+
+screen del proyecto:
+
+![Page Screen](resource/readme/home.png)
+
+![Page Screen](resource/readme/home2.png)
+
+![Page Screen](resource/readme/cart.png)
+
+![Page Screen](resource/readme/pedido.png)
+
+![Page Screen](resource/readme/orden.png)
+
+![Page Screen](resource/readme/listado.png)
+
+![Page Screen](resource/readme/detalle.png)
