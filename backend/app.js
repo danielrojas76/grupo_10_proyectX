@@ -6,6 +6,7 @@ const methodOverride = require('method-override');// Pasar poder usar los métod
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const { userLog } =  require('./middlewares/userLog'); 
+const PORT = process.env.PORT || 3000;
 
 // ************ express() - (don't touch) ************
 const app = express();
@@ -50,6 +51,6 @@ app.use((req, res, next) => {
     res.status(404).render("not-found")
 })
 
-app.listen(process.env.PORT, () => { 
+app.listen(PORT, () => { 
     console.log("Servidor escuchando en Puerto " + process.env.PORT);
 });
